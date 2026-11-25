@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"outline":"#9a9088","on-primary-container":"#fbe8d8","on-surface-variant":"#605850","primary":"#c2652a","on-tertiary-container":"#3a2020","on-secondary-container":"#605850","on-tertiary-fixed":"#2e1515","primary-fixed-dim":"#f0a878","on-primary-fixed":"#401a08","primary-container":"#e08850","surface":"#faf5ee","secondary-fixed-dim":"#cec6be","outline-variant":"#d8d0c8","on-secondary-fixed-variant":"#504840","on-tertiary-fixed-variant":"#6e3030","surface-bright":"#faf5ee","error":"#c0392b","primary-fixed":"#fbe8d8","on-error":"#ffffff","surface-container-high":"#ece6dc","tertiary-fixed":"#fce0e0","secondary-fixed":"#eae2da","surface-container":"#f2ece4","secondary-container":"#eae2da","surface-container-highest":"#e6e0d6","surface-variant":"#ece6dc","inverse-surface":"#3a302a","on-primary-fixed-variant":"#8a4518","error-container":"#fce4e0","tertiary":"#8c3c3c","surface-container-lowest":"#ffffff","surface-tint":"#c2652a","surface-dim":"#dcd6cc","on-background":"#3a302a","on-tertiary":"#ffffff","inverse-on-surface":"#faf5ee","on-secondary-fixed":"#2a2420","on-primary":"#ffffff","tertiary-fixed-dim":"#e8a0a0","on-error-container":"#7a1a10","inverse-primary":"#f0a878","tertiary-container":"#d47070","on-surface":"#3a302a","secondary":"#78706a","background":"#faf5ee","surface-container-low":"#f6f0e8","on-secondary":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{},"fontFamily":{"headline":["EB Garamond"],"display":["EB Garamond"],"body":["Manrope"],"label":["Manrope"]},"fontSize":{}}}};</script></head><body class="bg-surface text-on-surface font-body flex flex-col"><header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-5 flex items-center justify-between gap-3"><div class="flex flex-col min-w-0"><span class="text-[11px] font-label font-semibold uppercase tracking-widest text-primary leading-none">Solidez MX</span><h1 class="text-lg font-headline font-semibold tracking-tight text-on-surface truncate">Casos</h1></div><div class="flex items-center gap-2 shrink-0"><button aria-label="Nuevo caso" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">add</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full px-6 pt-16 pb-24 bg-surface"><div class="flex flex-col w-full gap-5 pt-2">
+<!-- CTA Superior Claro -->
+<div class="flex items-center justify-between gap-3">
+<p class="text-xs font-label text-on-surface-variant">
+      Gestiona tus aclaraciones y soporte
+    </p>
+<button class="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-lg bg-primary text-on-primary text-xs font-label font-semibold shadow-sm hover:opacity-95 active:scale-[0.98] transition-all shrink-0" id="btn-new-case" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span>
+<span>Abrir Nuevo Caso o Reclamación</span>
+</button>
+</div>
+<!-- 1. Barra de filtros rápidos por estado -->
+<div aria-label="Filtrar casos por estado" class="flex items-center gap-2 overflow-x-auto pb-1 -mx-1 px-1" role="tablist">
+<button class="filter-chip px-3.5 py-2 rounded-full text-xs font-label font-semibold bg-primary text-on-primary shadow-sm whitespace-nowrap transition-all" data-filter="todos" type="button">
+      Todos (3)
+    </button>
+<button class="filter-chip px-3.5 py-2 rounded-full text-xs font-label font-medium bg-surface-container text-on-surface-variant hover:bg-surface-container-high whitespace-nowrap transition-all" data-filter="abierto" type="button">
+      Abierto
+    </button>
+<button class="filter-chip px-3.5 py-2 rounded-full text-xs font-label font-medium bg-surface-container text-on-surface-variant hover:bg-surface-container-high whitespace-nowrap transition-all" data-filter="en-revision" type="button">
+      En revisión
+    </button>
+<button class="filter-chip px-3.5 py-2 rounded-full text-xs font-label font-medium bg-surface-container text-on-surface-variant hover:bg-surface-container-high whitespace-nowrap transition-all" data-filter="resuelto" type="button">
+      Resuelto
+    </button>
+<button class="filter-chip px-3.5 py-2 rounded-full text-xs font-label font-medium bg-surface-container text-on-surface-variant hover:bg-surface-container-high whitespace-nowrap transition-all" data-filter="cerrado" type="button">
+      Cerrado
+    </button>
+</div>
+<!-- Lista de Casos -->
+<div class="flex flex-col gap-4" id="cases-list">
+<!-- 2. Tarjeta destacada de Caso Resuelto con Ventana de Objeción de 7 días -->
+<article class="case-card flex flex-col gap-4 p-5 rounded-xl bg-surface-container-lowest shadow-[0_2px_16px_rgba(58,48,42,0.05)]" data-status="resuelto">
+<div class="flex items-start justify-between gap-3">
+<div class="flex flex-col gap-1 min-w-0">
+<span class="text-xs font-label font-semibold text-primary tracking-wide">
+            #CASO-1042 · Reclamación de Pago
+          </span>
+<h2 class="font-headline text-xl font-semibold text-on-surface leading-snug">
+            Pintura de fachada · #SLZ-8310
+          </h2>
+</div>
+<span class="px-2.5 py-1 rounded-full text-[11px] font-label font-semibold bg-primary-fixed text-on-primary-fixed shrink-0">
+          Resuelto
+        </span>
+</div>
+<!-- Decisión del Administrador -->
+<div class="p-4 rounded-lg bg-surface-container-low flex flex-col gap-1.5">
+<div class="flex items-center gap-1.5 text-xs font-label font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">gavel</span>
+<span>Decisión del Administrador</span>
+</div>
+<p class="text-sm font-body text-on-surface-variant leading-relaxed">
+          Liquidación parcial aprobada: <strong class="text-on-surface font-semibold">$450.00 MXN</strong> reembolsados a tu tarjeta, <strong class="text-on-surface font-semibold">$400.00 MXN</strong> al trabajador.
+        </p>
+</div>
+<!-- Alerta de plazo (Ventana de 7 días) -->
+<div class="p-3.5 rounded-lg bg-tertiary-fixed/70 flex flex-col gap-2">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-tertiary shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">schedule</span>
+<p class="text-xs font-body text-on-tertiary-fixed leading-relaxed">
+            Tienes <strong class="font-semibold">5 días restantes</strong> para aceptar u objetar esta resolución antes del cierre automático.
+          </p>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-lowest/80 overflow-hidden">
+<div class="h-full w-[28%] rounded-full bg-tertiary"></div>
+</div>
+</div>
+<!-- Botones de acción -->
+<div class="flex items-center gap-2.5 pt-1" id="resolved-actions">
+<button class="flex-1 py-2.5 px-3 rounded-lg bg-surface-container text-on-surface text-xs font-label font-semibold hover:bg-surface-container-high active:scale-[0.98] transition-all" id="btn-object" type="button">
+          Objetar Resolución
+        </button>
+<button class="flex-1 py-2.5 px-3 rounded-lg bg-primary text-on-primary text-xs font-label font-semibold shadow-sm hover:opacity-95 active:scale-[0.98] transition-all" id="btn-accept" type="button">
+          Aceptar y Cerrar
+        </button>
+</div>
+</article>
+<!-- 3. Tarjeta de Caso en Revisión con Hilo de Mensajes Activo -->
+<article class="case-card flex flex-col gap-4 p-5 rounded-xl bg-surface-container-low shadow-[0_2px_16px_rgba(58,48,42,0.04)]" data-status="en-revision">
+<div class="flex items-start justify-between gap-3">
+<div class="flex flex-col gap-1 min-w-0">
+<span class="text-xs font-label font-semibold text-on-surface-variant tracking-wide">
+            #TCK-2041 · Ticket de Soporte (Pagos)
+          </span>
+<h2 class="font-headline text-lg font-semibold text-on-surface leading-snug">
+            Autorización 3D-Secure en Stripe
+          </h2>
+</div>
+<span class="px-2.5 py-1 rounded-full text-[11px] font-label font-semibold bg-secondary-container text-on-secondary-container shrink-0">
+          En revisión
+        </span>
+</div>
+<!-- Último mensaje del soporte -->
+<div class="p-3.5 rounded-lg bg-surface-container-lowest flex items-start gap-3">
+<img alt="Elena Vance" class="w-9 h-9 rounded-full object-cover shrink-0 bg-surface-container" data-alt="Warm editorial portrait of a friendly female customer support specialist in her 30s, soft natural daylight, warm cream and terracotta background tones, minimalist luxury aesthetic, calm confident expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ4NMdPy4vxgHTn5Bci183mVCLG2ZhukKB8iJkf7KC-6Q129Q94Y-M1o4-ytSq62Rl7X-82MQUSSoLr6sDB8oUa2Z85WxDRjtQ0HCM82A4d2H8oyXQqWmP8ZO0PQuKYgHxY0I_WvfHnogJK-f9NdfIyGIaXHCOQlqvWFeg2IIki_3MhyZvPd84KWWTo12uFwhPLGrV39AZ6AW1qGh7bBUEfTjNo8on0cLbJipkP3I"/>
+<div class="flex flex-col gap-1 min-w-0">
+<div class="flex items-center justify-between gap-2">
+<span class="text-xs font-label font-semibold text-on-surface truncate">
+              Elena Vance (Admin)
+            </span>
+<span class="text-[11px] font-label text-outline shrink-0">Hace 2 h</span>
+</div>
+<p class="text-xs font-body text-on-surface-variant leading-relaxed">
+            Hemos verificado el PaymentIntent en Stripe y regeneramos la autorización 3D-Secure.
+          </p>
+</div>
+</div>
+<!-- Respuestas rápidas agregadas dinámicamente -->
+<div class="hidden flex-col gap-2" id="quick-replies-container"></div>
+<!-- Input rápido para responder en el hilo -->
+<form class="flex items-center gap-2" id="quick-reply-form">
+<input class="flex-1 min-w-0 px-3.5 py-2.5 rounded-lg bg-surface-container-lowest text-xs font-body text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest" id="quick-reply-input" placeholder="Escribir respuesta al equipo de soporte..." type="text"/>
+<button aria-label="Enviar respuesta" class="w-10 h-10 rounded-lg bg-primary text-on-primary flex items-center justify-center shrink-0 shadow-sm hover:opacity-95 active:scale-95 transition-all" type="submit">
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</form>
+<div class="flex items-center justify-end">
+<button class="inline-flex items-center gap-1 text-xs font-label font-semibold text-primary hover:underline" type="button">
+<span>Ver hilo completo (4 mensajes)</span>
+<span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- 4. Tarjeta de Caso Cerrado -->
+<article class="case-card flex flex-col gap-3 p-5 rounded-xl bg-surface-container-low shadow-[0_2px_16px_rgba(58,48,42,0.03)]" data-status="cerrado">
+<div class="flex items-start justify-between gap-3">
+<div class="flex flex-col gap-1 min-w-0">
+<span class="text-xs font-label font-semibold text-on-surface-variant tracking-wide">
+            #CASO-0988 · Reclamación por Ausencia
+          </span>
+<h2 class="font-headline text-lg font-semibold text-on-surface leading-snug">
+            Reembolso ejecutado
+          </h2>
+</div>
+<span class="px-2.5 py-1 rounded-full text-[11px] font-label font-semibold bg-surface-container-high text-on-surface-variant shrink-0">
+          Cerrado
+        </span>
+</div>
+<div class="flex items-center gap-2.5 text-xs font-body text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px] text-primary">verified</span>
+<span>Reembolso total de <strong class="text-on-surface font-semibold">$770.00 MXN</strong> ejecutado a Visa •••• 4242</span>
+</div>
+</article>
+</div>
+<!-- Estado vacío para filtros sin resultados (ej. Abierto) -->
+<div class="hidden flex-col items-center justify-center text-center gap-3 py-10 px-6 rounded-xl bg-surface-container-low" id="empty-state">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[24px]">inbox</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-headline text-lg font-semibold text-on-surface">
+        Todo en orden por ahora
+      </h3>
+<p class="text-xs font-body text-on-surface-variant max-w-xs">
+        No tienes casos en este estado. Si necesitas ayuda con algún servicio o pago, puedes abrir un nuevo caso.
+      </p>
+</div>
+</div>
+</div>
+<script>
+  (function () {
+    const chips = document.querySelectorAll('.filter-chip');
+    const cards = document.querySelectorAll('.case-card');
+    const emptyState = document.getElementById('empty-state');
+
+    chips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        const filter = chip.getAttribute('data-filter');
+
+        chips.forEach((c) => {
+          c.classList.remove('bg-primary', 'text-on-primary', 'font-semibold', 'shadow-sm');
+          c.classList.add('bg-surface-container', 'text-on-surface-variant', 'font-medium');
+        });
+        chip.classList.remove('bg-surface-container', 'text-on-surface-variant', 'font-medium');
+        chip.classList.add('bg-primary', 'text-on-primary', 'font-semibold', 'shadow-sm');
+
+        let visibleCount = 0;
+        cards.forEach((card) => {
+          const status = card.getAttribute('data-status');
+          if (filter === 'todos' || status === filter) {
+            card.classList.remove('hidden');
+            visibleCount++;
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+
+        if (visibleCount === 0) {
+          emptyState.classList.remove('hidden');
+          emptyState.classList.add('flex');
+        } else {
+          emptyState.classList.add('hidden');
+          emptyState.classList.remove('flex');
+        }
+      });
+    });
+
+    const replyForm = document.getElementById('quick-reply-form');
+    const replyInput = document.getElementById('quick-reply-input');
+    const repliesContainer = document.getElementById('quick-replies-container');
+
+    if (replyForm) {
+      replyForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const text = replyInput.value.trim();
+        if (!text) return;
+
+        repliesContainer.classList.remove('hidden');
+        repliesContainer.classList.add('flex');
+
+        const msgEl = document.createElement('div');
+        msgEl.className = 'p-3 rounded-lg bg-primary-fixed/50 text-xs font-body text-on-surface self-end max-w-[85%]';
+        msgEl.textContent = text;
+        repliesContainer.appendChild(msgEl);
+
+        replyInput.value = '';
+      });
+    }
+
+    const btnAccept = document.getElementById('btn-accept');
+    const btnObject = document.getElementById('btn-object');
+    const resolvedActions = document.getElementById('resolved-actions');
+
+    if (btnAccept) {
+      btnAccept.addEventListener('click', () => {
+        resolvedActions.innerHTML =
+          '<div class="w-full py-2.5 px-3 rounded-lg bg-primary-fixed text-on-primary-fixed text-xs font-label font-semibold text-center">Resoluci&oacute;n aceptada. Caso cerrado.</div>';
+      });
+    }
+
+    if (btnObject) {
+      btnObject.addEventListener('click', () => {
+        resolvedActions.innerHTML =
+          '<div class="w-full py-2.5 px-3 rounded-lg bg-tertiary-fixed text-on-tertiary-fixed text-xs font-label font-semibold text-center">Objeci&oacute;n registrada. Un especialista revisar&aacute; tu caso.</div>';
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/80 backdrop-blur-xl shadow-[0_-1px_8px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-semibold"><div class="flex justify-around items-center h-20 px-2"><a class="flex flex-col items-center justify-center gap-1 min-w-[64px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="patrimonio" href="#"><span class="material-symbols-outlined text-[22px]">account_balance</span><span class="text-[11px] font-label">Patrimonio</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[64px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="movimientos" href="#"><span class="material-symbols-outlined text-[22px]">swap_horiz</span><span class="text-[11px] font-label">Movimientos</span></a><a aria-current="page" class="flex flex-col items-center justify-center gap-1 min-w-[64px] h-12 transition-colors text-primary font-semibold" data-path="casos" href="#"><span class="material-symbols-outlined text-[22px]">support_agent</span><span class="text-[11px] font-label">Casos</span></a><a class="flex flex-col items-center justify-center gap-1 min-w-[64px] h-12 text-on-surface-variant hover:text-on-surface transition-colors" data-path="perfil" href="#"><span class="material-symbols-outlined text-[22px]">person</span><span class="text-[11px] font-label">Perfil</span></a></div></nav></body></html>

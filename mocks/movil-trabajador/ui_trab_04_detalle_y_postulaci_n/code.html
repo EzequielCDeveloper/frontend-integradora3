@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "tertiary": "#8c3c3c",
+          "secondary-fixed-dim": "#cec6be",
+          "on-background": "#3a302a",
+          "surface-bright": "#faf5ee",
+          "error-container": "#fce4e0",
+          "surface-tint": "#c2652a",
+          "on-primary-fixed-variant": "#8a4518",
+          "tertiary-fixed": "#fce0e0",
+          "error": "#c0392b",
+          "primary-container": "#e08850",
+          "primary-fixed-dim": "#f0a878",
+          "secondary-container": "#eae2da",
+          "on-error": "#ffffff",
+          "surface-container-lowest": "#ffffff",
+          "surface": "#faf5ee",
+          "on-secondary-fixed": "#2a2420",
+          "primary": "#c2652a",
+          "surface-container-highest": "#e6e0d6",
+          "surface-container": "#f2ece4",
+          "on-surface": "#3a302a",
+          "tertiary-container": "#d47070",
+          "tertiary-fixed-dim": "#e8a0a0",
+          "surface-container-high": "#ece6dc",
+          "primary-fixed": "#fbe8d8",
+          "on-secondary": "#ffffff",
+          "on-primary-container": "#fbe8d8",
+          "background": "#faf5ee",
+          "on-secondary-fixed-variant": "#504840",
+          "secondary-fixed": "#eae2da",
+          "surface-dim": "#dcd6cc",
+          "on-error-container": "#7a1a10",
+          "on-tertiary-container": "#3a2020",
+          "on-tertiary": "#ffffff",
+          "outline-variant": "#d8d0c8",
+          "surface-container-low": "#f6f0e8",
+          "secondary": "#78706a",
+          "inverse-primary": "#f0a878",
+          "on-surface-variant": "#605850",
+          "on-tertiary-fixed-variant": "#6e3030",
+          "outline": "#9a9088",
+          "surface-variant": "#ece6dc",
+          "on-primary-fixed": "#401a08",
+          "inverse-on-surface": "#faf5ee",
+          "on-tertiary-fixed": "#2e1515",
+          "on-primary": "#ffffff",
+          "inverse-surface": "#3a302a",
+          "on-secondary-container": "#605850"
+        },
+        borderRadius: {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.5rem",
+          "full": "9999px"
+        },
+        spacing: {
+          "space-sm": "0.5rem",
+          "gutter": "0.75rem",
+          "space-xs": "0.25rem",
+          "margin": "1rem",
+          "space-xl": "2rem",
+          "space-lg": "1.5rem",
+          "space-md": "1rem"
+        },
+        fontFamily: {
+          "label-lg": ["Manrope", "sans-serif"],
+          "headline-sm": ["Manrope", "sans-serif"],
+          "title-lg": ["Manrope", "sans-serif"],
+          "label-sm": ["Manrope", "sans-serif"],
+          "display-lg-mobile": ["Manrope", "sans-serif"],
+          "label-md": ["Manrope", "sans-serif"],
+          "headline-md": ["Manrope", "sans-serif"],
+          "body-md": ["Manrope", "sans-serif"],
+          "body-lg": ["Manrope", "sans-serif"],
+          "display-lg": ["Manrope", "sans-serif"],
+          "title-md": ["Manrope", "sans-serif"],
+          "headline-lg": ["Manrope", "sans-serif"]
+        },
+        fontSize: {
+          "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+          "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+          "title-lg": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+          "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+          "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+          "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }],
+          "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+          "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+          "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+          "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+          "title-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }],
+          "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }]
+        }
+      }
+    }
+  }
+</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl border-b border-outline-variant/50"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Regresar" class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface hover:bg-surface-container-high transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface tracking-tight truncate max-w-[200px]">Detalle De Vacante</h1></div><div class="flex items-center gap-space-xs"><button aria-label="Ayuda y soporte" class="w-11 h-11 flex items-center justify-center rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[20px]">help_outline</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full pb-28">
+<!-- Status Chip & Category Strip -->
+<div class="px-margin pt-space-md flex items-center justify-between gap-space-sm">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container-high rounded-full">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">cleaning_services</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold">Categoría: Limpieza</span>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 bg-secondary-fixed text-on-secondary-fixed rounded-full font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+      Vacante activa
+    </span>
+</div>
+<!-- Main Headline Title -->
+<div class="px-margin pt-space-sm">
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+      Limpieza profunda de oficina corporativa
+    </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+      Publicado hace 2 horas • Benito Juárez, CDMX
+    </p>
+</div>
+<!-- Escrow Protected Compensation Hero Banner -->
+<div class="mx-margin mt-space-md p-space-md bg-surface-container-low border border-outline-variant/60 rounded-lg relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block mb-1">
+          Remuneración neta estimada
+        </span>
+<div class="flex items-baseline gap-1.5">
+<span class="font-display-lg-mobile text-display-lg-mobile text-primary font-bold tracking-tight">
+            $850.00
+          </span>
+<span class="font-label-lg text-label-lg text-primary font-semibold">MXN</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium ml-1">pago fijo</span>
+</div>
+</div>
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[24px]">payments</span>
+</div>
+</div>
+<!-- Escrow Protection Badge -->
+<div class="mt-space-md p-3 bg-primary-fixed rounded-lg flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-on-primary-fixed text-[22px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<div class="min-w-0">
+<span class="font-label-md text-label-md text-on-primary-fixed font-bold block leading-tight">
+          Pago en Custodia Stripe Escrow
+        </span>
+<span class="font-label-sm text-label-sm text-on-primary-fixed-variant leading-snug">
+          Fondos retenidos en garantía previa. Se liberan de inmediato al completar.
+        </span>
+</div>
+</div>
+</div>
+<!-- Key Logistics Quick Cards -->
+<div class="grid grid-cols-2 gap-gutter px-margin mt-space-md">
+<!-- Schedule Card -->
+<div class="p-space-md bg-surface-container-lowest border border-outline-variant/60 rounded-lg flex flex-col justify-between">
+<div class="flex items-center gap-1.5 text-primary mb-2">
+<span class="material-symbols-outlined text-[20px]">calendar_today</span>
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider">Fecha y Turno</span>
+</div>
+<div>
+<span class="font-title-md text-title-md text-on-surface font-semibold block leading-tight">
+          24 Nov 2026
+        </span>
+<span class="font-label-md text-label-md text-on-surface-variant mt-0.5 block">
+          09:00 AM – 02:00 PM
+        </span>
+<span class="inline-block mt-2 font-label-sm text-label-sm text-on-secondary-fixed-variant font-medium">
+          ~5 horas de jornada
+        </span>
+</div>
+</div>
+<!-- Distance Card -->
+<div class="p-space-md bg-surface-container-lowest border border-outline-variant/60 rounded-lg flex flex-col justify-between">
+<div class="flex items-center gap-1.5 text-primary mb-2">
+<span class="material-symbols-outlined text-[20px]">near_me</span>
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider">Proximidad</span>
+</div>
+<div>
+<span class="font-title-md text-title-md text-on-surface font-semibold block leading-tight">
+          &lt; 5 km de ti
+        </span>
+<span class="font-label-md text-label-md text-on-surface-variant mt-0.5 block truncate">
+          Narvarte Poniente
+        </span>
+<span class="inline-block mt-2 font-label-sm text-label-sm text-primary font-medium">
+          Fácil acceso en Metro
+        </span>
+</div>
+</div>
+</div>
+<!-- Approximate Location Map View -->
+<div class="px-margin mt-space-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-title-lg text-title-lg text-on-surface font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[20px] text-primary">location_on</span>
+        Ubicación aproximada
+      </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Pública</span>
+</div>
+<!-- Map Container -->
+<div class="relative rounded-lg overflow-hidden border border-outline-variant/60">
+<div class="w-full h-44 bg-cover bg-center" data-location="Colonia Narvarte Poniente, Benito Juárez, Ciudad de México" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD5SCyBMDlbit2-_SvsxFeh-zr6MzYXuLi_QKiLULtVJ8HD5dvjKChZRs6phZOXA4OwscMMm9hqyWkr9ZQ4OuMbXE_sLVbiRpxMqQVogd3kYWdyG34uXEuUznIF4xjrrWEnvK0JWe6BwlN9cW0g3Yo9WIucu5tM7z8yZfwz7MBDhAmba3ZSS402TaAKKwMVQ-H41ADr7ZFV0JNWFCAaoyuKFlJPumzX1SJqd5MYBsk')">
+</div>
+<!-- Radial overlay depicting approx radius -->
+<div class="absolute inset-0 bg-primary/10 flex items-center justify-center pointer-events-none">
+<div class="w-24 h-24 rounded-full bg-primary/20 flex items-center justify-center animate-pulse">
+<div class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined text-[14px]">my_location</span>
+</div>
+</div>
+</div>
+<!-- Bottom Safe Notice Badge inside Map -->
+<div class="absolute bottom-2 inset-x-2 p-2 bg-surface-container-lowest/95 backdrop-blur-md rounded-lg flex items-center gap-2 border border-outline-variant/40">
+<span class="material-symbols-outlined text-[18px] text-primary shrink-0">lock</span>
+<p class="font-label-sm text-label-sm text-on-surface-variant leading-snug">
+          Por seguridad, el domicilio exacto y número se desbloquean al ser seleccionado.
+        </p>
+</div>
+</div>
+</div>
+<!-- Real Photos of the Space -->
+<div class="px-margin mt-space-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold">
+        Fotos reales del espacio
+      </h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">2 áreas a calcular</span>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<div class="flex flex-col gap-1.5">
+<div class="relative h-36 rounded-lg overflow-hidden border border-outline-variant/60 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Modern bright open plan corporate office space in Mexico City with laminate wooden floors, floor to ceiling glass windows, minimalist white desks needing surface wipe down, neutral light palette with soft indigo accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMJHz48sJ10cLMqxlu_QxKCogXK6_keAmNeSLBSATkkIFiQYghLI6YkNg1fnVfLEagySFBX3jC_QOveDykbYWZ5Tf67IlH_2cks0Jr2PZlJ1HmT2Y6PRl5V9iWnCpH8ge44trZTiQ4KFg_EMPV9z4ID3HO0ctJptgNuJuaZ_HA4svVQ_CRPFcLc16W6MxErvEJ5LQICzZOGwAqDdhlPM0z6L-E1vr1YVOE9FEaq-U"/>
+<span class="absolute bottom-2 left-2 px-2 py-0.5 bg-inverse-surface/85 text-inverse-on-surface rounded font-label-sm text-label-sm backdrop-blur-sm">
+            Área de trabajo
+          </span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant px-1">45 m² aprox. Superficie plana.</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<div class="relative h-36 rounded-lg overflow-hidden border border-outline-variant/60 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Small corporate kitchen and coffee station with polished quartz countertop, stainless steel sink, tiled backsplash, tidy cupboard setup, clean daylight reflection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQhc5MfIaJ0e3Whycv1rr3JRNyr0KY2ikkiIckwL-cGdkIgRXvIkcDfU946ZKOAl4_1vBPM7wHZdd1-tkxj-TEU43oVBHMJ-mt7OG1vTz-siox9Llc24Sp2fOpnR1sZNQIJVvnLrLF3TCG3gGIJVGz93Rf7pC1qv6kGK5zMkIBSWv6qo9R4J5Xs2OZX6DtETicpkCHS_GE8rZpc8-iMc1Gs247UXoH0UtJUjU-_OA"/>
+<span class="absolute bottom-2 left-2 px-2 py-0.5 bg-inverse-surface/85 text-inverse-on-surface rounded font-label-sm text-label-sm backdrop-blur-sm">
+            Comedor &amp; Cocineta
+          </span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant px-1">Tarja y superficies de cristal.</span>
+</div>
+</div>
+</div>
+<!-- Job Requirements & Employer Equipment Conditions -->
+<div class="mx-margin mt-space-lg p-space-md bg-surface-container-lowest border border-outline-variant/60 rounded-lg">
+<div class="flex items-center gap-space-sm mb-space-sm">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">assignment_turned_in</span>
+</span>
+<h3 class="font-title-lg text-title-lg text-on-surface font-semibold">
+        Condiciones especificadas
+      </h3>
+</div>
+<div class="space-y-space-sm">
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-primary shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<p class="font-body-md text-body-md text-on-surface leading-snug">
+          Se proporcionan todos los insumos y equipo de limpieza (aspiradora, líquidos, paños microfibra).
+        </p>
+</div>
+<div class="flex items-start gap-2.5">
+<span class="material-symbols-outlined text-[18px] text-primary shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<p class="font-body-md text-body-md text-on-surface leading-snug">
+          Traer ropa cómoda de trabajo y calzado cerrado antiderrapante por seguridad física.
+        </p>
+</div>
+</div>
+</div>
+<!-- Employer Reputation Card -->
+<div class="mx-margin mt-space-md p-space-md bg-surface-container-lowest border border-outline-variant/60 rounded-lg">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block mb-space-sm">
+      Publicado por
+    </span>
+<div class="flex items-center gap-space-md">
+<div class="relative shrink-0">
+<img class="w-14 h-14 rounded-full object-cover" data-alt="Professional friendly headshot portrait of Roberto Garza, a middle-aged Mexican business manager smiling warmly, wearing a crisp dark navy collared shirt against a warm neutral office backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3qawjyAc2-tN0ZvRGnFafxGir1HvklJK1T8ZJccujV9D0F8L5g_oHR_gWliAcqdCBtQrqF59_IvH4xqcRMMW9MdPHBRe08NCSMZT6Zf5G4AsZuMQcIozmpBAPHJZ72D7150BOWx9JWtEuk0jY1Im4EZ9JpZQm13kEQrsqPKX3WcrCHwTvcpEwz_JXSChjruCX-I-0cKTI0wyAoTfe5YBt5AWrTgeEl4fWgFddJjM"/>
+<span class="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[11px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-title-lg text-title-lg text-on-surface font-bold truncate">
+            Roberto Garza
+          </span>
+<span class="font-label-sm text-label-sm text-on-primary-fixed bg-primary-fixed px-1.5 py-0.5 rounded font-medium shrink-0">
+            Verificado
+          </span>
+</div>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">4.9</span>
+<span class="font-label-md text-label-md text-on-surface-variant">(14 evaluaciones)</span>
+</div>
+</div>
+</div>
+<!-- Reputation Highlights -->
+<div class="mt-space-sm pt-space-sm flex items-center gap-space-sm">
+<div class="inline-flex items-center gap-1 px-2 py-1 bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-[14px] text-primary">schedule</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Puntual en pagos</span>
+</div>
+<div class="inline-flex items-center gap-1 px-2 py-1 bg-surface-container rounded-lg">
+<span class="material-symbols-outlined text-[14px] text-primary">thumb_up</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Excelentes referencias</span>
+</div>
+</div>
+</div>
+<!-- Pre-Application Informative Disclaimer -->
+<div class="mx-margin mt-space-md p-space-sm bg-surface-container-high/70 rounded-lg flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">info</span>
+<p class="font-label-sm text-label-sm text-on-surface leading-snug">
+      Solo puedes postularte una vez. Al postularte, el empleador evaluará tu perfil y disponibilidad en tiempo real.
+    </p>
+</div>
+<!-- Secondary Actions (Bookmark & Report) -->
+<div class="px-margin mt-space-md flex items-center justify-around">
+<button class="inline-flex items-center gap-1.5 py-2 px-3 rounded-lg text-on-surface-variant active:bg-surface-container transition-colors" id="btnBookmark" type="button">
+<span class="material-symbols-outlined text-[20px]" id="iconBookmark">bookmark_border</span>
+<span class="font-label-md text-label-md font-medium" id="lblBookmark">Guardar para después</span>
+</button>
+<button class="inline-flex items-center gap-1.5 py-2 px-3 rounded-lg text-error active:bg-error-container/30 transition-colors" id="btnReport" type="button">
+<span class="material-symbols-outlined text-[20px]">flag</span>
+<span class="font-label-md text-label-md font-medium">Reportar publicación</span>
+</button>
+</div>
+<!-- Fixed Bottom CTA Bar (React Native thumb reachable layout) -->
+<div class="fixed bottom-0 inset-x-0 bg-surface-container-lowest/95 backdrop-blur-xl p-space-md border-t border-outline-variant/60 z-40">
+<div class="max-w-md mx-auto flex items-center gap-space-sm">
+<div class="shrink-0 flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant leading-none">Monto</span>
+<span class="font-title-lg text-title-lg text-primary font-bold leading-tight">$850 MXN</span>
+</div>
+<button class="flex-1 h-12 bg-primary text-on-primary rounded-lg font-title-lg text-title-lg font-semibold flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-all" id="btnApply" type="button">
+<span class="material-symbols-outlined text-[20px]">send</span>
+<span>Postularme a este trabajo</span>
+</button>
+</div>
+</div>
+<!-- Success Notification Feedback Modal / Sheet (Simulated micro-interaction) -->
+<div class="hidden fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm flex items-end justify-center" id="applySuccessFeedback">
+<div class="w-full bg-surface-container-lowest rounded-t-lg p-space-lg shadow-xl max-w-md animate-in slide-in-from-bottom duration-300">
+<div class="w-12 h-1 bg-surface-container-high rounded-full mx-auto mb-space-md"></div>
+<div class="w-14 h-14 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center mx-auto mb-space-sm">
+<span class="material-symbols-outlined text-[32px]">check_circle</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface text-center font-bold">
+        ¡Postulación Enviada!
+      </h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-center mt-1">
+        Roberto Garza fue notificado con tu perfil y reputación de la plataforma. Recibirás respuesta aquí mismo.
+      </p>
+<div class="mt-space-lg">
+<button class="w-full h-12 bg-primary text-on-primary rounded-lg font-title-lg text-title-lg font-semibold flex items-center justify-center shadow-sm" id="btnCloseModal" type="button">
+          Entendido
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function initJobDetailInteractions() {
+    const applyBtn = document.getElementById('btnApply');
+    const successFeedback = document.getElementById('applySuccessFeedback');
+    const closeModalBtn = document.getElementById('btnCloseModal');
+    const bookmarkBtn = document.getElementById('btnBookmark');
+    const bookmarkIcon = document.getElementById('iconBookmark');
+    const bookmarkLabel = document.getElementById('lblBookmark');
+    let isBookmarked = false;
+
+    if (applyBtn && successFeedback) {
+      applyBtn.addEventListener('click', function() {
+        successFeedback.classList.remove('hidden');
+      });
+    }
+
+    if (closeModalBtn && successFeedback && applyBtn) {
+      closeModalBtn.addEventListener('click', function() {
+        successFeedback.classList.add('hidden');
+        applyBtn.classList.remove('bg-primary', 'text-on-primary');
+        applyBtn.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+        applyBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check</span> Postulado con éxito';
+        applyBtn.disabled = true;
+      });
+    }
+
+    if (bookmarkBtn && bookmarkIcon && bookmarkLabel) {
+      bookmarkBtn.addEventListener('click', function() {
+        isBookmarked = !isBookmarked;
+        if (isBookmarked) {
+          bookmarkIcon.textContent = 'bookmark';
+          bookmarkIcon.style.fontVariationSettings = "'FILL' 1";
+          bookmarkIcon.classList.add('text-primary');
+          bookmarkLabel.textContent = 'Guardado';
+        } else {
+          bookmarkIcon.textContent = 'bookmark_border';
+          bookmarkIcon.style.fontVariationSettings = "'FILL' 0";
+          bookmarkIcon.classList.remove('text-primary');
+          bookmarkLabel.textContent = 'Guardar para después';
+        }
+      });
+    }
+  })();
+</script></main></body></html>

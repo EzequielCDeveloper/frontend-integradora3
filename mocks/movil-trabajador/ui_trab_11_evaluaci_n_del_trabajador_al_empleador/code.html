@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-container": "#eae2da", "tertiary-fixed": "#fce0e0", "on-tertiary-fixed-variant": "#6e3030", "on-secondary-fixed": "#2a2420", "on-error": "#ffffff", "primary-fixed-dim": "#f0a878", "error": "#c0392b", "on-secondary": "#ffffff", "on-tertiary-container": "#3a2020", "surface-container-low": "#f6f0e8", "primary-container": "#e08850", "on-primary-fixed-variant": "#8a4518", "tertiary-container": "#d47070", "surface-container": "#f2ece4", "surface": "#faf5ee", "outline": "#9a9088", "secondary-fixed-dim": "#cec6be", "surface-dim": "#dcd6cc", "surface-container-highest": "#e6e0d6", "on-background": "#3a302a", "on-secondary-container": "#605850", "inverse-on-surface": "#faf5ee", "secondary-fixed": "#eae2da", "on-surface": "#3a302a", "surface-variant": "#ece6dc", "on-secondary-fixed-variant": "#504840", "surface-container-high": "#ece6dc", "inverse-surface": "#3a302a", "error-container": "#fce4e0", "inverse-primary": "#f0a878", "outline-variant": "#d8d0c8", "on-primary": "#ffffff", "on-primary-container": "#fbe8d8", "surface-container-lowest": "#ffffff", "on-error-container": "#7a1a10", "on-primary-fixed": "#401a08", "on-tertiary": "#ffffff", "secondary": "#78706a", "tertiary": "#8c3c3c", "primary-fixed": "#fbe8d8", "on-surface-variant": "#605850", "primary": "#c2652a", "background": "#faf5ee", "tertiary-fixed-dim": "#e8a0a0", "surface-bright": "#faf5ee", "on-tertiary-fixed": "#2e1515", "surface-tint": "#c2652a" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": {}, "fontFamily": { "headline": ["EB Garamond"], "display": ["EB Garamond"], "body": ["Manrope"], "label": ["Manrope"] }, "fontSize": {} } } }</script></head><body class="bg-surface font-body text-on-surface min-h-screen flex flex-col antialiased"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/85 backdrop-blur-xl shadow-[0_2px_16px_rgba(58,48,42,0.04)]"><div class="h-16 px-4 flex items-center justify-between"><div class="flex items-center gap-1"><button aria-label="Volver" class="w-11 h-11 -ml-1 flex items-center justify-center text-on-surface hover:text-primary transition-colors" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><div class="flex items-center gap-2 pl-1"><div class="w-7 h-7 rounded bg-primary/10 flex items-center justify-center"><span class="material-symbols-outlined text-primary text-[17px]">verified_user</span></div><span class="font-headline text-lg font-semibold tracking-tight text-on-surface">Evaluación Del Servicio</span></div></div><div class="flex items-center"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface"><div class="flex flex-col w-full pb-8">
+<!-- Payout Confirmation Banner (Warm Success Ambient) -->
+<div class="px-4 pt-3 pb-2">
+<div class="bg-surface-container-low rounded-xl p-4 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[19px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<span class="font-label text-xs font-bold uppercase tracking-wider text-primary">Pago Confirmado</span>
+</div>
+<span class="font-label text-[11px] font-semibold text-on-surface-variant bg-surface-container-highest px-2.5 py-0.5 rounded-full">Folio #SLZ-8492</span>
+</div>
+<div class="space-y-0.5 pl-1">
+<h2 class="font-headline text-2xl font-bold tracking-tight text-on-surface">
+          $850.00 <span class="text-sm font-body font-normal text-on-surface-variant">MXN</span>
+</h2>
+<p class="font-body text-xs text-on-surface-variant leading-relaxed">
+          Transferencia liberada a tu cuenta CLABE vía Stripe Connect. Turno finalizado con éxito.
+        </p>
+</div>
+</div>
+</div>
+<!-- Employer Summary Card (Editorial Sahara Layout) -->
+<div class="px-4 py-2">
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm space-y-4">
+<div class="flex items-start gap-3.5">
+<div class="relative w-14 h-14 rounded-full overflow-hidden shrink-0 shadow-sm bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Distinguished Mexican architect in his early 50s wearing neutral linen shirt, confident friendly look, warm sunlit studio background with blueprints and clay textures, architectural portrait photography, warm tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCGnyJtgH8UU-wuMGi9SQe60J4CErFys3u00sBXjltrDTnL0G8JzrtYywhhgovUN-xbVeSesGdQDGYKN1ttdI9X1QgFGYIhMzYbd8Nsx7-9Bgge4wLC_5Abwq-FJW2UkbBAkvDCXmTRKOdDrddSmN8cRPrPK5EjVXnEJTmq-tSPGXvMHn_c-Tx4ciQ_Vf87YApby0Hlu9I1nEeQZ99_WfjzLxsqd9sJdJeeEM6HDY"/>
+<div class="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-primary text-on-primary flex items-center justify-center ring-2 ring-surface-container-lowest">
+<span class="material-symbols-outlined text-[11px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<h3 class="font-headline text-lg font-bold text-on-surface leading-snug truncate">Arq. Roberto Garza Leal</h3>
+</div>
+<p class="font-body text-xs font-medium text-on-surface-variant truncate">Casa Tierra Estudio Arquitectura</p>
+<div class="flex items-center gap-1.5 mt-2 flex-wrap">
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-primary bg-primary-fixed/60 px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[13px]">military_tech</span>
+              Nivel 2
+            </span>
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-on-secondary-container bg-secondary-container px-2 py-0.5 rounded">
+<span class="material-symbols-outlined text-[13px]">lock</span>
+              100% Escrow
+            </span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-3 flex items-center gap-2.5 text-xs text-on-surface">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0">handyman</span>
+<div class="min-w-0">
+<p class="font-semibold truncate">Instalación de luminarias de riel</p>
+<p class="text-[11px] text-on-surface-variant truncate">Narvarte Poniente, Benito Juárez, CDMX</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Star Rating Section -->
+<div class="px-4 py-2">
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm text-center space-y-3">
+<div class="space-y-1">
+<p class="font-label text-xs uppercase tracking-wider font-semibold text-primary">Tu opinión construye comunidad</p>
+<h4 class="font-headline text-xl font-bold text-on-surface">¿Cómo fue tu experiencia en obra?</h4>
+<p class="font-body text-xs text-on-surface-variant max-w-xs mx-auto leading-relaxed">
+          Ayuda a otros contratistas y técnicos de oficio a identificar empleadores serios, respetuosos y puntuales.
+        </p>
+</div>
+<!-- Star Rating Micro-component -->
+<div class="pt-2 flex flex-col items-center">
+<div class="flex items-center justify-center gap-2.5" id="starContainer">
+<button aria-label="1 estrella" class="star-btn transition-transform active:scale-90 focus:outline-none" data-val="1" type="button">
+<span class="material-symbols-outlined text-[34px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button aria-label="2 estrellas" class="star-btn transition-transform active:scale-90 focus:outline-none" data-val="2" type="button">
+<span class="material-symbols-outlined text-[34px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button aria-label="3 estrellas" class="star-btn transition-transform active:scale-90 focus:outline-none" data-val="3" type="button">
+<span class="material-symbols-outlined text-[34px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button aria-label="4 estrellas" class="star-btn transition-transform active:scale-90 focus:outline-none" data-val="4" type="button">
+<span class="material-symbols-outlined text-[34px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+<button aria-label="5 estrellas" class="star-btn transition-transform active:scale-90 focus:outline-none" data-val="5" type="button">
+<span class="material-symbols-outlined text-[34px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+</button>
+</div>
+<div class="mt-2.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed/50">
+<span class="material-symbols-outlined text-primary text-[15px]">sentiment_very_satisfied</span>
+<span class="font-body text-xs font-bold text-on-primary-fixed" id="scoreLabel">5.0 · Empleador altamente recomendado</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Specific Criteria Tags -->
+<div class="px-4 py-2">
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<label class="font-headline text-base font-bold text-on-surface">Puntos destacados del turno</label>
+<span class="font-body text-[11px] text-on-surface-variant">Selecciona los aplicables</span>
+</div>
+<div class="flex flex-wrap gap-2 pt-1" id="tagGroup">
+<button class="tag-pill inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors bg-primary text-on-primary shadow-xs" data-selected="true" type="button">
+<span class="material-symbols-outlined text-[15px]">key</span>
+<span>Acceso rápido a las instalaciones</span>
+</button>
+<button class="tag-pill inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors bg-primary text-on-primary shadow-xs" data-selected="true" type="button">
+<span class="material-symbols-outlined text-[15px]">chat_bubble_outline</span>
+<span>Instrucciones claras y precisas</span>
+</button>
+<button class="tag-pill inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors bg-primary text-on-primary shadow-xs" data-selected="true" type="button">
+<span class="material-symbols-outlined text-[15px]">favorite_border</span>
+<span>Trato respetuoso y digno</span>
+</button>
+<button class="tag-pill inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors bg-primary text-on-primary shadow-xs" data-selected="true" type="button">
+<span class="material-symbols-outlined text-[15px]">payments</span>
+<span>Liberación inmediata del código</span>
+</button>
+<button class="tag-pill inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors bg-primary text-on-primary shadow-xs" data-selected="true" type="button">
+<span class="material-symbols-outlined text-[15px]">security</span>
+<span>Lugar seguro y condiciones óptimas</span>
+</button>
+<button class="tag-pill inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors bg-surface-container text-on-surface-variant hover:bg-secondary-container" data-selected="false" type="button">
+<span class="material-symbols-outlined text-[15px]">inventory_2</span>
+<span>Materiales disponibles en obra</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Qualitative Review Textarea (RF-31) -->
+<div class="px-4 py-2">
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-sm space-y-3">
+<div class="flex items-center justify-between">
+<label class="font-headline text-base font-bold text-on-surface" for="reviewComment">Comentarios sobre la jornada</label>
+<span class="text-[11px] font-semibold text-primary">RF-31</span>
+</div>
+<div class="relative bg-surface rounded-lg p-3 focus-within:ring-2 focus-within:ring-primary/40 transition-all">
+<textarea class="w-full bg-transparent border-0 p-0 text-xs font-body text-on-surface placeholder:text-on-surface-variant/50 focus:outline-none resize-none leading-relaxed" id="reviewComment" maxlength="500" placeholder="Describe el trato, puntualidad de acceso y si las herramientas y condiciones coincidían con lo acordado..." rows="4">El Arq. Garza dejó indicaciones precisas con el personal de vigilancia, el acceso fue rápido y las especificaciones estaban clarísimas en el chat. Al terminar revisó el trabajo y compartió el código de inmediato. Excelente contratante.</textarea>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface-variant pt-0.5">
+<span>Mínimo 20 caracteres</span>
+<span class="font-semibold text-on-surface" id="charCounter">242 / 500</span>
+</div>
+</div>
+</div>
+<!-- Trust & Protection Micro-Card -->
+<div class="px-4 py-2">
+<div class="bg-surface-container-low rounded-xl p-4 flex items-start gap-3 text-xs leading-relaxed text-on-surface-variant">
+<div class="w-8 h-8 rounded-lg bg-surface flex items-center justify-center shrink-0 text-primary shadow-xs">
+<span class="material-symbols-outlined text-[20px]">gavel</span>
+</div>
+<div class="space-y-1">
+<p class="font-bold text-on-surface font-headline text-sm">Garantía de protección laboral</p>
+<p class="text-[11px] text-on-surface-variant leading-snug">
+          Tu reseña es pública pero imparcial. Los empleadores no pueden condicionar el pago fiduciario de Stripe Connect a cambio de una calificación favorable.
+        </p>
+</div>
+</div>
+</div>
+<!-- Sticky-feel Primary CTAs -->
+<div class="px-4 pt-3 space-y-2.5">
+<button class="w-full h-12 bg-primary text-on-primary font-body font-semibold text-sm rounded-lg shadow-md hover:bg-primary-container active:scale-[0.99] transition-all flex items-center justify-center gap-2" id="submitReviewBtn" type="button">
+<span>Enviar Calificación del Empleador</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<button class="w-full h-11 bg-transparent text-on-surface-variant hover:text-on-surface font-body font-medium text-xs rounded-lg transition-colors flex items-center justify-center gap-1.5" onclick="history.back()" type="button">
+<span class="material-symbols-outlined text-[16px]">travel_explore</span>
+<span>Volver al explorador de trabajos</span>
+</button>
+</div>
+</div>
+<script>
+  (function() {
+    // Star Rating Interaction
+    const starButtons = document.querySelectorAll('.star-btn');
+    const scoreLabel = document.getElementById('scoreLabel');
+    const scoreDescriptions = {
+      1: '1.0 · Experiencia insatisfactoria',
+      2: '2.0 · Con varios inconvenientes',
+      3: '3.0 · Experiencia regular',
+      4: '4.0 · Muy buen empleador',
+      5: '5.0 · Empleador altamente recomendado'
+    };
+
+    function updateStars(val) {
+      starButtons.forEach(btn => {
+        const btnVal = parseInt(btn.getAttribute('data-val'), 10);
+        const icon = btn.querySelector('.material-symbols-outlined');
+        if (btnVal <= val) {
+          icon.style.fontVariationSettings = "'FILL' 1";
+          icon.className = 'material-symbols-outlined text-[34px] text-primary';
+        } else {
+          icon.style.fontVariationSettings = "'FILL' 0";
+          icon.className = 'material-symbols-outlined text-[34px] text-outline';
+        }
+      });
+      scoreLabel.textContent = scoreDescriptions[val] || `${val}.0`;
+    }
+
+    starButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const val = parseInt(btn.getAttribute('data-val'), 10);
+        updateStars(val);
+      });
+    });
+
+    // Tag pills toggle
+    const tags = document.querySelectorAll('.tag-pill');
+    tags.forEach(tag => {
+      tag.addEventListener('click', () => {
+        const isSelected = tag.getAttribute('data-selected') === 'true';
+        if (isSelected) {
+          tag.setAttribute('data-selected', 'false');
+          tag.className = 'tag-pill inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors bg-surface-container text-on-surface-variant hover:bg-secondary-container';
+        } else {
+          tag.setAttribute('data-selected', 'true');
+          tag.className = 'tag-pill inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors bg-primary text-on-primary shadow-xs';
+        }
+      });
+    });
+
+    // Character counter
+    const textarea = document.getElementById('reviewComment');
+    const counter = document.getElementById('charCounter');
+    if (textarea && counter) {
+      textarea.addEventListener('input', () => {
+        const len = textarea.value.length;
+        counter.textContent = `${len} / 500`;
+        if (len < 20) {
+          counter.classList.add('text-error');
+        } else {
+          counter.classList.remove('text-error');
+        }
+      });
+    }
+
+    // Submit micro-feedback
+    const submitBtn = document.getElementById('submitReviewBtn');
+    if (submitBtn) {
+      submitBtn.addEventListener('click', () => {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `
+          <span class="material-symbols-outlined animate-spin text-[18px]">progress_activity</span>
+          <span>Registrando reseña fiduciaria...</span>
+        `;
+        setTimeout(() => {
+          submitBtn.className = 'w-full h-12 bg-surface-container-highest text-on-surface font-body font-semibold text-sm rounded-lg flex items-center justify-center gap-2';
+          submitBtn.innerHTML = `
+            <span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            <span>¡Reseña Publicada con Éxito!</span>
+          `;
+        }, 1100);
+      });
+    }
+  })();
+</script></main></body></html>

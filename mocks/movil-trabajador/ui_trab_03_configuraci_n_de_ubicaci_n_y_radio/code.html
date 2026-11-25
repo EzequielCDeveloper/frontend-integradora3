@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;min-height:100vh;margin:0;padding:0;}body{overscroll-behavior-y:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"surface-variant":"#ece6dc","on-primary-fixed":"#401a08","on-tertiary":"#ffffff","tertiary-fixed":"#fce0e0","tertiary-fixed-dim":"#e8a0a0","error-container":"#fce4e0","primary-fixed":"#fbe8d8","background":"#faf5ee","on-tertiary-fixed-variant":"#6e3030","surface-container-lowest":"#ffffff","outline":"#9a9088","secondary-fixed":"#eae2da","surface-tint":"#c2652a","on-surface-variant":"#605850","surface-container-highest":"#e6e0d6","error":"#c0392b","secondary":"#78706a","secondary-fixed-dim":"#cec6be","on-error-container":"#7a1a10","on-secondary-fixed-variant":"#504840","primary-container":"#e08850","on-secondary-fixed":"#2a2420","inverse-on-surface":"#faf5ee","primary":"#c2652a","on-primary-container":"#fbe8d8","surface-dim":"#dcd6cc","on-background":"#3a302a","outline-variant":"#d8d0c8","on-primary-fixed-variant":"#8a4518","tertiary":"#8c3c3c","surface":"#faf5ee","on-primary":"#ffffff","inverse-surface":"#3a302a","inverse-primary":"#f0a878","on-secondary-container":"#605850","surface-container-low":"#f6f0e8","on-secondary":"#ffffff","tertiary-container":"#d47070","primary-fixed-dim":"#f0a878","surface-container":"#f2ece4","surface-container-high":"#ece6dc","secondary-container":"#eae2da","on-error":"#ffffff","on-surface":"#3a302a","on-tertiary-container":"#3a2020","on-tertiary-fixed":"#2e1515","surface-bright":"#faf5ee"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},fontFamily:{headline:["EB Garamond"],display:["EB Garamond"],body:["Manrope"],label:["Manrope"]}}}}</script></head><body class="bg-surface font-body text-on-surface min-h-screen flex flex-col antialiased selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_2px_16px_rgba(58,48,42,0.04)] pt-safe"><div class="h-16 px-4 flex items-center justify-between"><div class="flex items-center gap-1"><a aria-label="Volver a Explorador" class="w-11 h-11 -ml-1.5 flex items-center justify-center rounded-full text-on-surface transition-colors hover:bg-surface-container active:bg-surface-container-high" data-path="explorador" href="#"><span class="material-symbols-outlined text-[22px]">arrow_back_ios_new</span></a><h1 class="text-xl font-headline font-semibold tracking-tight text-on-surface ml-1">Ubicación Y Radio</h1></div><div class="flex items-center gap-2"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-safe bg-surface min-h-screen"><div class="flex flex-col w-full pb-8">
+<!-- Privacy & Context Policy Notice -->
+<section class="px-5 pt-3 pb-4">
+<div class="bg-surface-container-low rounded-xl p-5 shadow-sm">
+<div class="flex items-start justify-between gap-3 mb-2.5">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[19px]">share_location</span>
+</span>
+<h2 class="text-lg font-headline font-bold text-on-surface tracking-tight">Zona de Cobertura Laboral</h2>
+</div>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container text-[11px] font-label font-medium text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+          Sin rastreo continuo
+        </span>
+</div>
+<p class="text-xs font-body text-on-surface-variant leading-relaxed mb-3">
+        Define tu punto de referencia y el radio deseado para recibir alertas precisas de empleadores. Tu dispositivo no compartirá tu geolocalización en segundo plano.
+      </p>
+<div class="flex items-center gap-2 text-[11px] font-label text-primary font-medium bg-surface/80 rounded-lg px-3 py-2">
+<span class="material-symbols-outlined text-[15px]">info</span>
+<span>Cálculo geodésico Haversine sin rastreo satelital continuo.</span>
+</div>
+</div>
+</section>
+<!-- Interactive Map & Geofence Section -->
+<section class="px-5 mb-5">
+<div class="relative w-full rounded-2xl overflow-hidden shadow-[0_2px_16px_rgba(58,48,42,0.06)] bg-surface-container-high h-[360px] flex flex-col justify-between p-4">
+<!-- Static Visual Map Canvas (Mexico City Benito Juárez / Cuauhtémoc Region) -->
+<div class="absolute inset-0 w-full h-full bg-cover bg-center" data-location="Narvarte Poniente, Benito Juárez, Ciudad de México, CDMX" style="">
+<!-- Haversine Radius Geometric Concentric Tint Overlay -->
+<div class="absolute inset-0 bg-primary/10 backdrop-brightness-95 flex items-center justify-center pointer-events-none">
+<!-- Outer Radar Ring (Simulated 10km Boundary) -->
+<div class="w-72 h-72 rounded-full border border-primary/30 bg-primary/5 flex items-center justify-center animate-pulse">
+<!-- Mid Ring -->
+<div class="w-48 h-48 rounded-full border border-primary/40 bg-primary/10 flex items-center justify-center">
+<!-- Inner Soft Core -->
+<div class="w-24 h-24 rounded-full bg-primary/15 flex items-center justify-center"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Address Search Input Bar -->
+<div class="relative z-10 w-full">
+<div class="flex items-center gap-2 bg-surface-container-lowest/95 backdrop-blur-md px-3.5 py-2.5 rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">search</span>
+<input class="w-full bg-transparent text-xs font-body text-on-surface placeholder:text-on-surface-variant focus:outline-none" placeholder="Buscar colonia, alcaldía o código postal..." type="text" value="Narvarte Poniente, Benito Juárez"/>
+<button class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+<!-- Center Dynamic Pin & Pulse Anchor (Simulated Center Overlay) -->
+<div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-10">
+<div class="relative flex flex-col items-center -mt-6">
+<!-- Pin Beacon Pill -->
+<div class="mb-1.5 px-2.5 py-1 rounded-full bg-on-surface text-surface text-[10px] font-label font-semibold shadow-md flex items-center gap-1 animate-bounce">
+<span class="material-symbols-outlined text-[12px] text-primary-fixed">engineering</span>
+<span>Punto Base Operativo</span>
+</div>
+<!-- Anchor Pin Graphic -->
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary shadow-xl flex items-center justify-center ring-4 ring-surface-container-lowest/90">
+<span class="material-symbols-outlined text-[22px]">location_on</span>
+</div>
+<!-- Ground Contact Shadow -->
+<div class="w-4 h-1.5 bg-on-surface/30 rounded-full blur-[2px] mt-0.5"></div>
+</div>
+</div>
+<!-- Floating Bottom Controls & Coordinate Pill -->
+<div class="relative z-10 flex flex-col gap-2">
+<div class="flex items-end justify-between">
+<div class="bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1.5 rounded-lg text-[10px] font-label text-on-surface shadow-sm inline-flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-medium text-on-surface-variant">Arrastra el mapa para refinar</span>
+</div>
+<!-- Recenter Floating Button -->
+<button aria-label="Centrar en mi ubicación de referencia" class="w-10 h-10 rounded-xl bg-surface-container-lowest shadow-md flex items-center justify-center text-on-surface hover:text-primary active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">my_location</span>
+</button>
+</div>
+<!-- Coordinates Readout Strip -->
+<div class="bg-surface/95 backdrop-blur-md px-3 py-2 rounded-xl text-center shadow-sm">
+<p class="text-[11px] font-label font-semibold text-on-surface truncate">
+            Lat: 19.3907, Lng: -99.1624
+          </p>
+<p class="text-[10px] font-body text-on-surface-variant truncate">
+            Narvarte Poniente, Benito Juárez, Ciudad de México, C.P. 03020
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Haversine Radius Selector (RF-08) -->
+<section class="px-5 mb-5">
+<div class="mb-3">
+<div class="flex items-baseline justify-between">
+<h3 class="font-headline font-bold text-xl text-on-surface">Radio de búsqueda</h3>
+<span class="text-xs font-label font-medium text-primary">Haversine (línea recta)</span>
+</div>
+<p class="text-xs font-body text-on-surface-variant">
+        Distancia máxima permitida entre tu base y la sede de los trabajos publicados.
+      </p>
+</div>
+<!-- Radio Options Selector Grid -->
+<div aria-label="Radio de búsqueda en kilómetros" class="grid grid-cols-1 gap-2.5" role="radiogroup">
+<!-- Option 1: 5 km -->
+<label class="relative flex items-center justify-between p-3.5 rounded-xl bg-surface-container cursor-pointer hover:bg-surface-container-high transition-all">
+<div class="flex items-center gap-3">
+<input class="sr-only peer" name="haversine_radius" type="radio" value="5"/>
+<div class="w-5 h-5 rounded-full bg-surface-container-lowest flex items-center justify-center peer-checked:bg-primary">
+<span class="w-2 h-2 rounded-full bg-primary peer-checked:bg-on-primary"></span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline font-bold text-base text-on-surface">5 km</span>
+<span class="text-xs font-label text-on-surface-variant font-medium">Local / Barrio</span>
+</div>
+<p class="text-[11px] font-body text-on-surface-variant">Desplazamiento ágil de ~15-20 min a pie o transporte local.</p>
+</div>
+</div>
+<span class="text-xs font-label font-semibold text-on-surface-variant bg-surface-container-highest px-2 py-0.5 rounded-md">
+          ~14 empleos
+        </span>
+</label>
+<!-- Option 2: 10 km (PREDETERMINADO / SELECTED) -->
+<label class="relative flex items-center justify-between p-3.5 rounded-xl bg-primary-fixed/40 ring-2 ring-primary cursor-pointer transition-all shadow-sm">
+<div class="flex items-center gap-3">
+<input checked="" class="sr-only peer" name="haversine_radius" type="radio" value="10"/>
+<div class="w-5 h-5 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] text-on-primary font-bold">check</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline font-bold text-base text-on-surface">10 km</span>
+<span class="text-[10px] font-label uppercase tracking-wider font-bold bg-primary text-on-primary px-2 py-0.5 rounded-full">Recomendado</span>
+</div>
+<p class="text-[11px] font-body text-on-surface-variant">Equilibrio óptimo entre proximidad y abundancia de vacantes.</p>
+</div>
+</div>
+<span class="text-xs font-label font-bold text-on-primary-fixed bg-primary-fixed px-2.5 py-1 rounded-md">
+          ~38 activos
+        </span>
+</label>
+<!-- Option 3: 25 km -->
+<label class="relative flex items-center justify-between p-3.5 rounded-xl bg-surface-container cursor-pointer hover:bg-surface-container-high transition-all">
+<div class="flex items-center gap-3">
+<input class="sr-only peer" name="haversine_radius" type="radio" value="25"/>
+<div class="w-5 h-5 rounded-full bg-surface-container-lowest flex items-center justify-center">
+<span class="w-2 h-2 rounded-full bg-transparent"></span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline font-bold text-base text-on-surface">25 km</span>
+<span class="text-xs font-label text-on-surface-variant font-medium">Metropolitana</span>
+</div>
+<p class="text-[11px] font-body text-on-surface-variant">Abarca casi toda la CDMX y parte del área conurbada.</p>
+</div>
+</div>
+<span class="text-xs font-label font-semibold text-on-surface-variant bg-surface-container-highest px-2 py-0.5 rounded-md">
+          ~85 empleos
+        </span>
+</label>
+<!-- Option 4: 50 km -->
+<label class="relative flex items-center justify-between p-3.5 rounded-xl bg-surface-container cursor-pointer hover:bg-surface-container-high transition-all">
+<div class="flex items-center gap-3">
+<input class="sr-only peer" name="haversine_radius" type="radio" value="50"/>
+<div class="w-5 h-5 rounded-full bg-surface-container-lowest flex items-center justify-center">
+<span class="w-2 h-2 rounded-full bg-transparent"></span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline font-bold text-base text-on-surface">50 km</span>
+<span class="text-xs font-label text-on-surface-variant font-medium">Regional Valle de México</span>
+</div>
+<p class="text-[11px] font-body text-on-surface-variant">Ideal para contratistas con vehículo propio o traslados diarios mayores.</p>
+</div>
+</div>
+<span class="text-xs font-label font-semibold text-on-surface-variant bg-surface-container-highest px-2 py-0.5 rounded-md">
+          ~142 empleos
+        </span>
+</label>
+</div>
+</section>
+<!-- Rolling 24-Hour Change Rate Limiter Card (Decision D-01) -->
+<section class="px-5 mb-5">
+<div class="bg-surface-container-low rounded-xl p-4 shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">history_toggle_off</span>
+<h4 class="font-headline font-bold text-base text-on-surface">Límite de actualización diaria</h4>
+</div>
+<span class="text-xs font-label font-bold text-on-primary-container bg-primary-container px-2 py-0.5 rounded-full">
+          2 de 3 disponibles
+        </span>
+</div>
+<!-- Step Counter Progress Track -->
+<div class="flex items-center gap-2 my-3">
+<!-- Used Shift 1 -->
+<div class="flex-1 flex flex-col gap-1">
+<div class="h-1.5 rounded-full bg-primary"></div>
+<span class="text-[10px] font-label text-on-surface font-semibold truncate">Hoy, 09:15 h</span>
+</div>
+<!-- Available Slot 2 -->
+<div class="flex-1 flex flex-col gap-1">
+<div class="h-1.5 rounded-full bg-secondary-fixed"></div>
+<span class="text-[10px] font-label text-on-surface-variant truncate">Disponible</span>
+</div>
+<!-- Available Slot 3 -->
+<div class="flex-1 flex flex-col gap-1">
+<div class="h-1.5 rounded-full bg-secondary-fixed"></div>
+<span class="text-[10px] font-label text-on-surface-variant truncate">Disponible</span>
+</div>
+</div>
+<p class="text-xs font-body text-on-surface-variant leading-relaxed mb-2.5">
+        Para asegurar cálculos transparentes en tarifas de traslado para contratantes, se admite un límite de 3 cambios en una ventana rodante de 24 horas.
+      </p>
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/40 text-[11px] font-label text-on-surface-variant">
+<span>Siguiente liberación de cupo:</span>
+<span class="font-bold text-on-surface">en 14h 22m</span>
+</div>
+</div>
+</section>
+<!-- Live Simulation Impact Summary Box -->
+<section class="px-5 mb-6">
+<div class="bg-surface-container rounded-xl p-4 flex items-center justify-between gap-4">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface flex items-center justify-center text-primary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[22px]">work_history</span>
+</div>
+<div class="min-w-0">
+<p class="text-xs font-label font-bold text-on-surface truncate">38 vacantes listas en tu radio</p>
+<p class="text-[11px] font-body text-on-surface-variant truncate">0 postulaciones activas verán afectada su distancia</p>
+</div>
+</div>
+<div class="shrink-0 text-right">
+<span class="text-[11px] font-label font-bold text-primary block">Óptimo</span>
+<span class="text-[10px] font-body text-on-surface-variant block">±10 km</span>
+</div>
+</div>
+</section>
+<!-- Bottom Execution Action Area -->
+<section class="px-5 flex flex-col items-center gap-3">
+<!-- Primary CTA: save_worker_location RPC -->
+<button class="w-full h-13 py-3.5 px-6 rounded-lg bg-primary text-on-primary font-label font-semibold text-sm shadow-[0_4px_12px_rgba(194,101,42,0.25)] hover:bg-primary-container active:scale-[0.99] transition-all flex items-center justify-center gap-2" id="save-location-btn" type="button">
+<span>Guardar Ubicación y Radio</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<!-- Secondary Revert Option -->
+<button class="py-2 px-4 text-xs font-label font-medium text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[15px]">undo</span>
+<span>Restablecer a ubicación anterior</span>
+</button>
+</section>
+</div>
+<script>
+  (function initWorkerLocationUI() {
+    const saveBtn = document.getElementById('save-location-btn');
+    const radioLabels = document.querySelectorAll('label[role="radiogroup"] label, label:has(input[name="haversine_radius"])');
+
+    // Dynamic selection visual feedback
+    document.querySelectorAll('input[name="haversine_radius"]').forEach(input => {
+      input.addEventListener('change', (e) => {
+        document.querySelectorAll('input[name="haversine_radius"]').forEach(radio => {
+          const parent = radio.closest('label');
+          if (radio.checked) {
+            parent.className = "relative flex items-center justify-between p-3.5 rounded-xl bg-primary-fixed/40 ring-2 ring-primary cursor-pointer transition-all shadow-sm";
+          } else {
+            parent.className = "relative flex items-center justify-between p-3.5 rounded-xl bg-surface-container cursor-pointer hover:bg-surface-container-high transition-all";
+          }
+        });
+      });
+    });
+
+    if (saveBtn) {
+      saveBtn.addEventListener('click', () => {
+        const originalContent = saveBtn.innerHTML;
+        saveBtn.disabled = true;
+        saveBtn.innerHTML = `
+          <span class="w-4 h-4 rounded-full border-2 border-on-primary border-t-transparent animate-spin"></span>
+          <span>Actualizando base geográfica...</span>
+        `;
+        
+        setTimeout(() => {
+          saveBtn.innerHTML = `
+            <span class="material-symbols-outlined text-[18px]">done</span>
+            <span>Ubicación Guardada con Éxito</span>
+          `;
+          saveBtn.classList.replace('bg-primary', 'bg-on-surface');
+          
+          setTimeout(() => {
+            saveBtn.innerHTML = originalContent;
+            saveBtn.classList.replace('bg-on-surface', 'bg-primary');
+            saveBtn.disabled = false;
+          }, 2200);
+        }, 900);
+      });
+    }
+  })();
+</script></main></body></html>

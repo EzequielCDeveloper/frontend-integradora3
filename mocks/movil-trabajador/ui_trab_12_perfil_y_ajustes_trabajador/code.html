@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'surface-container-highest': '#e6e0d6', 'on-primary': '#ffffff', 'on-tertiary-fixed-variant': '#6e3030', 'on-background': '#3a302a', 'on-primary-fixed-variant': '#8a4518', 'primary-fixed-dim': '#f0a878', 'on-secondary-fixed-variant': '#504840', 'secondary-container': '#eae2da', 'inverse-primary': '#f0a878', 'primary-fixed': '#fbe8d8', 'on-surface-variant': '#605850', 'error': '#c0392b', 'on-primary-fixed': '#401a08', 'on-error-container': '#7a1a10', 'primary': '#c2652a', 'on-secondary-fixed': '#2a2420', 'surface-container': '#f2ece4', 'background': '#faf5ee', 'surface-container-high': '#ece6dc', 'secondary-fixed-dim': '#cec6be', 'on-tertiary-fixed': '#2e1515', 'on-tertiary-container': '#3a2020', 'surface-bright': '#faf5ee', 'on-error': '#ffffff', 'tertiary': '#8c3c3c', 'on-primary-container': '#fbe8d8', 'on-tertiary': '#ffffff', 'surface-container-lowest': '#ffffff', 'on-surface': '#3a302a', 'surface': '#faf5ee', 'tertiary-fixed-dim': '#e8a0a0', 'tertiary-container': '#d47070', 'error-container': '#fce4e0', 'primary-container': '#e08850', 'outline': '#9a9088', 'surface-variant': '#ece6dc', 'surface-tint': '#c2652a', 'inverse-surface': '#3a302a', 'inverse-on-surface': '#faf5ee', 'surface-container-low': '#f6f0e8', 'secondary': '#78706a', 'surface-dim': '#dcd6cc', 'tertiary-fixed': '#fce0e0', 'on-secondary': '#ffffff', 'on-secondary-container': '#605850', 'outline-variant': '#d8d0c8', 'secondary-fixed': '#eae2da' }, borderRadius: { 'DEFAULT': '0.25rem', 'lg': '0.5rem', 'xl': '0.75rem', 'full': '9999px' }, spacing: {}, fontFamily: { 'headline': ['EB Garamond'], 'display': ['EB Garamond'], 'body': ['Manrope'], 'label': ['Manrope'] }, fontSize: {} } } };</script><style>@layer base { html, body { width: 100vw; margin: 0; padding: 0; background-color: #faf5ee; } body { overscroll-behavior-y: none; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } } ::-webkit-scrollbar { display: none; }</style></head><body class="bg-surface font-body text-on-surface antialiased min-h-screen flex flex-col selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_2px_16px_rgba(58,48,42,0.04)]"><div class="h-16 px-6 flex items-center justify-between"><div class="flex items-center gap-3"><span class="font-headline italic text-2xl font-medium tracking-tight text-on-surface">Solidez</span><span class="text-[11px] font-label font-semibold tracking-widest uppercase px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-variant">MX</span></div><h1 class="text-base font-label font-medium tracking-normal text-on-surface select-none truncate max-w-[140px]">Profile Hub</h1><div class="flex items-center gap-2"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-surface"><div class="flex flex-col w-full pb-8">
+<!-- Top Navigation & Availability Bar -->
+<div class="px-5 pt-3 pb-4 flex items-center justify-between">
+<button aria-label="Regresar" class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface shadow-sm active:scale-95 transition-transform" type="button">
+<span class="material-symbols-outlined text-[20px]">arrow_back</span>
+</button>
+<!-- Status Toggle Pill -->
+<div class="flex items-center gap-2 pl-3 pr-2 py-1.5 rounded-full bg-surface-container shadow-sm cursor-pointer select-none transition-colors" id="availability-pill" onclick="toggleAvailability()">
+<span class="w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse" id="status-indicator"></span>
+<span class="text-xs font-label font-semibold text-on-surface tracking-tight" id="status-text">Disponible para trabajar</span>
+<div class="w-7 h-4 rounded-full bg-primary flex items-center px-0.5 transition-colors" id="toggle-track">
+<div class="w-3 h-3 rounded-full bg-on-primary shadow transform translate-x-3 transition-transform" id="toggle-thumb"></div>
+</div>
+</div>
+</div>
+<!-- Profile Card Showcase -->
+<div class="px-4">
+<div class="relative bg-surface-container-lowest rounded-2xl p-5 shadow-[0_2px_16px_rgba(58,48,42,0.04)] overflow-hidden">
+<!-- Ambient Decorative Accent -->
+<div class="absolute -right-12 -top-12 w-36 h-36 rounded-full bg-gradient-to-br from-primary-fixed/30 to-transparent pointer-events-none"></div>
+<div class="flex flex-col items-center text-center relative z-10">
+<!-- Worker Avatar with Edit Action -->
+<div class="relative mb-3.5">
+<div class="w-24 h-24 rounded-full overflow-hidden shadow-md p-1 bg-surface-container-high">
+<img class="w-full h-full object-cover rounded-full" data-alt="Portrait of Mateo Villalobos, a warm, smiling 29-year-old Mexican technician wearing a subtle terracotta collared work shirt, captured in natural warm golden sunlight with clean soft focus architectural background, dignified and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsbL_loOtLmbRT6zk6L9xX9rX1DihSFLiJ8v-qG3hwRvQ2U-8KQWgiMmaLKleVOrRsPn0SeQ5Joa3oS5QpOQvQbB4t9sGmLbKmP3tYawf7eoiaRXdcgvj9J67rYF1u6Dlk1HjFZKiG4HxnMf1V4DsL24l99KxU__sGixbKJnHW4yP9TVkT0W_1O9K1chC7t-UfqwNxvxdiybPztOAzQl2HffAJEWCWrb-uYOh6lUU"/>
+</div>
+<button class="absolute bottom-0 right-0 w-8 h-8 rounded-full bg-primary text-on-primary shadow flex items-center justify-center hover:bg-primary-container active:scale-90 transition" title="Cambiar fotografía (JPG/PNG max 10MB)" type="button">
+<span class="material-symbols-outlined text-[17px]">photo_camera</span>
+</button>
+</div>
+<!-- Name & Legal Verification -->
+<div class="flex items-center gap-1.5 justify-center">
+<h2 class="font-headline text-2xl font-bold tracking-tight text-on-surface">Mateo Villalobos Cruz</h2>
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;" title="Identidad Verificada con INE/CURP">verified</span>
+</div>
+<p class="text-xs font-label text-secondary mt-0.5 flex items-center gap-1">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-primary"></span>
+          ID Verificada oficialmente con INE &amp; CURP
+        </p>
+<!-- Skill Badges -->
+<div class="flex flex-wrap items-center justify-center gap-1.5 mt-3.5">
+<span class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-xs font-semibold tracking-tight shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">bolt</span>
+            Electricista Certificado
+          </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant text-xs font-medium">
+            Pintura residencial
+          </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant text-xs font-medium">
+            Limpieza técnica
+          </span>
+</div>
+<!-- Metrics & Reputation Grid -->
+<div class="grid grid-cols-4 w-full gap-2 mt-5 pt-4 bg-surface-container-low rounded-xl p-3">
+<div class="flex flex-col items-center">
+<div class="flex items-center gap-0.5 text-primary">
+<span class="font-bold text-sm text-on-surface font-label">4.9</span>
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="text-[10px] text-secondary font-label mt-0.5">28 reseñas</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-bold text-sm text-on-surface font-label">98%</span>
+<span class="text-[10px] text-secondary font-label mt-0.5">Cumplimiento</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="font-bold text-sm text-on-surface font-label">0</span>
+<span class="text-[10px] text-secondary font-label mt-0.5">Cancelaciones</span>
+</div>
+<div class="flex flex-col items-center">
+<span class="px-1.5 py-0.5 rounded bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-bold uppercase tracking-wider">
+              Experto
+            </span>
+<span class="text-[10px] text-secondary font-label mt-0.5">Nivel Solidez</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Professional Competencies & Editable Bio (RF-04) -->
+<div class="px-4 mt-5">
+<div class="bg-surface-container-lowest rounded-2xl p-5 shadow-[0_2px_16px_rgba(58,48,42,0.04)]">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">badge</span>
+<h3 class="font-headline text-lg font-bold text-on-surface">Competencias y Experiencia</h3>
+</div>
+<span class="text-[11px] font-label text-secondary uppercase tracking-wider">RF-04</span>
+</div>
+<!-- Description Textarea -->
+<div class="flex flex-col">
+<label class="text-xs font-semibold text-on-surface-variant font-label mb-1.5 flex justify-between" for="worker-bio">
+<span>Habilidades y Experiencia Técnica</span>
+<span class="text-secondary font-normal" id="bio-counter">248/300 caracteres</span>
+</label>
+<textarea class="w-full text-xs font-body leading-relaxed p-3 rounded-xl bg-surface-container-low text-on-surface focus:bg-surface-container-lowest focus:outline-none focus:ring-1 focus:ring-primary transition-all resize-none shadow-inner" id="worker-bio" maxlength="300" oninput="updateCharCount('worker-bio', 'bio-counter', 300)" rows="4">Técnico electricista en baja y media tensión con 7 años de experiencia. Reparación de cortos, cableado estructurado, balanceo de cargas e instalación de luminarias y plafones con herramienta propia y certificación.</textarea>
+</div>
+<!-- Availability Textarea -->
+<div class="flex flex-col mt-4">
+<label class="text-xs font-semibold text-on-surface-variant font-label mb-1.5 flex justify-between" for="worker-availability">
+<span>Disponibilidad de Horarios y Zonas</span>
+<span class="text-secondary font-normal" id="avail-counter">176/300 caracteres</span>
+</label>
+<textarea class="w-full text-xs font-body leading-relaxed p-3 rounded-xl bg-surface-container-low text-on-surface focus:bg-surface-container-lowest focus:outline-none focus:ring-1 focus:ring-primary transition-all resize-none shadow-inner" id="worker-availability" maxlength="300" oninput="updateCharCount('worker-availability', 'avail-counter', 300)" rows="3">Disponible de Lunes a Sábado de 08:00 a 18:00 hrs para turnos en Benito Juárez, Cuauhtémoc, Coyoacán y Miguel Hidalgo. Disponibilidad para turnos de urgencia previa confirmación.</textarea>
+</div>
+</div>
+</div>
+<!-- Operational Zone Map Widget (Quick Reference) -->
+<div class="px-4 mt-5">
+<div class="bg-surface-container-lowest rounded-2xl p-4 shadow-[0_2px_16px_rgba(58,48,42,0.04)]">
+<div class="flex items-center justify-between mb-2.5">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">explore</span>
+<span class="font-headline text-base font-bold text-on-surface">Zona de Operación Frecuente</span>
+</div>
+<a class="text-xs font-semibold text-primary hover:underline flex items-center gap-0.5" data-path="worker-zones" href="#">
+<span>Modificar</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+</div>
+<!-- Static Map Box -->
+<div class="w-full h-32 bg-cover bg-center rounded-xl relative overflow-hidden shadow-inner flex flex-col justify-end p-2.5" data-location="Narvarte Poniente, Ciudad de México, CDMX, Mexico" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDvvT7tiaEG8GHFiaTT19LTItfhQkBDQtWV4Pd2AHrp1AZmbxcK-FWTySbZkGcYe9cDdpRjmvJObVAGv2JflYZ-vJJrwOJLUflqzC90AxtYdWW3KrIDnJMy9QmRk6b1OLzmuU9hQe02GVhDxzeHxyyg7RwgDurmZ4FBzK7o0FeTKcfiEefdjBVz-Gnv8yIGObwqk5HWW8OhbJ9fk_1ZebvcQjvA-klEG-WfD4X6qvc')">
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/70 via-on-background/20 to-transparent"></div>
+<div class="relative z-10 flex items-center justify-between text-on-primary">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-fixed text-[18px]">location_on</span>
+<span class="text-xs font-semibold font-label drop-shadow">Narvarte Pte. (Radio 10 km)</span>
+</div>
+<span class="text-[10px] font-label px-2 py-0.5 rounded-full bg-surface/90 text-on-surface font-medium backdrop-blur-sm">
+            1/3 cambios hoy
+          </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Stripe Connect & Payout Status -->
+<div class="px-4 mt-5">
+<div class="bg-gradient-to-br from-secondary-container to-surface-container-high rounded-2xl p-4 shadow-[0_2px_16px_rgba(58,48,42,0.04)] relative">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-on-primary flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[22px]">account_balance_wallet</span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="text-xs font-bold text-on-secondary-fixed uppercase tracking-wider font-label">Stripe Connect</span>
+<span class="inline-flex items-center px-1.5 py-0.2 rounded text-[10px] font-bold bg-emerald-100 text-emerald-800">Conectada</span>
+</div>
+<p class="text-xs font-medium text-on-secondary-variant mt-0.5">Depósitos automáticos a CLABE •••• 8192</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-on-primary text-[10px] font-bold text-primary font-label shadow-sm">
+          0% comisiones
+        </span>
+</div>
+<p class="text-[11px] text-on-secondary-variant mt-2.5 leading-normal">
+        Tus honorarios se liberan de la cuenta de depósito en garantía de Solidez MX en un plazo máximo de 24 horas tras finalizar cada turno auditado.
+      </p>
+</div>
+</div>
+<!-- Personal & Verified Contact Data -->
+<div class="px-4 mt-5">
+<div class="bg-surface-container-lowest rounded-2xl p-5 shadow-[0_2px_16px_rgba(58,48,42,0.04)]">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">lock_person</span>
+<h3 class="font-headline text-lg font-bold text-on-surface">Datos Personales y Contacto</h3>
+</div>
+<span class="text-[10px] font-label text-secondary bg-surface-container px-2 py-0.5 rounded-full">RF-08</span>
+</div>
+<div class="space-y-3.5">
+<!-- WhatsApp -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low">
+<div class="flex items-center gap-3 min-w-0">
+<span class="material-symbols-outlined text-secondary text-[20px]">chat</span>
+<div class="truncate">
+<span class="text-[11px] font-label text-secondary block">WhatsApp de Contacto</span>
+<span class="text-xs font-bold text-on-surface font-label">+52 55 4920 1832</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[18px]" title="Protegido por política de privacidad. Compartido tras confirmación mutua.">verified_user</span>
+</div>
+<!-- Correo Electrónico -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low">
+<div class="flex items-center gap-3 min-w-0">
+<span class="material-symbols-outlined text-secondary text-[20px]">mail</span>
+<div class="truncate">
+<span class="text-[11px] font-label text-secondary block">Correo Electrónico Oficial</span>
+<span class="text-xs font-bold text-on-surface font-label">mateo.villalobos@correo.mx</span>
+</div>
+</div>
+<span class="text-[10px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full shrink-0">Supabase Auth</span>
+</div>
+<!-- Fecha de Nacimiento -->
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-low">
+<div class="flex items-center gap-3 min-w-0">
+<span class="material-symbols-outlined text-secondary text-[20px]">calendar_today</span>
+<div class="truncate">
+<span class="text-[11px] font-label text-secondary block">Nacimiento &amp; Elegibilidad</span>
+<span class="text-xs font-bold text-on-surface font-label">22/05/1996 (29 años)</span>
+</div>
+</div>
+<span class="text-[10px] font-medium text-secondary-fixed-variant bg-secondary-fixed px-2 py-0.5 rounded-full shrink-0">Elegible legal</span>
+</div>
+</div>
+<p class="text-[11px] text-secondary mt-3 italic leading-tight text-center">
+        Tus datos personales directos solo se comparten con el empleador una vez confirmada la contratación y asegurados los fondos fiduciarios.
+      </p>
+</div>
+</div>
+<!-- Primary Actions -->
+<div class="px-4 mt-6 flex flex-col gap-3">
+<!-- Save Button -->
+<button class="w-full h-13 py-3.5 rounded-xl bg-primary hover:bg-primary-container active:scale-[0.99] text-on-primary font-label font-bold text-sm tracking-wide shadow-md flex items-center justify-center gap-2 transition-all" id="save-profile-btn" onclick="saveProfileChanges()" type="button">
+<span class="material-symbols-outlined text-[19px]">save</span>
+<span>Guardar Cambios de Perfil</span>
+</button>
+<!-- Secondary Legal Links -->
+<div class="flex items-center justify-center gap-4 py-2 text-xs font-label">
+<a class="text-on-surface-variant hover:text-primary transition-colors underline decoration-outline-variant underline-offset-4" href="#">
+        Aviso de Privacidad Laboral
+      </a>
+<span class="text-outline-variant">•</span>
+<a class="text-on-surface-variant hover:text-primary transition-colors underline decoration-outline-variant underline-offset-4" href="#">
+        Reglamento de Trabajo Temporal
+      </a>
+</div>
+<!-- Sign Out Button -->
+<button class="w-full py-3 rounded-xl bg-surface-container-low hover:bg-error-container text-error font-label font-semibold text-xs tracking-wide flex items-center justify-center gap-1.5 transition-colors" onclick="confirmSignOut()" type="button">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+<span>Cerrar Sesión</span>
+</button>
+</div>
+<!-- Footnote Brand -->
+<div class="mt-6 text-center">
+<p class="text-[11px] font-headline italic tracking-wider text-secondary">
+      Solidez MX · Fiduciaria Digital y Protección Laboral
+    </p>
+</div>
+<!-- Visual Save Feedback Toast -->
+<div class="fixed bottom-24 left-1/2 transform -translate-x-1/2 bg-on-background text-on-primary text-xs font-label px-4 py-2.5 rounded-full shadow-lg flex items-center gap-2 opacity-0 pointer-events-none transition-all duration-300 z-50" id="save-toast">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[18px]">check_circle</span>
+<span>Cambios de perfil actualizados exitosamente</span>
+</div>
+</div>
+<script>
+  function updateCharCount(textareaId, counterId, max) {
+    const el = document.getElementById(textareaId);
+    const counter = document.getElementById(counterId);
+    if (el && counter) {
+      counter.innerText = el.value.length + '/' + max + ' caracteres';
+    }
+  }
+
+  let isAvailable = true;
+  function toggleAvailability() {
+    isAvailable = !isAvailable;
+    const indicator = document.getElementById('status-indicator');
+    const text = document.getElementById('status-text');
+    const track = document.getElementById('toggle-track');
+    const thumb = document.getElementById('toggle-thumb');
+
+    if (isAvailable) {
+      indicator.className = 'w-2.5 h-2.5 rounded-full bg-emerald-600 animate-pulse';
+      text.innerText = 'Disponible para trabajar';
+      track.className = 'w-7 h-4 rounded-full bg-primary flex items-center px-0.5 transition-colors';
+      thumb.className = 'w-3 h-3 rounded-full bg-on-primary shadow transform translate-x-3 transition-transform';
+    } else {
+      indicator.className = 'w-2.5 h-2.5 rounded-full bg-secondary';
+      text.innerText = 'Pausado / No disponible';
+      track.className = 'w-7 h-4 rounded-full bg-surface-container-highest flex items-center px-0.5 transition-colors';
+      thumb.className = 'w-3 h-3 rounded-full bg-on-surface-variant shadow transform translate-x-0 transition-transform';
+    }
+  }
+
+  function saveProfileChanges() {
+    const btn = document.getElementById('save-profile-btn');
+    const toast = document.getElementById('save-toast');
+    
+    if (btn) {
+      btn.classList.add('opacity-80');
+      btn.innerText = 'Guardando información...';
+    }
+
+    setTimeout(() => {
+      if (btn) {
+        btn.classList.remove('opacity-80');
+        btn.innerHTML = '<span class="material-symbols-outlined text-[19px]">save</span><span>Guardar Cambios de Perfil</span>';
+      }
+      if (toast) {
+        toast.classList.remove('opacity-0', 'pointer-events-none');
+        toast.classList.add('opacity-100');
+        setTimeout(() => {
+          toast.classList.add('opacity-0', 'pointer-events-none');
+          toast.classList.remove('opacity-100');
+        }, 2600);
+      }
+    }, 600);
+  }
+
+  function confirmSignOut() {
+    if (confirm('¿Deseas cerrar tu sesión activa en Solidez MX?')) {
+      console.log('Sesión terminada.');
+    }
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-2px_16px_rgba(58,48,42,0.04)]" data-active-classes="text-primary font-semibold"><div class="flex justify-around items-center h-20 px-2"><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] py-1 text-on-surface-variant hover:text-on-surface transition-colors duration-200" data-path="overview" href="#"><span class="material-symbols-outlined text-[24px]">account_balance</span><span class="text-[11px] font-label font-medium tracking-tight mt-0.5">Patrimonio</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] py-1 text-on-surface-variant hover:text-on-surface transition-colors duration-200" data-path="operations" href="#"><span class="material-symbols-outlined text-[24px]">swap_horiz</span><span class="text-[11px] font-label font-medium tracking-tight mt-0.5">Movimientos</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] py-1 transition-colors duration-200 text-primary font-semibold" data-path="profile-hub" href="#"><span class="material-symbols-outlined text-[24px]">person</span><span class="text-[11px] font-label font-medium tracking-tight mt-0.5">Perfil</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] py-1 text-on-surface-variant hover:text-on-surface transition-colors duration-200" data-path="settings-overview" href="#"><span class="material-symbols-outlined text-[24px]">settings</span><span class="text-[11px] font-label font-medium tracking-tight mt-0.5">Ajustes</span></a></div></nav></body></html>

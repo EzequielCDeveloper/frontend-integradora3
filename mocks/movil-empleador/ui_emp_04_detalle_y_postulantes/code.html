@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "tertiary": "#8c3c3c",
+          "secondary-fixed-dim": "#cec6be",
+          "on-background": "#3a302a",
+          "surface-bright": "#faf5ee",
+          "error-container": "#fce4e0",
+          "surface-tint": "#c2652a",
+          "on-primary-fixed-variant": "#8a4518",
+          "tertiary-fixed": "#fce0e0",
+          "error": "#c0392b",
+          "primary-container": "#e08850",
+          "primary-fixed-dim": "#f0a878",
+          "secondary-container": "#eae2da",
+          "on-error": "#ffffff",
+          "surface-container-lowest": "#ffffff",
+          "surface": "#faf5ee",
+          "on-secondary-fixed": "#2a2420",
+          "primary": "#c2652a",
+          "surface-container-highest": "#e6e0d6",
+          "surface-container": "#f2ece4",
+          "on-surface": "#3a302a",
+          "tertiary-container": "#d47070",
+          "tertiary-fixed-dim": "#e8a0a0",
+          "surface-container-high": "#ece6dc",
+          "primary-fixed": "#fbe8d8",
+          "on-secondary": "#ffffff",
+          "on-primary-container": "#fbe8d8",
+          "background": "#faf5ee",
+          "on-secondary-fixed-variant": "#504840",
+          "secondary-fixed": "#eae2da",
+          "surface-dim": "#dcd6cc",
+          "on-error-container": "#7a1a10",
+          "on-tertiary-container": "#3a2020",
+          "on-tertiary": "#ffffff",
+          "outline-variant": "#d8d0c8",
+          "surface-container-low": "#f6f0e8",
+          "secondary": "#78706a",
+          "inverse-primary": "#f0a878",
+          "on-surface-variant": "#605850",
+          "on-tertiary-fixed-variant": "#6e3030",
+          "outline": "#9a9088",
+          "surface-variant": "#ece6dc",
+          "on-primary-fixed": "#401a08",
+          "inverse-on-surface": "#faf5ee",
+          "on-tertiary-fixed": "#2e1515",
+          "on-primary": "#ffffff",
+          "inverse-surface": "#3a302a",
+          "on-secondary-container": "#605850"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {"space-sm":"0.5rem","gutter":"0.75rem","space-lg":"1.5rem","space-md":"1rem","space-xs":"0.25rem","space-xl":"2rem","margin":"1rem"},
+        "fontFamily": {
+          "headline": ["Manrope"],
+          "display": ["Manrope"],
+          "body": ["Manrope"],
+          "label": ["Manrope"],
+          "title-md": ["Manrope"],
+          "body-lg": ["Manrope"],
+          "headline-sm": ["Manrope"],
+          "headline-lg": ["Manrope"],
+          "display-lg-mobile": ["Manrope"],
+          "label-sm": ["Manrope"],
+          "headline-md": ["Manrope"],
+          "display-lg": ["Manrope"],
+          "body-md": ["Manrope"],
+          "title-lg": ["Manrope"],
+          "label-lg": ["Manrope"],
+          "label-md": ["Manrope"]
+        },
+        "fontSize": {"title-md":["14px",{"lineHeight":"20px","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-sm":["18px",{"lineHeight":"24px","fontWeight":"600"}],"headline-lg":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"700"}],"display-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.02em","fontWeight":"600"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"title-lg":["16px",{"lineHeight":"24px","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"500"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.01em","fontWeight":"500"}]}
+      },
+    },
+  }
+</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-surface text-on-surface font-body text-body-md flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl pt-safe border-b border-outline-variant/60"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><button aria-label="Regresar" class="w-11 h-11 flex items-center justify-center text-on-surface hover:text-primary transition-colors shrink-0" onclick="history.back()"><span class="material-symbols-outlined">arrow_back_ios_new</span></button><img alt="Logo Solidez MX" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvt55QT42nm89kk4_9eKrvpX9FvvpHogy0qjA2Xpkph-TakD-8bZnPOvAzk0A0zaqXWpuACAX_swnhrWplR3TbF76w3qXcgRM2HqCNnvcfZ3yrP1vLNWc0RpK4xBOOah5cpHTbBXdkwXRXRKVXCz5r0HObuSbMj4qzKVR2xqO--1wbZZJXLB9bf47_PdgLHW3xGC1oSoZ029UoSTKNbnbn9Lae29SMzs-tpSEvwro"/><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Detalle De Publicación</h1></div><div class="w-11 h-11 flex items-center justify-center shrink-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkmLQ31ARZWh6eEX9IyFNAR-II6yAE0JiN-A6TiJPRLwkg5g6yTAq4gfFg4ey_8OgIBExA-pvA4Uh_VhFPll_arTDETqTX4OjrcFfuBbjkWTbtpnvx4LCsPjtGGVgzF_L1acTWFXiGiyNc0PtzNb4vhmxgtXVENkWNUI9vVFhAhokbeGmQSeF49UYq7nRZg1Dcw5cXxonMK-nLzXi9yEsMYVVS4DAYFgw6SJU809k"/></div></div></header><main class="flex flex-col relative w-full px-margin pt-20 pb-safe bg-surface flex-1"><div class="flex flex-col w-full gap-space-md pb-space-xl">
+<!-- Tarjeta Resumen del Trabajo -->
+<section class="bg-surface-container-lowest rounded-lg p-space-md border border-outline-variant/60 shadow-sm flex flex-col gap-space-md">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex flex-col gap-space-xs min-w-0">
+<span class="inline-flex items-center self-start gap-1.5 px-2.5 py-1 rounded-lg bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+          Con postulaciones
+        </span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-1">
+          Limpieza profunda de oficina
+        </h2>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-headline-md text-headline-md text-primary">$850.00</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">MXN</span>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm bg-surface-container-low rounded-lg px-3 py-2.5">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px] text-primary">calendar_today</span>
+<span class="font-label-md text-label-md text-on-surface">24 Nov • 09:00 - 14:00</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-1.5 text-on-secondary-container">
+<span class="material-symbols-outlined text-[18px] text-primary" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-label-md text-label-md text-on-surface">Pago en custodia</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<button class="min-h-[48px] px-3 rounded-lg bg-surface-container-low text-on-surface font-title-md text-title-md flex items-center justify-center gap-2 hover:bg-surface-container transition-colors border border-outline-variant/50" onclick="showToast('Modo edición disponible próximamente')" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+<span>Editar</span>
+</button>
+<button class="min-h-[48px] px-3 rounded-lg bg-error-container text-on-error-container font-title-md text-title-md flex items-center justify-center gap-2 hover:opacity-90 transition-opacity" onclick="openCancelModal()" type="button">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+<span>Cancelar publicación</span>
+</button>
+</div>
+</section>
+<!-- Nota informativa de ventana de 24h -->
+<div class="bg-primary-fixed/70 rounded-lg p-3.5 flex items-start gap-2.5 border border-primary-fixed-dim/50">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">info</span>
+<p class="font-body-md text-body-md text-on-primary-fixed">
+      Al seleccionar inicia una ventana de 24 h para confirmar condiciones.
+    </p>
+</div>
+<!-- Sección Postulantes -->
+<section class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between px-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Postulantes (3)</h3>
+<span class="font-label-md text-label-md text-on-surface-variant">Ordenados por calificación</span>
+</div>
+<!-- Candidato 1 -->
+<article class="bg-surface-container-lowest rounded-lg p-space-md border border-outline-variant/60 shadow-sm flex flex-col gap-space-md" data-candidate="Sofía Ramírez">
+<div class="flex items-start gap-3">
+<img alt="Foto de Sofía Ramírez" class="w-14 h-14 rounded-lg object-cover shrink-0 bg-surface-container" data-alt="Retrato profesional y cálido de Sofía Ramírez, mujer mexicana de 32 años con sonrisa amable y vestimenta casual ordenada, fondo luminoso en tonos azul suave y blanco, iluminación natural de estudio, estilo corporativo moderno y confiable." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHrhYI9vWbj-hjDRyY4EStv6lLWyXAIMQvCKpQXxwsTB9G-VeDjqkNnpOSXFF4HapEW8vUtMdGw5KU6szP7g3JfRtOZAccxmnhTlE8C9WsrtRKaIBRHI-HmnOCi5cYSM17P2rQH7WqhdD0Nt-J15dlMlyocKIDHOy6E5Jw9v24bzMZZ8CuT1qYpeDNWeATb1P5pOMsdT8RFAQl5fQ0KjarnIoCwv0N7a8dFQwVVqM"/>
+<div class="flex flex-col min-w-0 flex-1 gap-1">
+<div class="flex items-center justify-between gap-2">
+<h4 class="font-title-lg text-title-lg text-on-surface truncate">Sofía Ramírez</h4>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg bg-secondary-container text-on-secondary-container font-label-sm text-label-sm shrink-0">
+<span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+              Verificada
+            </span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-title-md text-title-md text-on-surface">4.9</span>
+<span class="font-body-md text-body-md text-on-surface-variant">• 18 reseñas</span>
+</div>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Especialista en limpieza profunda de oficinas y espacios corporativos. Manejo de productos ecológicos, desinfección de áreas comunes, cristales y estaciones de trabajo con equipo propio.
+      </p>
+<div class="flex items-center gap-2 bg-surface-container-low rounded-lg px-3 py-2">
+<span class="material-symbols-outlined text-[18px] text-primary">event_available</span>
+<span class="font-label-md text-label-md text-on-surface">Disponible 24 Nov, 09:00 - 14:00</span>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<button class="min-h-[48px] px-3 rounded-lg bg-surface-container-low text-on-surface font-title-md text-title-md flex items-center justify-center hover:bg-surface-container transition-colors border border-outline-variant/50" onclick="showToast('Abriendo perfil de Sofía Ramírez')" type="button">
+          Ver perfil
+        </button>
+<button class="min-h-[48px] px-3 rounded-lg bg-primary text-on-primary font-title-md text-title-md flex items-center justify-center hover:bg-primary-container transition-colors" onclick="selectCandidate('Sofía Ramírez')" type="button">
+          Seleccionar candidato
+        </button>
+</div>
+</article>
+<!-- Candidato 2 -->
+<article class="bg-surface-container-lowest rounded-lg p-space-md border border-outline-variant/60 shadow-sm flex flex-col gap-space-md" data-candidate="Carlos Mendoza">
+<div class="flex items-start gap-3">
+<img alt="Foto de Carlos Mendoza" class="w-14 h-14 rounded-lg object-cover shrink-0 bg-surface-container" data-alt="Retrato amigable de Carlos Mendoza, hombre mexicano de 29 años con camisa polo azul marino limpia, expresión confiable y profesional, fondo claro minimalista en tonos azul hielo, iluminación suave natural, estética fintech moderna." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhbP7y_Q8MEOInTzu4Es5noXsPKLRjZ31ZPwZLnLvm6xEZhHq9JvVOQ9QMj57kvlQqUGMaEandAvR2m20-r83Yb6wRWQufmEiFZ1aOQJG-NoBoKJ_WmuCfMDDh4HDbhCvEeANuuh6I_MQGl2xjffVfBvxsljTnsJHjM8kigeNjQMFKcgx1t-spfEGEopDv9WBKBeRcClVlN5J9wVqnK1AQziucEpjxe3NbvbpT5q0"/>
+<div class="flex flex-col min-w-0 flex-1 gap-1">
+<div class="flex items-center justify-between gap-2">
+<h4 class="font-title-lg text-title-lg text-on-surface truncate">Carlos Mendoza</h4>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg bg-secondary-container text-on-secondary-container font-label-sm text-label-sm shrink-0">
+<span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+              Verificado
+            </span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-title-md text-title-md text-on-surface">4.8</span>
+<span class="font-body-md text-body-md text-on-surface-variant">• 24 reseñas</span>
+</div>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Experiencia en mantenimiento y limpieza integral de despachos y consultorios. Puntual, organizado y cuidadoso con mobiliario delicado, pisos laminados y sanitización de baños.
+      </p>
+<div class="flex items-center gap-2 bg-surface-container-low rounded-lg px-3 py-2">
+<span class="material-symbols-outlined text-[18px] text-primary">event_available</span>
+<span class="font-label-md text-label-md text-on-surface">Disponible 24 Nov, 09:00 - 14:00</span>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<button class="min-h-[48px] px-3 rounded-lg bg-surface-container-low text-on-surface font-title-md text-title-md flex items-center justify-center hover:bg-surface-container transition-colors border border-outline-variant/50" onclick="showToast('Abriendo perfil de Carlos Mendoza')" type="button">
+          Ver perfil
+        </button>
+<button class="min-h-[48px] px-3 rounded-lg bg-primary text-on-primary font-title-md text-title-md flex items-center justify-center hover:bg-primary-container transition-colors" onclick="selectCandidate('Carlos Mendoza')" type="button">
+          Seleccionar candidato
+        </button>
+</div>
+</article>
+<!-- Candidato 3 -->
+<article class="bg-surface-container-lowest rounded-lg p-space-md border border-outline-variant/60 shadow-sm flex flex-col gap-space-md" data-candidate="Lucía Hernández">
+<div class="flex items-start gap-3">
+<img alt="Foto de Lucía Hernández" class="w-14 h-14 rounded-lg object-cover shrink-0 bg-surface-container" data-alt="Retrato cercano de Lucía Hernández, mujer mexicana de 36 años con sonrisa serena y vestimenta práctica ordenada, fondo limpio en tonos claros con sutil acento índigo, luz natural suave, estilo profesional y humano." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBd75iwtm5O7DF_LSY3DxWfKHpoppbYk_d2FqIZX6pyHPoh11uwLFziiUbAcpdn-h80HugeZqbEnDgtvHQIyrU36EU4exyhn5ViBfyE4-E5GCme94WGUoX_HUvaxsfjuHcMQKRcR13LouohuKWTb_3Bf6INEqtgWwWTHLn3hgD-mSa-_AHify_aQXezghz92bWnvIj9GcZrvfZlPtcA6xdkFY5HS8XZFd7_daKEXvQ"/>
+<div class="flex flex-col min-w-0 flex-1 gap-1">
+<div class="flex items-center justify-between gap-2">
+<h4 class="font-title-lg text-title-lg text-on-surface truncate">Lucía Hernández</h4>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-title-md text-title-md text-on-surface">4.7</span>
+<span class="font-body-md text-body-md text-on-surface-variant">• 9 reseñas</span>
+</div>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Limpieza detallada de oficinas, cocinetas y salas de juntas. Atención minuciosa al polvo, organización de espacios y recolección responsable de residuos.
+      </p>
+<div class="flex items-center gap-2 bg-surface-container-low rounded-lg px-3 py-2">
+<span class="material-symbols-outlined text-[18px] text-primary">event_available</span>
+<span class="font-label-md text-label-md text-on-surface">Disponible 24 Nov, 09:00 - 14:00</span>
+</div>
+<div class="grid grid-cols-2 gap-gutter">
+<button class="min-h-[48px] px-3 rounded-lg bg-surface-container-low text-on-surface font-title-md text-title-md flex items-center justify-center hover:bg-surface-container transition-colors border border-outline-variant/50" onclick="showToast('Abriendo perfil de Lucía Hernández')" type="button">
+          Ver perfil
+        </button>
+<button class="min-h-[48px] px-3 rounded-lg bg-primary text-on-primary font-title-md text-title-md flex items-center justify-center hover:bg-primary-container transition-colors" onclick="selectCandidate('Lucía Hernández')" type="button">
+          Seleccionar candidato
+        </button>
+</div>
+</article>
+</section>
+<!-- Modal de Confirmación de Selección -->
+<div class="fixed inset-0 z-50 hidden items-end sm:items-center justify-center bg-on-surface/40 backdrop-blur-sm p-margin" id="selectModal">
+<div class="bg-surface-container-lowest rounded-lg p-space-lg w-full max-w-md shadow-xl border border-outline-variant flex flex-col gap-space-md">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-lg bg-primary-fixed flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined">handshake</span>
+</div>
+<div class="flex flex-col">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Confirmar selección</h4>
+<p class="font-body-md text-body-md text-on-surface-variant" id="selectModalName"></p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface bg-surface-container-low rounded-lg p-3">
+        Al seleccionar inicia una ventana de 24 h para confirmar condiciones. El monto de <strong class="font-title-md text-primary">$850.00 MXN</strong> permanecerá protegido en custodia.
+      </p>
+<div class="grid grid-cols-2 gap-gutter">
+<button class="min-h-[48px] rounded-lg bg-surface-container-low text-on-surface font-title-md text-title-md border border-outline-variant/50" onclick="closeSelectModal()" type="button">
+          Volver
+        </button>
+<button class="min-h-[48px] rounded-lg bg-primary text-on-primary font-title-md text-title-md" onclick="confirmSelection()" type="button">
+          Confirmar
+        </button>
+</div>
+</div>
+</div>
+<!-- Modal de Cancelación -->
+<div class="fixed inset-0 z-50 hidden items-end sm:items-center justify-center bg-on-surface/40 backdrop-blur-sm p-margin" id="cancelModal">
+<div class="bg-surface-container-lowest rounded-lg p-space-lg w-full max-w-md shadow-xl border border-outline-variant flex flex-col gap-space-md">
+<div class="flex items-center gap-3">
+<div class="w-11 h-11 rounded-lg bg-error-container flex items-center justify-center text-on-error-container shrink-0">
+<span class="material-symbols-outlined">warning</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">¿Cancelar publicación?</h4>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Se notificará a los 3 postulantes que la vacante ha sido cerrada. Esta acción no tiene costo.
+      </p>
+<div class="grid grid-cols-2 gap-gutter">
+<button class="min-h-[48px] rounded-lg bg-surface-container-low text-on-surface font-title-md text-title-md border border-outline-variant/50" onclick="closeCancelModal()" type="button">
+          Mantener
+        </button>
+<button class="min-h-[48px] rounded-lg bg-error text-on-error font-title-md text-title-md" onclick="confirmCancel()" type="button">
+          Sí, cancelar
+        </button>
+</div>
+</div>
+</div>
+<!-- Toast de retroalimentación -->
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-lg shadow-lg font-label-lg text-label-lg whitespace-nowrap" id="toast">
+</div>
+</div>
+<script>
+  let pendingCandidate = '';
+
+  function selectCandidate(name) {
+    pendingCandidate = name;
+    document.getElementById('selectModalName').textContent = 'Has elegido a ' + name;
+    const modal = document.getElementById('selectModal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  function closeSelectModal() {
+    const modal = document.getElementById('selectModal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  }
+
+  function confirmSelection() {
+    closeSelectModal();
+    showToast('¡' + pendingCandidate + ' seleccionada! Ventana de 24 h iniciada.');
+  }
+
+  function openCancelModal() {
+    const modal = document.getElementById('cancelModal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  function closeCancelModal() {
+    const modal = document.getElementById('cancelModal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  }
+
+  function confirmCancel() {
+    closeCancelModal();
+    showToast('Publicación cancelada correctamente.');
+  }
+
+  function showToast(message) {
+    const toast = document.getElementById('toast');
+    toast.textContent = message;
+    toast.classList.remove('hidden');
+    clearTimeout(window._toastTimer);
+    window._toastTimer = setTimeout(() => {
+      toast.classList.add('hidden');
+    }, 3000);
+  }
+</script></main></body></html>

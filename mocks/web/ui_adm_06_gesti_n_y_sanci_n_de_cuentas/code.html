@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"tertiary":"#8c3c3c","secondary-fixed-dim":"#cec6be","on-background":"#3a302a","surface-bright":"#faf5ee","error-container":"#fce4e0","surface-tint":"#c2652a","on-primary-fixed-variant":"#8a4518","tertiary-fixed":"#fce0e0","error":"#c0392b","primary-container":"#e08850","primary-fixed-dim":"#f0a878","secondary-container":"#eae2da","on-error":"#ffffff","surface-container-lowest":"#ffffff","surface":"#faf5ee","on-secondary-fixed":"#2a2420","primary":"#c2652a","surface-container-highest":"#e6e0d6","surface-container":"#f2ece4","on-surface":"#3a302a","tertiary-container":"#d47070","tertiary-fixed-dim":"#e8a0a0","surface-container-high":"#ece6dc","primary-fixed":"#fbe8d8","on-secondary":"#ffffff","on-primary-container":"#fbe8d8","background":"#faf5ee","on-secondary-fixed-variant":"#504840","secondary-fixed":"#eae2da","surface-dim":"#dcd6cc","on-error-container":"#7a1a10","on-tertiary-container":"#3a2020","on-tertiary":"#ffffff","outline-variant":"#d8d0c8","surface-container-low":"#f6f0e8","secondary":"#78706a","inverse-primary":"#f0a878","on-surface-variant":"#605850","on-tertiary-fixed-variant":"#6e3030","outline":"#9a9088","surface-variant":"#ece6dc","on-primary-fixed":"#401a08","inverse-on-surface":"#faf5ee","on-tertiary-fixed":"#2e1515","on-primary":"#ffffff","inverse-surface":"#3a302a","on-secondary-container":"#605850"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{},"fontFamily":{"headline":["EB Garamond"],"display":["EB Garamond"],"body":["Manrope"],"label":["Manrope"]},"fontSize":{}}}};</script></head><body class="bg-surface font-body text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col pt-6 pb-8"><div class="px-6 mb-10 flex items-center gap-3"><div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-on-primary font-headline font-bold text-lg">S</div><span class="text-xl font-headline font-bold tracking-tight text-on-surface">Solidez MX</span></div><nav class="flex-1 px-4 space-y-1" data-active-classes="bg-primary-container text-on-primary-container font-bold"><a class="flex items-center px-4 py-3 rounded-xl text-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="bandeja-de-casos" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">inbox</span>Bandeja de Casos</a><a class="flex items-center px-4 py-3 rounded-xl text-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="arbitraje-de-reclamaciones" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">gavel</span>Arbitraje de Reclamaciones</a><a class="flex items-center px-4 py-3 rounded-xl text-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="moderacion-de-contenido" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">shield</span>Moderación de Contenido</a><a class="flex items-center px-4 py-3 rounded-xl text-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="gestion-de-cuentas" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">manage_accounts</span>Gestión de Cuentas</a><a class="flex items-center px-4 py-3 rounded-xl text-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="monitoreo-stripe" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">payments</span>Monitoreo Stripe</a></nav></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-8 flex items-center justify-between"><div class="relative w-96"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span><input class="w-full bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant text-sm rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Buscar casos, usuarios o transacciones..." type="text"/></div><div class="flex items-center gap-5"><button class="relative text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-surface w-full px-8"><div class="flex flex-col w-full pb-16">
+<!-- Editorial Top Section: Asymmetric Metrics & Search -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-12 pt-4">
+<div class="lg:col-span-5 flex flex-col">
+<div class="flex items-center gap-3 mb-3">
+<span class="text-xs font-label uppercase tracking-[0.2em] text-primary font-semibold">UI-ADM-06</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span class="text-xs font-label uppercase tracking-[0.15em] text-on-surface-variant">Control de Integridad</span>
+</div>
+<h2 class="font-headline text-4xl lg:text-5xl font-medium tracking-tight text-on-surface leading-[1.08]">
+        Gestión y Sanción de Cuentas
+      </h2>
+<p class="text-sm text-on-surface-variant mt-4 max-w-md leading-relaxed">
+        Supervisión de perfiles activos, historial de incidencias y ejecución de medidas disciplinarias con preservación de trazabilidad legal y financiera.
+      </p>
+</div>
+<!-- Bento KPI Strip -->
+<div class="lg:col-span-7 grid grid-cols-2 sm:grid-cols-4 gap-4">
+<div class="bg-surface-container-low rounded-xl p-5 flex flex-col justify-between shadow-sm">
+<span class="text-[11px] font-label uppercase tracking-wider text-on-surface-variant">Cuentas Activas</span>
+<div class="mt-3 flex items-baseline justify-between">
+<span class="font-headline text-3xl font-semibold text-on-surface">14,820</span>
+<span class="text-xs font-medium text-primary">+2.4%</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-5 flex flex-col justify-between shadow-sm">
+<span class="text-[11px] font-label uppercase tracking-wider text-on-surface-variant">Advertidas</span>
+<div class="mt-3 flex items-baseline justify-between">
+<span class="font-headline text-3xl font-semibold text-on-primary-fixed-variant">342</span>
+<span class="material-symbols-outlined text-primary text-[18px]">warning</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-5 flex flex-col justify-between shadow-sm">
+<span class="text-[11px] font-label uppercase tracking-wider text-on-surface-variant">Suspendidas</span>
+<div class="mt-3 flex items-baseline justify-between">
+<span class="font-headline text-3xl font-semibold text-tertiary">89</span>
+<span class="material-symbols-outlined text-tertiary text-[18px]">timer_off</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-5 flex flex-col justify-between shadow-sm">
+<span class="text-[11px] font-label uppercase tracking-wider text-on-surface-variant">Baja / Bloqueo</span>
+<div class="mt-3 flex items-baseline justify-between">
+<span class="font-headline text-3xl font-semibold text-error">124</span>
+<span class="material-symbols-outlined text-error text-[18px]">block</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Search & Filter Bar -->
+<div class="bg-surface-container-lowest rounded-xl p-4 sm:p-5 shadow-sm mb-8 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+<div class="relative flex-1 min-w-0">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">person_search</span>
+<input class="w-full bg-surface-container-low text-on-surface placeholder:text-on-surface-variant text-sm rounded-lg pl-12 pr-4 py-3 focus:outline-none focus:ring-1 focus:ring-primary transition-all" id="userSearchInput" placeholder="Buscar usuario por nombre completo, correo electrónico o ID (ej. USR-8492)..." type="text"/>
+</div>
+<div class="flex flex-wrap items-center gap-3">
+<select class="bg-surface-container-low text-on-surface text-sm rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer" id="roleFilter">
+<option value="all">Todos los Roles</option>
+<option value="Empleador">Empleador</option>
+<option value="Trabajador">Trabajador</option>
+</select>
+<select class="bg-surface-container-low text-on-surface text-sm rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer" id="statusFilter">
+<option value="all">Todos los Estados</option>
+<option value="Activa">Activa</option>
+<option value="Advertida">Advertida</option>
+<option value="Suspendida">Suspendida</option>
+<option value="Bloqueada">Bloqueada</option>
+<option value="Baja Lógica">Baja Lógica</option>
+</select>
+</div>
+</div>
+<!-- Main Asymmetric Workspace: Table (Left) + Inline Visual/Summary or Action Drawer -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-8 items-start">
+<!-- Accounts Table -->
+<div class="xl:col-span-12 bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="px-7 py-5 bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="font-headline text-xl font-medium text-on-surface">Directorio de Cuentas</span>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-medium" id="visibleCountBadge">6 registros</span>
+</div>
+<span class="text-xs font-label text-on-surface-variant hidden sm:inline">Haz clic en una cuenta para gestionar sanciones</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container/60 text-[11px] font-label uppercase tracking-wider text-on-surface-variant">
+<th class="py-4 px-7 font-semibold">Usuario / ID</th>
+<th class="py-4 px-5 font-semibold">Rol</th>
+<th class="py-4 px-5 font-semibold">Estado de Cuenta</th>
+<th class="py-4 px-5 font-semibold">Historial de Reportes</th>
+<th class="py-4 px-5 font-semibold">Última Actividad</th>
+<th class="py-4 px-7 font-semibold text-right">Acción</th>
+</tr>
+</thead>
+<tbody class="text-sm" id="accountsTableBody">
+<!-- Row 1 -->
+<tr class="account-row hover:bg-surface-container-low/70 transition-colors cursor-pointer" data-email="m.villalobos@constructora-mx.com" data-history="Sin incidencias previas. Perfil verificado." data-id="USR-8492" data-name="Mateo Villalobos" data-reports="0" data-role="Empleador" data-status="Activa">
+<td class="py-5 px-7">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-headline font-bold text-base shrink-0">MV</div>
+<div class="min-w-0">
+<p class="font-semibold text-on-surface truncate">Mateo Villalobos</p>
+<p class="text-xs text-on-surface-variant truncate">m.villalobos@constructora-mx.com · <span class="font-mono text-[11px]">USR-8492</span></p>
+</div>
+</div>
+</td>
+<td class="py-5 px-5">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-secondary-container text-on-secondary-container text-xs font-medium">
+<span class="material-symbols-outlined text-[15px]">business_center</span>Empleador
+                </span>
+</td>
+<td class="py-5 px-5">
+<span class="status-badge inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Activa
+                </span>
+</td>
+<td class="py-5 px-5">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="font-semibold text-on-surface">0</span>
+<span class="text-xs">reportes</span>
+</div>
+</td>
+<td class="py-5 px-5 text-xs text-on-surface-variant">Hoy, 10:42</td>
+<td class="py-5 px-7 text-right">
+<button class="open-sanction-btn px-4 py-2 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface text-xs font-semibold transition-colors" type="button">
+                  Gestionar
+                </button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="account-row hover:bg-surface-container-low/70 transition-colors cursor-pointer bg-surface-container-low/30" data-email="valeria.mendoza@correo.mx" data-history="3 reportes por incumplimiento de horario en servicio #4021. Advertencia emitida el 12/05." data-id="USR-3104" data-name="Valeria Mendoza" data-reports="3" data-role="Trabajador" data-status="Advertida">
+<td class="py-5 px-7">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-headline font-bold text-base shrink-0">VM</div>
+<div class="min-w-0">
+<p class="font-semibold text-on-surface truncate">Valeria Mendoza</p>
+<p class="text-xs text-on-surface-variant truncate">valeria.mendoza@correo.mx · <span class="font-mono text-[11px]">USR-3104</span></p>
+</div>
+</div>
+</td>
+<td class="py-5 px-5">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-surface-container-high text-on-surface-variant text-xs font-medium">
+<span class="material-symbols-outlined text-[15px]">engineering</span>Trabajador
+                </span>
+</td>
+<td class="py-5 px-5">
+<span class="status-badge inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-container/30 text-on-primary-fixed-variant text-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-on-primary-fixed-variant"></span>Advertida
+                </span>
+</td>
+<td class="py-5 px-5">
+<div class="flex items-center gap-2">
+<span class="font-semibold text-on-primary-fixed-variant">3</span>
+<span class="text-xs text-on-surface-variant">reportes (2 recientes)</span>
+</div>
+</td>
+<td class="py-5 px-5 text-xs text-on-surface-variant">Ayer, 18:15</td>
+<td class="py-5 px-7 text-right">
+<button class="open-sanction-btn px-4 py-2 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface text-xs font-semibold transition-colors" type="button">
+                  Gestionar
+                </button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="account-row hover:bg-surface-container-low/70 transition-colors cursor-pointer" data-email="rsalinas@logistica-norte.mx" data-history="5 reportes por retraso reiterado en liberación de pagos. Suspensión de 7 días activa." data-id="USR-5519" data-name="Ricardo Salinas" data-reports="5" data-role="Empleador" data-status="Suspendida">
+<td class="py-5 px-7">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-headline font-bold text-base shrink-0">RS</div>
+<div class="min-w-0">
+<p class="font-semibold text-on-surface truncate">Ricardo Salinas</p>
+<p class="text-xs text-on-surface-variant truncate">rsalinas@logistica-norte.mx · <span class="font-mono text-[11px]">USR-5519</span></p>
+</div>
+</div>
+</td>
+<td class="py-5 px-5">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-secondary-container text-on-secondary-container text-xs font-medium">
+<span class="material-symbols-outlined text-[15px]">business_center</span>Empleador
+                </span>
+</td>
+<td class="py-5 px-5">
+<span class="status-badge inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed-variant text-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>Suspendida
+                </span>
+</td>
+<td class="py-5 px-5">
+<div class="flex items-center gap-2">
+<span class="font-semibold text-tertiary">5</span>
+<span class="text-xs text-on-surface-variant">reportes</span>
+</div>
+</td>
+<td class="py-5 px-5 text-xs text-on-surface-variant">Hace 3 días</td>
+<td class="py-5 px-7 text-right">
+<button class="open-sanction-btn px-4 py-2 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface text-xs font-semibold transition-colors" type="button">
+                  Gestionar
+                </button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="account-row hover:bg-surface-container-low/70 transition-colors cursor-pointer bg-surface-container-low/30" data-email="camila.dom@servicios.mx" data-history="9 reportes por suplantación de identidad y documentación alterada. Bloqueo permanente aplicado." data-id="USR-1092" data-name="Camila Domínguez" data-reports="9" data-role="Trabajador" data-status="Bloqueada">
+<td class="py-5 px-7">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-full bg-error-container text-on-error-container flex items-center justify-center font-headline font-bold text-base shrink-0">CD</div>
+<div class="min-w-0">
+<p class="font-semibold text-on-surface truncate">Camila Domínguez</p>
+<p class="text-xs text-on-surface-variant truncate">camila.dom@servicios.mx · <span class="font-mono text-[11px]">USR-1092</span></p>
+</div>
+</div>
+</td>
+<td class="py-5 px-5">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-surface-container-high text-on-surface-variant text-xs font-medium">
+<span class="material-symbols-outlined text-[15px]">engineering</span>Trabajador
+                </span>
+</td>
+<td class="py-5 px-5">
+<span class="status-badge inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-error-container text-on-error-container text-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>Bloqueada
+                </span>
+</td>
+<td class="py-5 px-5">
+<div class="flex items-center gap-2">
+<span class="font-semibold text-error">9</span>
+<span class="text-xs text-on-surface-variant">reportes graves</span>
+</div>
+</td>
+<td class="py-5 px-5 text-xs text-on-surface-variant">14 Abr 2025</td>
+<td class="py-5 px-7 text-right">
+<button class="open-sanction-btn px-4 py-2 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface text-xs font-semibold transition-colors" type="button">
+                  Gestionar
+                </button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="account-row hover:bg-surface-container-low/70 transition-colors cursor-pointer" data-email="hibarra@arquitextura.mx" data-history="Baja lógica solicitada y ejecutada. Registros fiscales y transacciones Stripe preservadas." data-id="USR-7741" data-name="Héctor Ibarra" data-reports="2" data-role="Empleador" data-status="Baja Lógica">
+<td class="py-5 px-7">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-headline font-bold text-base shrink-0">HI</div>
+<div class="min-w-0">
+<p class="font-semibold text-on-surface truncate">Héctor Ibarra</p>
+<p class="text-xs text-on-surface-variant truncate">hibarra@arquitextura.mx · <span class="font-mono text-[11px]">USR-7741</span></p>
+</div>
+</div>
+</td>
+<td class="py-5 px-5">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-secondary-container text-on-secondary-container text-xs font-medium">
+<span class="material-symbols-outlined text-[15px]">business_center</span>Empleador
+                </span>
+</td>
+<td class="py-5 px-5">
+<span class="status-badge inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-highest text-on-surface-variant text-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>Baja Lógica
+                </span>
+</td>
+<td class="py-5 px-5">
+<div class="flex items-center gap-2">
+<span class="font-semibold text-on-surface">2</span>
+<span class="text-xs text-on-surface-variant">reportes cerrados</span>
+</div>
+</td>
+<td class="py-5 px-5 text-xs text-on-surface-variant">02 Mar 2025</td>
+<td class="py-5 px-7 text-right">
+<button class="open-sanction-btn px-4 py-2 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface text-xs font-semibold transition-colors" type="button">
+                  Gestionar
+                </button>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="account-row hover:bg-surface-container-low/70 transition-colors cursor-pointer bg-surface-container-low/30" data-email="sofia.cast@taller-mx.com" data-history="1 reporte menor resuelto por mediación sin sanción." data-id="USR-6380" data-name="Sofía Castellanos" data-reports="1" data-role="Trabajador" data-status="Activa">
+<td class="py-5 px-7">
+<div class="flex items-center gap-3.5">
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-headline font-bold text-base shrink-0">SC</div>
+<div class="min-w-0">
+<p class="font-semibold text-on-surface truncate">Sofía Castellanos</p>
+<p class="text-xs text-on-surface-variant truncate">sofia.cast@taller-mx.com · <span class="font-mono text-[11px]">USR-6380</span></p>
+</div>
+</div>
+</td>
+<td class="py-5 px-5">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-surface-container-high text-on-surface-variant text-xs font-medium">
+<span class="material-symbols-outlined text-[15px]">engineering</span>Trabajador
+                </span>
+</td>
+<td class="py-5 px-5">
+<span class="status-badge inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed text-xs font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Activa
+                </span>
+</td>
+<td class="py-5 px-5">
+<div class="flex items-center gap-2">
+<span class="font-semibold text-on-surface">1</span>
+<span class="text-xs text-on-surface-variant">reporte</span>
+</div>
+</td>
+<td class="py-5 px-5 text-xs text-on-surface-variant">Hoy, 09:14</td>
+<td class="py-5 px-7 text-right">
+<button class="open-sanction-btn px-4 py-2 rounded-lg bg-surface-container-high hover:bg-primary hover:text-on-primary text-on-surface text-xs font-semibold transition-colors" type="button">
+                  Gestionar
+                </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Slide-over Sanction Panel (Modal Lateral) -->
+<div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-50 hidden transition-opacity" id="sanctionDrawerBackdrop">
+<div class="fixed inset-y-0 right-0 w-full max-w-lg bg-surface shadow-2xl flex flex-col justify-between overflow-y-auto">
+<div class="p-8">
+<!-- Drawer Header -->
+<div class="flex items-start justify-between mb-8">
+<div>
+<span class="text-[11px] font-label uppercase tracking-[0.18em] text-primary font-semibold">Resolución Disciplinaria</span>
+<h3 class="font-headline text-3xl font-medium text-on-surface mt-1" id="drawerUserName">Mateo Villalobos</h3>
+<p class="text-xs text-on-surface-variant mt-1" id="drawerUserMeta">USR-8492 · Empleador · m.villalobos@constructora-mx.com</p>
+</div>
+<button class="w-9 h-9 rounded-full bg-surface-container-high hover:bg-surface-container-highest flex items-center justify-center text-on-surface transition-colors" id="closeDrawerBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Account History Summary Card -->
+<div class="bg-surface-container-low rounded-xl p-5 mb-8">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-label uppercase tracking-wider text-on-surface-variant font-semibold">Historial de Reportes</span>
+<span class="text-xs font-semibold text-primary" id="drawerReportCount">0 reportes</span>
+</div>
+<p class="text-sm text-on-surface leading-relaxed" id="drawerHistoryText">Sin incidencias previas. Perfil verificado.</p>
+</div>
+<!-- Sanction Form -->
+<form class="space-y-6" id="sanctionForm">
+<div>
+<label class="block text-xs font-label uppercase tracking-wider text-on-surface-variant font-semibold mb-3">
+              Tipo de Sanción a Aplicar
+            </label>
+<div class="grid grid-cols-1 gap-3">
+<label class="flex items-start gap-3.5 p-4 rounded-xl bg-surface-container-lowest cursor-pointer hover:bg-surface-container-low transition-colors">
+<input checked="" class="mt-1 accent-primary" name="sanctionType" type="radio" value="Advertida"/>
+<div>
+<span class="block text-sm font-semibold text-on-surface">Advertencia Formal</span>
+<span class="block text-xs text-on-surface-variant mt-0.5">Notificación oficial sin restricción operativa inmediata.</span>
+</div>
+</label>
+<label class="flex items-start gap-3.5 p-4 rounded-xl bg-surface-container-lowest cursor-pointer hover:bg-surface-container-low transition-colors">
+<input class="mt-1 accent-primary" name="sanctionType" type="radio" value="Suspendida"/>
+<div class="flex-1">
+<span class="block text-sm font-semibold text-on-surface">Suspensión Temporal</span>
+<span class="block text-xs text-on-surface-variant mt-0.5">Restricción de acceso y operaciones por periodo definido.</span>
+<div class="mt-3 hidden" id="suspensionDurationBox">
+<div class="flex items-center gap-2">
+<button class="duration-pill px-3 py-1.5 rounded-lg bg-primary text-on-primary text-xs font-semibold" data-days="1" type="button">1 día</button>
+<button class="duration-pill px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface text-xs font-semibold" data-days="7" type="button">7 días</button>
+<button class="duration-pill px-3 py-1.5 rounded-lg bg-surface-container-high text-on-surface text-xs font-semibold" data-days="30" type="button">30 días</button>
+</div>
+</div>
+</div>
+</label>
+<label class="flex items-start gap-3.5 p-4 rounded-xl bg-surface-container-lowest cursor-pointer hover:bg-surface-container-low transition-colors">
+<input class="mt-1 accent-primary" name="sanctionType" type="radio" value="Bloqueada"/>
+<div>
+<span class="block text-sm font-semibold text-error">Bloqueo Permanente</span>
+<span class="block text-xs text-on-surface-variant mt-0.5">Inhabilitación definitiva de la cuenta por falta grave.</span>
+</div>
+</label>
+<label class="flex items-start gap-3.5 p-4 rounded-xl bg-surface-container-lowest cursor-pointer hover:bg-surface-container-low transition-colors">
+<input class="mt-1 accent-primary" name="sanctionType" type="radio" value="Baja Lógica"/>
+<div>
+<span class="block text-sm font-semibold text-on-surface">Baja Lógica</span>
+<span class="block text-xs text-on-surface-variant mt-0.5">Desactivación de perfil preservando registros financieros y legales.</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Mandatory Reason Field -->
+<div>
+<label class="block text-xs font-label uppercase tracking-wider text-on-surface-variant font-semibold mb-2" for="sanctionReason">
+              Motivo de la Sanción <span class="text-error">*</span>
+</label>
+<textarea class="w-full bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant text-sm rounded-xl p-4 focus:outline-none focus:ring-1 focus:ring-primary" id="sanctionReason" placeholder="Describe detalladamente los hechos, evidencia o número de caso que respaldan esta resolución..." required="" rows="4"></textarea>
+<p class="text-xs text-error mt-1.5 hidden" id="reasonError">El motivo es obligatorio para registrar la sanción.</p>
+</div>
+</form>
+</div>
+<!-- Drawer Footer -->
+<div class="p-8 pt-4 bg-surface-container-low flex items-center justify-end gap-3">
+<button class="px-5 py-2.5 rounded-lg bg-surface-container-high text-on-surface text-sm font-semibold hover:bg-surface-container-highest transition-colors" id="cancelDrawerBtn" type="button">
+          Cancelar
+        </button>
+<button class="px-6 py-2.5 rounded-lg bg-primary text-on-primary text-sm font-semibold hover:bg-on-primary-fixed-variant transition-colors" id="confirmSanctionBtn" type="button">
+          Aplicar Sanción
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function () {
+    const searchInput = document.getElementById('userSearchInput');
+    const roleFilter = document.getElementById('roleFilter');
+    const statusFilter = document.getElementById('statusFilter');
+    const rows = Array.from(document.querySelectorAll('.account-row'));
+    const visibleCountBadge = document.getElementById('visibleCountBadge');
+
+    const drawerBackdrop = document.getElementById('sanctionDrawerBackdrop');
+    const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+    const cancelDrawerBtn = document.getElementById('cancelDrawerBtn');
+    const confirmSanctionBtn = document.getElementById('confirmSanctionBtn');
+
+    const drawerUserName = document.getElementById('drawerUserName');
+    const drawerUserMeta = document.getElementById('drawerUserMeta');
+    const drawerReportCount = document.getElementById('drawerReportCount');
+    const drawerHistoryText = document.getElementById('drawerHistoryText');
+    const sanctionReason = document.getElementById('sanctionReason');
+    const reasonError = document.getElementById('reasonError');
+    const suspensionDurationBox = document.getElementById('suspensionDurationBox');
+    const durationPills = Array.from(document.querySelectorAll('.duration-pill'));
+    const sanctionRadios = Array.from(document.querySelectorAll('input[name="sanctionType"]'));
+
+    let activeRow = null;
+    let selectedDays = '1';
+
+    function filterRows() {
+      const q = searchInput.value.trim().toLowerCase();
+      const role = roleFilter.value;
+      const status = statusFilter.value;
+      let count = 0;
+
+      rows.forEach((row) => {
+        const name = row.dataset.name.toLowerCase();
+        const email = row.dataset.email.toLowerCase();
+        const id = row.dataset.id.toLowerCase();
+        const rowRole = row.dataset.role;
+        const rowStatus = row.dataset.status;
+
+        const matchesQuery = !q || name.includes(q) || email.includes(q) || id.includes(q);
+        const matchesRole = role === 'all' || rowRole === role;
+        const matchesStatus = status === 'all' || rowStatus === status;
+
+        if (matchesQuery && matchesRole && matchesStatus) {
+          row.classList.remove('hidden');
+          count++;
+        } else {
+          row.classList.add('hidden');
+        }
+      });
+
+      visibleCountBadge.textContent = count + (count === 1 ? ' registro' : ' registros');
+    }
+
+    searchInput.addEventListener('input', filterRows);
+    roleFilter.addEventListener('change', filterRows);
+    statusFilter.addEventListener('change', filterRows);
+
+    function openDrawer(row) {
+      activeRow = row;
+      drawerUserName.textContent = row.dataset.name;
+      drawerUserMeta.textContent = `${row.dataset.id} · ${row.dataset.role} · ${row.dataset.email}`;
+      drawerReportCount.textContent = `${row.dataset.reports} reportes`;
+      drawerHistoryText.textContent = row.dataset.history;
+      sanctionReason.value = '';
+      reasonError.classList.add('hidden');
+      drawerBackdrop.classList.remove('hidden');
+    }
+
+    function closeDrawer() {
+      drawerBackdrop.classList.add('hidden');
+      activeRow = null;
+    }
+
+    rows.forEach((row) => {
+      row.addEventListener('click', () => openDrawer(row));
+    });
+
+    closeDrawerBtn.addEventListener('click', closeDrawer);
+    cancelDrawerBtn.addEventListener('click', closeDrawer);
+
+    sanctionRadios.forEach((radio) => {
+      radio.addEventListener('change', (e) => {
+        if (e.target.value === 'Suspendida') {
+          suspensionDurationBox.classList.remove('hidden');
+        } else {
+          suspensionDurationBox.classList.add('hidden');
+        }
+      });
+    });
+
+    durationPills.forEach((pill) => {
+      pill.addEventListener('click', () => {
+        selectedDays = pill.dataset.days;
+        durationPills.forEach((p) => {
+          p.classList.remove('bg-primary', 'text-on-primary');
+          p.classList.add('bg-surface-container-high', 'text-on-surface');
+        });
+        pill.classList.remove('bg-surface-container-high', 'text-on-surface');
+        pill.classList.add('bg-primary', 'text-on-primary');
+      });
+    });
+
+    confirmSanctionBtn.addEventListener('click', () => {
+      const reason = sanctionReason.value.trim();
+      if (!reason) {
+        reasonError.classList.remove('hidden');
+        sanctionReason.focus();
+        return;
+      }
+
+      const selectedSanction = document.querySelector('input[name="sanctionType"]:checked').value;
+      if (activeRow) {
+        activeRow.dataset.status = selectedSanction;
+        const badge = activeRow.querySelector('.status-badge');
+        badge.textContent = selectedSanction === 'Suspendida' ? `Suspendida (${selectedDays}d)` : selectedSanction;
+      }
+
+      closeDrawer();
+      filterRows();
+    });
+  })();
+</script></main></div></body></html>

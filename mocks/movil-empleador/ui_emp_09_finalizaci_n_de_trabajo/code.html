@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="mobile_stack" name="shell-type"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        overscroll-behavior: none;
+        min-height: max(884px, 100dvh);
+      }
+      .pb-safe {
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      .pt-safe {
+        padding-top: env(safe-area-inset-top, 0px);
+      }
+      main > :first-child {
+        margin-top: 0 !important;
+      }
+      main > :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary": "#8c3c3c",
+            "secondary-fixed-dim": "#cec6be",
+            "on-background": "#3a302a",
+            "surface-bright": "#faf5ee",
+            "error-container": "#fce4e0",
+            "surface-tint": "#c2652a",
+            "on-primary-fixed-variant": "#8a4518",
+            "tertiary-fixed": "#fce0e0",
+            "error": "#c0392b",
+            "primary-container": "#e08850",
+            "primary-fixed-dim": "#f0a878",
+            "secondary-container": "#eae2da",
+            "on-error": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "surface": "#faf5ee",
+            "on-secondary-fixed": "#2a2420",
+            "primary": "#c2652a",
+            "surface-container-highest": "#e6e0d6",
+            "surface-container": "#f2ece4",
+            "on-surface": "#3a302a",
+            "tertiary-container": "#d47070",
+            "tertiary-fixed-dim": "#e8a0a0",
+            "surface-container-high": "#ece6dc",
+            "primary-fixed": "#fbe8d8",
+            "on-secondary": "#ffffff",
+            "on-primary-container": "#fbe8d8",
+            "background": "#faf5ee",
+            "on-secondary-fixed-variant": "#504840",
+            "secondary-fixed": "#eae2da",
+            "surface-dim": "#dcd6cc",
+            "on-error-container": "#7a1a10",
+            "on-tertiary-container": "#3a2020",
+            "on-tertiary": "#ffffff",
+            "outline-variant": "#d8d0c8",
+            "surface-container-low": "#f6f0e8",
+            "secondary": "#78706a",
+            "inverse-primary": "#f0a878",
+            "on-surface-variant": "#605850",
+            "on-tertiary-fixed-variant": "#6e3030",
+            "outline": "#9a9088",
+            "surface-variant": "#ece6dc",
+            "on-primary-fixed": "#401a08",
+            "inverse-on-surface": "#faf5ee",
+            "on-tertiary-fixed": "#2e1515",
+            "on-primary": "#ffffff",
+            "inverse-surface": "#3a302a",
+            "on-secondary-container": "#605850"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {},
+          "fontFamily": {
+            "headline": ["EB Garamond"],
+            "display": ["EB Garamond"],
+            "body": ["Manrope"],
+            "label": ["Manrope"]
+          },
+          "fontSize": {}
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface text-on-surface font-body text-sm flex flex-col min-h-screen antialiased">
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl pt-safe border-b border-outline-variant/60">
+<div class="h-16 px-4 flex items-center justify-between gap-2">
+<div class="flex items-center gap-2 min-w-0">
+<button aria-label="Regresar" class="w-11 h-11 flex items-center justify-center text-on-surface hover:text-primary transition-colors shrink-0 rounded-lg" onclick="history.back()">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</button>
+<img alt="Logo Solidez MX" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvt55QT42nm89kk4_9eKrvpX9FvvpHogy0qjA2Xpkph-TakD-8bZnPOvAzk0A0zaqXWpuACAX_swnhrWplR3TbF76w3qXcgRM2HqCNnvcfZ3yrP1vLNWc0RpK4xBOOah5cpHTbBXdkwXRXRKVXCz5r0HObuSbMj4qzKVR2xqO--1wbZZJXLB9bf47_PdgLHW3xGC1oSoZ029UoSTKNbnbn9Lae29SMzs-tpSEvwro"/>
+<h1 class="font-body font-bold text-lg text-on-surface truncate">Detalle De Publicación</h1>
+</div>
+<div class="w-11 h-11 flex items-center justify-center shrink-0">
+<img alt="Profile" class="w-8 h-8 rounded-full object-cover border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkmLQ31ARZWh6eEX9IyFNAR-II6yAE0JiN-A6TiJPRLwkg5g6yTAq4gfFg4ey_8OgIBExA-pvA4Uh_VhFPll_arTDETqTX4OjrcFfuBbjkWTbtpnvx4LCsPjtGGVgzF_L1acTWFXiGiyNc0PtzNb4vhmxgtXVENkWNUI9vVFhAhokbeGmQSeF49UYq7nRZg1Dcw5cXxonMK-nLzXi9yEsMYVVS4DAYFgw6SJU809k"/>
+</div>
+</div>
+</header>
+<main class="flex flex-col relative w-full px-4 pt-20 pb-safe bg-surface flex-1">
+<div class="flex flex-col w-full gap-4 pb-6">
+<section class="bg-surface-container-lowest rounded-lg p-4 border border-outline-variant/60 shadow-sm flex flex-col gap-2.5">
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-1.5 bg-primary-fixed text-on-primary-fixed px-2.5 py-1 rounded-full">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[11px] leading-3.5 font-semibold tracking-wide">En curso</span>
+</div>
+<span class="text-xs font-medium text-on-surface-variant">Folio #SLZ-8492</span>
+</div>
+<div class="flex items-center justify-between gap-2 pt-1">
+<div class="flex items-center gap-3 min-w-0">
+<img class="w-11 h-11 rounded-full object-cover shrink-0 bg-surface-container border border-outline-variant/50" data-alt="Portrait of a friendly Mexican male electrician in his 30s wearing a clean navy work polo shirt, warm natural daylight, shallow depth of field, trustworthy expression, corporate modern fintech aesthetic with subtle indigo tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_C9vua6XPvVLkEmVqnqdYFFDt8_oN6pX2tV7ujy7HtFmw8wv6fDl9HxC-xgNVhkDPFOUAnQXL7Ir1PMNlDCZxpoZt33IfLmauEMDwUqpnX3ApxCtvUOmNhGZAtN9T3_5QWfoUY3XJWi4BxY7lu0SXvCu7VJVjL17T6l23auYvRVNQxRnBZd2qm3GeJv7OPeRYnY6KZ1Zv8A1k5Qd1t9U-o2HJEHnDC6SJ2feA-Bk"/>
+<div class="flex flex-col min-w-0">
+<h2 class="font-semibold text-sm text-on-surface truncate">Instalación de tablero eléctrico</h2>
+<p class="text-sm text-on-surface-variant truncate">Carlos Mendoza · 4.9 ★</p>
+</div>
+</div>
+<div class="flex flex-col items-end shrink-0">
+<span class="font-bold text-xl text-primary tracking-tight">$2,850</span>
+<span class="text-[11px] font-semibold text-secondary">En custodia</span>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-lowest rounded-lg p-4 border border-outline-variant/60 shadow-sm flex flex-col gap-4 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-fixed/40 rounded-full -mr-10 -mt-10 pointer-events-none"></div>
+<div class="flex items-center gap-3 relative">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed text-on-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-semibold text-base text-on-surface">Código de Finalización de 6 dígitos</h3>
+<p class="text-xs font-medium text-on-surface-variant">Entrega este código al trabajador al terminar</p>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-4 flex flex-col items-center gap-4 border border-outline-variant/40">
+<div aria-label="Código de finalización 4 8 2 9 1 5" class="grid grid-cols-6 gap-1.5 w-full max-w-xs" id="code-display">
+<div class="bg-surface-container-lowest rounded-lg py-2 border border-outline-variant/50 flex items-center justify-center shadow-sm">
+<span class="text-[28px] leading-9 font-bold text-primary">4</span>
+</div>
+<div class="bg-surface-container-lowest rounded-lg py-2 border border-outline-variant/50 flex items-center justify-center shadow-sm">
+<span class="text-[28px] leading-9 font-bold text-primary">8</span>
+</div>
+<div class="bg-surface-container-lowest rounded-lg py-2 border border-outline-variant/50 flex items-center justify-center shadow-sm">
+<span class="text-[28px] leading-9 font-bold text-primary">2</span>
+</div>
+<div class="bg-surface-container-lowest rounded-lg py-2 border border-outline-variant/50 flex items-center justify-center shadow-sm">
+<span class="text-[28px] leading-9 font-bold text-primary">9</span>
+</div>
+<div class="bg-surface-container-lowest rounded-lg py-2 border border-outline-variant/50 flex items-center justify-center shadow-sm">
+<span class="text-[28px] leading-9 font-bold text-primary">1</span>
+</div>
+<div class="bg-surface-container-lowest rounded-lg py-2 border border-outline-variant/50 flex items-center justify-center shadow-sm">
+<span class="text-[28px] leading-9 font-bold text-primary">5</span>
+</div>
+</div>
+<button class="w-full h-12 bg-primary text-on-primary rounded-lg font-semibold text-base flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-transform" id="copy-code-btn" type="button">
+<span class="material-symbols-outlined" id="copy-icon">content_copy</span>
+<span id="copy-text">Copiar código</span>
+</button>
+</div>
+<div class="bg-primary-fixed/60 text-on-primary-fixed-variant rounded-lg p-3 flex items-start gap-2">
+<span class="material-symbols-outlined shrink-0 mt-0.5 text-primary">schedule</span>
+<p class="text-sm text-on-surface">Comparte este código solo cuando el trabajo haya concluido satisfactoriamente. <span class="font-semibold text-on-primary-fixed">Expira en 23:40 h</span></p>
+</div>
+</section>
+<section class="bg-surface-container-lowest rounded-lg p-4 border border-outline-variant/60 shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between gap-2">
+<h3 class="font-semibold text-base text-on-surface">Solicitud de finalización sin código</h3>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed px-2.5 py-1 rounded-full text-[11px] font-semibold shrink-0">Pendiente</span>
+</div>
+<div class="bg-surface-container-low rounded-lg p-3 flex items-start gap-2 border border-outline-variant/40">
+<span class="material-symbols-outlined text-primary shrink-0 mt-0.5">info</span>
+<p class="text-sm text-on-surface-variant">Carlos Mendoza marcó el servicio como terminado y adjuntó 2 evidencias para liberar el pago en custodia.</p>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<div class="flex flex-col gap-1.5">
+<img class="w-full h-28 rounded-lg object-cover bg-surface-container border border-outline-variant/50" data-alt="Close-up photo of a newly installed modern residential electrical breaker panel on a clean white wall, neat wiring, bright indoor lighting, realistic smartphone photo style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDw7r6NplH4lU8DrePuOkUhXvQBbKIeXG1kUXTzNwydNfF26vP90ArgQYjfENjqm4drhZqp3l5eBaGww2169EvRuUv8ofxHoBybzfIG5kFX7EbpXulXk7zZ_OkLWMjH-LKKVmfv2ssY5BuIxymoqALjyGqxroy2I-MZ-fp-8bG4qpWn6jPiqBLRphrzXIa4kvkZOo_2WlrzZm9X0J5DcACWZN4H-qGeZhfPZcVoAq4"/>
+<span class="text-xs font-medium text-on-surface-variant truncate">Evidencia 1 · Tablero</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<img class="w-full h-28 rounded-lg object-cover bg-surface-container border border-outline-variant/50" data-alt="Digital multimeter showing normal voltage reading next to an electrical outlet, clean residential interior background, sharp focus, realistic mobile photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTLY9RLwzBrPiNTnfCuFXwXPrATQSFwXXRM6lapce_Ez36HzYtuLNino_MT4MuU_CRgtm7DZIvWHnB-sRy65jxgRyksP-8U105VqkwlH-osWqDSdPb4yhVos--rkWB3NxdSA1yXDAI7r_Y9QJOhjtYjfePTPMRdqFouVeXswr1c-j7BUwv-GGNGatlnqn0HGwXTd5MDqkkmBJDBY8LBaLz-UCbZP3_suPCHngvpUQ"/>
+<span class="text-xs font-medium text-on-surface-variant truncate">Evidencia 2 · Prueba</span>
+</div>
+</div>
+<div class="hidden rounded-lg p-3 text-sm flex items-center gap-2" id="action-feedback"></div>
+<div class="flex flex-col gap-2.5 pt-1">
+<button class="w-full h-12 bg-primary text-on-primary rounded-lg font-semibold text-base flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-transform" id="confirm-btn" type="button">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Confirmar finalización</span>
+</button>
+<button class="w-full h-12 bg-error-container text-on-error-container rounded-lg font-semibold text-base flex items-center justify-center gap-2 active:scale-[0.98] transition-transform" id="dispute-btn" type="button">
+<span class="material-symbols-outlined">gavel</span>
+<span>Impugnar / Abrir reclamación</span>
+</button>
+</div>
+<div class="flex items-center justify-center gap-1.5 text-on-surface-variant pt-1">
+<span class="material-symbols-outlined text-base">timer</span>
+<p class="text-xs font-medium text-center">Tienes 24 h para responder antes de la aceptación automática</p>
+</div>
+</section>
+</div>
+<script>
+      (function () {
+        const copyBtn = document.getElementById('copy-code-btn');
+        const copyIcon = document.getElementById('copy-icon');
+        const copyText = document.getElementById('copy-text');
+        const confirmBtn = document.getElementById('confirm-btn');
+        const disputeBtn = document.getElementById('dispute-btn');
+        const feedback = document.getElementById('action-feedback');
+
+        if (copyBtn) {
+          copyBtn.addEventListener('click', function () {
+            if (navigator.clipboard) {
+              navigator.clipboard.writeText('482915').catch(function () {});
+            }
+            copyIcon.textContent = 'check';
+            copyText.textContent = '¡Código copiado!';
+            copyBtn.classList.remove('bg-primary', 'text-on-primary');
+            copyBtn.classList.add('bg-on-surface', 'text-surface');
+
+            setTimeout(function () {
+              copyIcon.textContent = 'content_copy';
+              copyText.textContent = 'Copiar código';
+              copyBtn.classList.remove('bg-on-surface', 'text-surface');
+              copyBtn.classList.add('bg-primary', 'text-on-primary');
+            }, 2000);
+          });
+        }
+
+        if (confirmBtn && feedback) {
+          confirmBtn.addEventListener('click', function () {
+            feedback.className = 'rounded-lg p-3 text-sm flex items-center gap-2 bg-secondary-container text-on-secondary-container';
+            feedback.innerHTML = '<span class="material-symbols-outlined shrink-0">verified</span><span>Finalización confirmada. Liberando $2,850 MXN al trabajador.</span>';
+          });
+        }
+
+        if (disputeBtn && feedback) {
+          disputeBtn.addEventListener('click', function () {
+            feedback.className = 'rounded-lg p-3 text-sm flex items-center gap-2 bg-tertiary-fixed text-on-tertiary-fixed';
+            feedback.innerHTML = '<span class="material-symbols-outlined shrink-0">support_agent</span><span>Reclamación iniciada. El pago permanece protegido en custodia.</span>';
+          });
+        }
+      })();
+    </script>
+</main>
+</body></html>

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"tertiary":"#8c3c3c","secondary-fixed-dim":"#cec6be","on-background":"#3a302a","surface-bright":"#faf5ee","error-container":"#fce4e0","surface-tint":"#c2652a","on-primary-fixed-variant":"#8a4518","tertiary-fixed":"#fce0e0","error":"#c0392b","primary-container":"#e08850","primary-fixed-dim":"#f0a878","secondary-container":"#eae2da","on-error":"#ffffff","surface-container-lowest":"#ffffff","surface":"#faf5ee","on-secondary-fixed":"#2a2420","primary":"#c2652a","surface-container-highest":"#e6e0d6","surface-container":"#f2ece4","on-surface":"#3a302a","tertiary-container":"#d47070","tertiary-fixed-dim":"#e8a0a0","surface-container-high":"#ece6dc","primary-fixed":"#fbe8d8","on-secondary":"#ffffff","on-primary-container":"#fbe8d8","background":"#faf5ee","on-secondary-fixed-variant":"#504840","secondary-fixed":"#eae2da","surface-dim":"#dcd6cc","on-error-container":"#7a1a10","on-tertiary-container":"#3a2020","on-tertiary":"#ffffff","outline-variant":"#d8d0c8","surface-container-low":"#f6f0e8","secondary":"#78706a","inverse-primary":"#f0a878","on-surface-variant":"#605850","on-tertiary-fixed-variant":"#6e3030","outline":"#9a9088","surface-variant":"#ece6dc","on-primary-fixed":"#401a08","inverse-on-surface":"#faf5ee","on-tertiary-fixed":"#2e1515","on-primary":"#ffffff","inverse-surface":"#3a302a","on-secondary-container":"#605850"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{},"fontFamily":{"headline":["EB Garamond"],"display":["EB Garamond"],"body":["Manrope"],"label":["Manrope"]},"fontSize":{}}}};</script></head><body class="bg-surface font-body text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col pt-6 pb-8"><div class="px-6 mb-10 flex items-center gap-3"><div class="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-on-primary font-headline font-bold text-lg">S</div><span class="text-xl font-headline font-bold tracking-tight text-on-surface">Solidez MX</span></div><nav class="flex-1 px-4 space-y-1" data-active-classes="bg-primary-container text-on-primary-container font-bold"><a class="flex items-center px-4 py-3 rounded-xl text-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="bandeja-de-casos" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">inbox</span>Bandeja de Casos</a><a class="flex items-center px-4 py-3 rounded-xl text-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="arbitraje-de-reclamaciones" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">gavel</span>Arbitraje de Reclamaciones</a><a class="flex items-center px-4 py-3 rounded-xl text-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="moderacion-de-contenido" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">shield</span>Moderación de Contenido</a><a class="flex items-center px-4 py-3 rounded-xl text-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="gestion-de-cuentas" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">manage_accounts</span>Gestión de Cuentas</a><a class="flex items-center px-4 py-3 rounded-xl text-sm text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="monitoreo-stripe" href="#"><span class="material-symbols-outlined mr-3 text-[20px]">payments</span>Monitoreo Stripe</a></nav></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-8 flex items-center justify-between"><div class="relative w-96"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span><input class="w-full bg-surface-container-lowest text-on-surface placeholder:text-on-surface-variant text-sm rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Buscar casos, usuarios o transacciones..." type="text"/></div><div class="flex items-center gap-5"><button class="relative text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-surface w-full px-8"><div class="flex flex-col w-full pb-16">
+<!-- Editorial Header & Top Metrics Strip -->
+<section class="pt-8 pb-10 flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+<div class="max-w-xl">
+<div class="flex items-center gap-3 mb-2">
+<span class="text-[11px] font-label uppercase tracking-[0.2em] text-primary font-semibold">UI-ADM-05</span>
+<span class="text-outline-variant">•</span>
+<span class="text-[11px] font-label uppercase tracking-[0.18em] text-on-surface-variant">Confianza y Seguridad</span>
+</div>
+<h2 class="font-headline text-4xl lg:text-5xl font-medium tracking-tight text-on-surface leading-[1.08]">
+        Centro de Moderación
+      </h2>
+<p class="mt-3 text-sm text-on-surface-variant leading-relaxed max-w-md">
+        Supervisión curada de publicaciones, reseñas y conversaciones reportadas por la comunidad.
+      </p>
+</div>
+<!-- Asymmetric KPI & Mini Visualization Strip -->
+<div class="grid grid-cols-3 gap-4 lg:gap-6 w-full lg:w-auto">
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-[0_2px_16px_rgba(58,48,42,0.04)] flex flex-col justify-between min-w-0">
+<span class="text-[11px] uppercase tracking-wider text-on-surface-variant font-medium">Pendientes</span>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="font-headline text-3xl font-semibold text-primary" id="kpi-pending">3</span>
+<span class="text-xs text-on-surface-variant">casos</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-5 shadow-[0_2px_16px_rgba(58,48,42,0.04)] flex flex-col justify-between min-w-0">
+<span class="text-[11px] uppercase tracking-wider text-on-surface-variant font-medium">Resueltos Hoy</span>
+<div class="mt-3 flex items-baseline gap-2">
+<span class="font-headline text-3xl font-semibold text-on-surface" id="kpi-resolved">18</span>
+<span class="text-xs text-primary font-medium">+12%</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-xl p-5 flex flex-col justify-between min-w-0">
+<span class="text-[11px] uppercase tracking-wider text-on-surface-variant font-medium">Tiempo Medio</span>
+<div class="mt-2 flex items-center justify-between gap-2">
+<span class="font-headline text-2xl font-semibold text-on-surface">14m</span>
+<svg aria-hidden="true" class="w-12 h-6 text-primary" fill="none" viewbox="0 0 48 24">
+<path d="M2 20C8 18 12 8 18 11C24 14 28 5 35 7C40 8.5 43 4 46 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Workspace: Split Panel -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Cola de Elementos Reportados -->
+<div class="lg:col-span-5 flex flex-col gap-5">
+<div class="bg-surface-container-low rounded-2xl p-6">
+<div class="flex items-center justify-between mb-5">
+<h3 class="font-headline text-2xl font-medium text-on-surface">Cola de Reportes</h3>
+<span class="text-xs font-medium px-2.5 py-1 rounded-full bg-surface-container-highest text-on-surface-variant" id="queue-count">5 elementos</span>
+</div>
+<!-- Filtro por Estado -->
+<div aria-label="Filtrar por estado" class="flex flex-wrap gap-2 mb-6" role="tablist">
+<button class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium transition-all bg-primary text-on-primary shadow-sm" data-filter="todos" type="button">
+            Todos
+          </button>
+<button class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium transition-all bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-high" data-filter="pendiente" type="button">
+            Pendiente
+          </button>
+<button class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium transition-all bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-high" data-filter="oculto" type="button">
+            Oculto
+          </button>
+<button class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium transition-all bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-high" data-filter="retirado" type="button">
+            Retirado
+          </button>
+<button class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium transition-all bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-high" data-filter="desestimado" type="button">
+            Desestimado
+          </button>
+</div>
+<!-- Lista de Elementos Reportados -->
+<div class="flex flex-col gap-3" id="report-queue">
+<!-- Items rendered by JS -->
+</div>
+</div>
+</div>
+<!-- Right Column: Panel de Inspección + Bitácora -->
+<div class="lg:col-span-7 flex flex-col gap-8">
+<!-- Panel de Inspección -->
+<div class="bg-surface-container-lowest rounded-2xl p-7 lg:p-8 shadow-[0_2px_16px_rgba(58,48,42,0.04)] relative overflow-hidden" id="inspection-panel">
+<!-- Subtle warm ambient glow -->
+<div class="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+<!-- Inspection Header -->
+<div class="relative flex flex-wrap items-start justify-between gap-4 pb-6">
+<div>
+<div class="flex items-center gap-2.5 mb-1.5">
+<span class="text-xs font-mono uppercase tracking-wider text-on-surface-variant" id="insp-id">REP-8492</span>
+<span class="text-outline-variant">•</span>
+<span class="text-xs font-medium text-primary uppercase tracking-wider" id="insp-type">Publicación</span>
+</div>
+<h3 class="font-headline text-2xl lg:text-3xl font-medium text-on-surface">Inspección de Contenido</h3>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-xs text-on-surface-variant" id="insp-time">Hace 18 min</span>
+<span class="px-3 py-1 rounded-full text-xs font-semibold bg-primary-fixed text-on-primary-fixed" id="insp-status-badge">
+              Pendiente
+            </span>
+</div>
+</div>
+<!-- Motivo del Reporte -->
+<div class="bg-tertiary-fixed/50 rounded-xl p-4 mb-6 flex items-start gap-3.5">
+<span class="material-symbols-outlined text-tertiary text-[20px] mt-0.5" style="font-variation-settings: 'FILL' 1;">flag</span>
+<div class="min-w-0">
+<span class="text-[11px] font-label uppercase tracking-wider font-semibold text-on-tertiary-fixed-variant block">Motivo del Reporte</span>
+<p class="text-sm font-medium text-on-tertiary-fixed mt-0.5" id="insp-reason">
+              Contenido promocional no autorizado y enlaces externos sospechosos en descripción.
+            </p>
+<span class="text-xs text-on-tertiary-fixed-variant/80 mt-1 block" id="insp-reporter">Reportado por 3 usuarios • Prioridad Alta</span>
+</div>
+</div>
+<!-- Contenido Textual / Fotográfico Reportado -->
+<div class="bg-surface-container-low rounded-xl p-6 mb-6">
+<span class="text-[11px] font-label uppercase tracking-wider text-on-surface-variant font-semibold block mb-3">Contenido Reportado</span>
+<p class="text-sm lg:text-base text-on-surface leading-relaxed font-body mb-4" id="insp-content-text">
+            "Aprovecha nuestra liquidación exclusiva fuera de plataforma. Escríbeme directo al enlace de mi perfil para obtener 40% de descuento sin comisiones de servicio."
+          </p>
+<div class="rounded-xl overflow-hidden bg-surface-container h-56 w-full" id="insp-image-wrapper">
+<img alt="Contenido fotográfico reportado" class="w-full h-full object-cover" data-alt="Warm-toned editorial photograph of handcrafted ceramic vases and woven linen textiles arranged on a sunlit terracotta table, soft afternoon shadows, warm minimalist aesthetic matching burnt sienna and linen tones." id="insp-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAK6oo1T3nlbYeeFJXV6kNFmqITxG4MeD-dwn3LbJOX_MzAC0Em4poE3aWoicVswGTk2kIB34Q-oGGOXPtjjmdybCqWAA9LgitGUOgSLk0ztOVe18YiMmMsRJJjzXsunLKrR-u-CkM5vWjNq4dH6NG_yPqWNT_3vqFbKV4PKmzEQU5pw6-zzC4D_IlqIiFO2kC4VCvOQF3oHsw7_gI2zGET2uVnpQb46MPTXsnu_Y"/>
+</div>
+</div>
+<!-- Usuario Infractor -->
+<div class="bg-surface-container-low/60 rounded-xl p-5 mb-7 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="flex items-center gap-4 min-w-0">
+<img alt="Avatar del usuario infractor" class="w-12 h-12 rounded-full object-cover shrink-0" data-alt="Warm natural light portrait of a young Mexican artisan in a linen shirt against a soft plaster wall, warm earthy tones, editorial photography." id="insp-user-avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbJOd5hNVSkjbBDUJWpgUuFoD20n-mYa7G6h2yTnOhPKhhGHFNWFV5fpQ0WX12FCM7TKUSlBBODG8ACc4w20R_AfBp6iYDTuYIyqYY256aubKtijSA7f24Lo6DJVtfCNbufv53TAAygyCoRufyk7FMAkM5PSCi-O1-BXfUBrawbuimxFh2sMQEi7kaaEtMraD-a0GGsRF17vMU3EleMgdi1_jDfibGddn17OGCP_0"/>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<h4 class="text-sm font-semibold text-on-surface truncate" id="insp-user-name">Mateo Villalobos</h4>
+<span class="text-xs text-on-surface-variant truncate" id="insp-user-handle">@mvillalobos_arte</span>
+</div>
+<p class="text-xs text-on-surface-variant mt-0.5" id="insp-user-meta">Miembro desde Mar 2023 • 2 advertencias previas</p>
+</div>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="px-2.5 py-1 rounded-lg bg-surface-container-highest text-on-surface-variant text-xs font-medium">
+              Historial: <strong class="text-tertiary" id="insp-user-strikes">2 faltas</strong>
+</span>
+</div>
+</div>
+<!-- Botones de Acción -->
+<div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+<div class="flex flex-wrap items-center gap-3">
+<button class="action-btn px-4 py-2.5 rounded-lg bg-secondary-container text-on-secondary-container hover:bg-surface-container-highest text-xs font-semibold transition-all flex items-center gap-2" data-action="oculto" type="button">
+<span class="material-symbols-outlined text-[18px]">visibility_off</span>
+              Ocultar temporalmente
+            </button>
+<button class="action-btn px-4 py-2.5 rounded-lg bg-tertiary text-on-tertiary hover:opacity-90 text-xs font-semibold transition-all flex items-center gap-2 shadow-sm" data-action="retirado" type="button">
+<span class="material-symbols-outlined text-[18px]">delete_forever</span>
+              Retirar definitivamente
+            </button>
+</div>
+<button class="action-btn px-4 py-2.5 rounded-lg bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface text-xs font-semibold transition-all flex items-center gap-2" data-action="desestimado" type="button">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+            Desestimar reporte
+          </button>
+</div>
+<!-- Toast Feedback -->
+<div class="hidden mt-4 px-4 py-2.5 rounded-lg bg-primary-fixed text-on-primary-fixed text-xs font-medium flex items-center gap-2" id="action-toast">
+<span class="material-symbols-outlined text-[16px]">info</span>
+<span id="action-toast-text">Decisión registrada en la bitácora.</span>
+</div>
+</div>
+<!-- Bitácora de Decisiones Administrativas -->
+<div class="bg-surface-container-low rounded-2xl p-7">
+<div class="flex items-center justify-between mb-5">
+<div>
+<span class="text-[11px] font-label uppercase tracking-[0.16em] text-on-surface-variant font-semibold block">Registro de Auditoría</span>
+<h3 class="font-headline text-2xl font-medium text-on-surface mt-0.5">Bitácora de Decisiones Administrativas</h3>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[22px]">history</span>
+</div>
+<div class="flex flex-col gap-3" id="audit-log">
+<div class="bg-surface-container-lowest rounded-xl p-4 flex items-start justify-between gap-4">
+<div class="flex items-start gap-3 min-w-0">
+<span class="w-2 h-2 rounded-full bg-tertiary mt-1.5 shrink-0"></span>
+<div class="min-w-0">
+<p class="text-sm text-on-surface font-medium">
+<span class="font-semibold">Retirar definitivamente</span> — <span class="text-on-surface-variant">REP-8489 (Reseña)</span>
+</p>
+<p class="text-xs text-on-surface-variant mt-0.5">Moderador: Elena Rojas • Motivo: Lenguaje ofensivo verificado</p>
+</div>
+</div>
+<span class="text-xs text-on-surface-variant shrink-0">Hoy, 11:42</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-4 flex items-start justify-between gap-4">
+<div class="flex items-start gap-3 min-w-0">
+<span class="w-2 h-2 rounded-full bg-primary mt-1.5 shrink-0"></span>
+<div class="min-w-0">
+<p class="text-sm text-on-surface font-medium">
+<span class="font-semibold">Ocultar temporalmente</span> — <span class="text-on-surface-variant">REP-8485 (Publicación)</span>
+</p>
+<p class="text-xs text-on-surface-variant mt-0.5">Moderador: Carlos Méndez • En espera de verificación de derechos</p>
+</div>
+</div>
+<span class="text-xs text-on-surface-variant shrink-0">Hoy, 10:15</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl p-4 flex items-start justify-between gap-4">
+<div class="flex items-start gap-3 min-w-0">
+<span class="w-2 h-2 rounded-full bg-secondary mt-1.5 shrink-0"></span>
+<div class="min-w-0">
+<p class="text-sm text-on-surface font-medium">
+<span class="font-semibold">Desestimar reporte</span> — <span class="text-on-surface-variant">REP-8481 (Chat)</span>
+</p>
+<p class="text-xs text-on-surface-variant mt-0.5">Moderador: Elena Rojas • Sin infracción a los términos de uso</p>
+</div>
+</div>
+<span class="text-xs text-on-surface-variant shrink-0">Hoy, 09:28</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  (function() {
+    const reports = [
+      {
+        id: 'REP-8492',
+        type: 'Publicación',
+        status: 'pendiente',
+        statusLabel: 'Pendiente',
+        time: 'Hace 18 min',
+        reason: 'Contenido promocional no autorizado y enlaces externos sospechosos en descripción.',
+        reporter: 'Reportado por 3 usuarios • Prioridad Alta',
+        text: '"Aprovecha nuestra liquidación exclusiva fuera de plataforma. Escríbeme directo al enlace de mi perfil para obtener 40% de descuento sin comisiones de servicio."',
+        hasImage: true,
+        user: {
+          name: 'Mateo Villalobos',
+          handle: '@mvillalobos_arte',
+          meta: 'Miembro desde Mar 2023 • 2 advertencias previas',
+          strikes: '2 faltas'
+        }
+      },
+      {
+        id: 'REP-8491',
+        type: 'Reseña',
+        status: 'pendiente',
+        statusLabel: 'Pendiente',
+        time: 'Hace 42 min',
+        reason: 'Lenguaje difamatorio y acusaciones sin sustento hacia el proveedor.',
+        reporter: 'Reportado por 1 usuario • Prioridad Media',
+        text: '"Pésimo servicio, son unos estafadores profesionales. No compren nada aquí si no quieren perder su dinero, el dueño ni siquiera responde."',
+        hasImage: false,
+        user: {
+          name: 'Sofía Castellanos',
+          handle: '@sofi_cast',
+          meta: 'Miembro desde Ene 2024 • Sin advertencias previas',
+          strikes: '0 faltas'
+        }
+      },
+      {
+        id: 'REP-8490',
+        type: 'Chat',
+        status: 'pendiente',
+        statusLabel: 'Pendiente',
+        time: 'Hace 1 h',
+        reason: 'Solicitud de pago por transferencia directa evadiendo la pasarela segura.',
+        reporter: 'Detección automática + 1 reporte • Prioridad Alta',
+        text: '"Hola, para apartar la pieza te paso mi CLABE interbancaria por aquí y así nos ahorramos el cargo de la plataforma, ¿te parece?"',
+        hasImage: false,
+        user: {
+          name: 'Diego Santamaría',
+          handle: '@dsantamaria',
+          meta: 'Miembro desde Nov 2022 • 1 advertencia previa',
+          strikes: '1 falta'
+        }
+      },
+      {
+        id: 'REP-8485',
+        type: 'Publicación',
+        status: 'oculto',
+        statusLabel: 'Oculto',
+        time: 'Hoy, 10:15',
+        reason: 'Posible infracción de derechos de autor en fotografía de catálogo.',
+        reporter: 'Reportado por 2 usuarios • Prioridad Media',
+        text: '"Nueva colección otoño-invierno disponible bajo pedido. Envíos a toda la República Mexicana."',
+        hasImage: true,
+        user: {
+          name: 'Taller Tierra Viva',
+          handle: '@tierraviva_mx',
+          meta: 'Miembro desde Ago 2021 • Sin advertencias previas',
+          strikes: '0 faltas'
+        }
+      },
+      {
+        id: 'REP-8481',
+        type: 'Chat',
+        status: 'desestimado',
+        statusLabel: 'Desestimado',
+        time: 'Hoy, 09:28',
+        reason: 'Reporte por presunto spam en hilo de negociación.',
+        reporter: 'Reportado por 1 usuario • Prioridad Baja',
+        text: '"Te confirmo que el envío salió hoy por la mañana con guía de rastreo actualizada."',
+        hasImage: false,
+        user: {
+          name: 'Lucía Ferreyra',
+          handle: '@lferreyra',
+          meta: 'Miembro desde May 2023 • Sin advertencias previas',
+          strikes: '0 faltas'
+        }
+      }
+    ];
+
+    let currentFilter = 'todos';
+    let selectedId = 'REP-8492';
+
+    const queueEl = document.getElementById('report-queue');
+    const queueCountEl = document.getElementById('queue-count');
+    const kpiPendingEl = document.getElementById('kpi-pending');
+    const kpiResolvedEl = document.getElementById('kpi-resolved');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const actionBtns = document.querySelectorAll('.action-btn');
+    const auditLogEl = document.getElementById('audit-log');
+    const toastEl = document.getElementById('action-toast');
+    const toastTextEl = document.getElementById('action-toast-text');
+
+    function getStatusBadgeClasses(status) {
+      switch(status) {
+        case 'pendiente': return 'bg-primary-fixed text-on-primary-fixed';
+        case 'oculto': return 'bg-secondary-container text-on-secondary-container';
+        case 'retirado': return 'bg-tertiary-fixed text-on-tertiary-fixed';
+        case 'desestimado': return 'bg-surface-container-highest text-on-surface-variant';
+        default: return 'bg-surface-container-highest text-on-surface-variant';
+      }
+    }
+
+    function renderQueue() {
+      const filtered = currentFilter === 'todos' 
+        ? reports 
+        : reports.filter(r => r.status === currentFilter);
+
+      queueCountEl.textContent = `${filtered.length} ${filtered.length === 1 ? 'elemento' : 'elementos'}`;
+      kpiPendingEl.textContent = reports.filter(r => r.status === 'pendiente').length;
+
+      if (filtered.length === 0) {
+        queueEl.innerHTML = `<div class="bg-surface-container-lowest rounded-xl p-8 text-center text-sm text-on-surface-variant">No hay reportes en estado "${currentFilter}".</div>`;
+        return;
+      }
+
+      queueEl.innerHTML = filtered.map(item => {
+        const isSelected = item.id === selectedId;
+        const cardBg = isSelected 
+          ? 'bg-surface-container-lowest shadow-[0_4px_20px_rgba(194,101,42,0.12)]' 
+          : 'bg-surface-container-lowest/70 hover:bg-surface-container-lowest';
+        const indicator = isSelected ? '<span class="w-1.5 h-8 rounded-full bg-primary shrink-0"></span>' : '';
+
+        return `
+          <button type="button" data-id="${item.id}" class="queue-item w-full text-left rounded-xl p-4 transition-all flex items-start gap-3 ${cardBg}">
+            ${indicator}
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="text-[11px] font-mono text-on-surface-variant">${item.id} &bull; ${item.type}</span>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-semibold ${getStatusBadgeClasses(item.status)}">${item.statusLabel}</span>
+              </div>
+              <p class="text-sm font-medium text-on-surface truncate">${item.user.name}</p>
+              <p class="text-xs text-on-surface-variant line-clamp-2 mt-0.5">${item.reason}</p>
+            </div>
+          </button>
+        `;
+      }).join('');
+
+      document.querySelectorAll('.queue-item').forEach(btn => {
+        btn.addEventListener('click', () => {
+          selectedId = btn.getAttribute('data-id');
+          renderQueue();
+          renderInspection();
+        });
+      });
+    }
+
+    function renderInspection() {
+      const item = reports.find(r => r.id === selectedId) || reports[0];
+      if (!item) return;
+
+      document.getElementById('insp-id').textContent = item.id;
+      document.getElementById('insp-type').textContent = item.type;
+      document.getElementById('insp-time').textContent = item.time;
+      
+      const badge = document.getElementById('insp-status-badge');
+      badge.textContent = item.statusLabel;
+      badge.className = `px-3 py-1 rounded-full text-xs font-semibold ${getStatusBadgeClasses(item.status)}`;
+
+      document.getElementById('insp-reason').textContent = item.reason;
+      document.getElementById('insp-reporter').textContent = item.reporter;
+      document.getElementById('insp-content-text').textContent = item.text;
+
+      const imgWrapper = document.getElementById('insp-image-wrapper');
+      if (item.hasImage) {
+        imgWrapper.classList.remove('hidden');
+      } else {
+        imgWrapper.classList.add('hidden');
+      }
+
+      document.getElementById('insp-user-name').textContent = item.user.name;
+      document.getElementById('insp-user-handle').textContent = item.user.handle;
+      document.getElementById('insp-user-meta').textContent = item.user.meta;
+      document.getElementById('insp-user-strikes').textContent = item.user.strikes;
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentFilter = btn.getAttribute('data-filter');
+        filterBtns.forEach(b => {
+          b.className = 'filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium transition-all bg-surface-container-lowest text-on-surface-variant hover:bg-surface-container-high';
+        });
+        btn.className = 'filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium transition-all bg-primary text-on-primary shadow-sm';
+        renderQueue();
+      });
+    });
+
+    actionBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const action = btn.getAttribute('data-action');
+        const item = reports.find(r => r.id === selectedId);
+        if (!item) return;
+
+        const labels = {
+          oculto: { status: 'Oculto', actionText: 'Ocultar temporalmente', dot: 'bg-primary' },
+          retirado: { status: 'Retirado', actionText: 'Retirar definitivamente', dot: 'bg-tertiary' },
+          desestimado: { status: 'Desestimado', actionText: 'Desestimar reporte', dot: 'bg-secondary' }
+        };
+
+        const wasPending = item.status === 'pendiente';
+        item.status = action;
+        item.statusLabel = labels[action].status;
+
+        if (wasPending) {
+          kpiResolvedEl.textContent = parseInt(kpiResolvedEl.textContent, 10) + 1;
+        }
+
+        const now = new Date();
+        const timeStr = `Hoy, ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+
+        const logEntry = document.createElement('div');
+        logEntry.className = 'bg-surface-container-lowest rounded-xl p-4 flex items-start justify-between gap-4';
+        logEntry.innerHTML = `
+          <div class="flex items-start gap-3 min-w-0">
+            <span class="w-2 h-2 rounded-full ${labels[action].dot} mt-1.5 shrink-0"></span>
+            <div class="min-w-0">
+              <p class="text-sm text-on-surface font-medium">
+                <span class="font-semibold">${labels[action].actionText}</span> &mdash; <span class="text-on-surface-variant">${item.id} (${item.type})</span>
+              </p>
+              <p class="text-xs text-on-surface-variant mt-0.5">Moderador: Administrador Actual &bull; Decisi&oacute;n aplicada al usuario ${item.user.handle}</p>
+            </div>
+          </div>
+          <span class="text-xs text-on-surface-variant shrink-0">${timeStr}</span>
+        `;
+        auditLogEl.prepend(logEntry);
+
+        toastTextEl.textContent = `Acción "${labels[action].actionText}" registrada para ${item.id}.`;
+        toastEl.classList.remove('hidden');
+        setTimeout(() => toastEl.classList.add('hidden'), 3500);
+
+        renderQueue();
+        renderInspection();
+      });
+    });
+
+    renderQueue();
+    renderInspection();
+  })();
+</script></main></div></body></html>

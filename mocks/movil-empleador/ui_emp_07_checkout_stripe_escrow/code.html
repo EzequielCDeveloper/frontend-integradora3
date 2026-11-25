@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "tertiary": "#8c3c3c",
+          "secondary-fixed-dim": "#cec6be",
+          "on-background": "#3a302a",
+          "surface-bright": "#faf5ee",
+          "error-container": "#fce4e0",
+          "surface-tint": "#c2652a",
+          "on-primary-fixed-variant": "#8a4518",
+          "tertiary-fixed": "#fce0e0",
+          "error": "#c0392b",
+          "primary-container": "#e08850",
+          "primary-fixed-dim": "#f0a878",
+          "secondary-container": "#eae2da",
+          "on-error": "#ffffff",
+          "surface-container-lowest": "#ffffff",
+          "surface": "#faf5ee",
+          "on-secondary-fixed": "#2a2420",
+          "primary": "#c2652a",
+          "surface-container-highest": "#e6e0d6",
+          "surface-container": "#f2ece4",
+          "on-surface": "#3a302a",
+          "tertiary-container": "#d47070",
+          "tertiary-fixed-dim": "#e8a0a0",
+          "surface-container-high": "#ece6dc",
+          "primary-fixed": "#fbe8d8",
+          "on-secondary": "#ffffff",
+          "on-primary-container": "#fbe8d8",
+          "background": "#faf5ee",
+          "on-secondary-fixed-variant": "#504840",
+          "secondary-fixed": "#eae2da",
+          "surface-dim": "#dcd6cc",
+          "on-error-container": "#7a1a10",
+          "on-tertiary-container": "#3a2020",
+          "on-tertiary": "#ffffff",
+          "outline-variant": "#d8d0c8",
+          "surface-container-low": "#f6f0e8",
+          "secondary": "#78706a",
+          "inverse-primary": "#f0a878",
+          "on-surface-variant": "#605850",
+          "on-tertiary-fixed-variant": "#6e3030",
+          "outline": "#9a9088",
+          "surface-variant": "#ece6dc",
+          "on-primary-fixed": "#401a08",
+          "inverse-on-surface": "#faf5ee",
+          "on-tertiary-fixed": "#2e1515",
+          "on-primary": "#ffffff",
+          "inverse-surface": "#3a302a",
+          "on-secondary-container": "#605850"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-sm": "0.5rem",
+          "gutter": "0.75rem",
+          "space-lg": "1.5rem",
+          "space-md": "1rem",
+          "space-xs": "0.25rem",
+          "space-xl": "2rem",
+          "margin": "1rem"
+        },
+        "fontFamily": {
+          "title-md": ["Manrope", "sans-serif"],
+          "body-lg": ["Manrope", "sans-serif"],
+          "headline-sm": ["Manrope", "sans-serif"],
+          "headline-lg": ["Manrope", "sans-serif"],
+          "display-lg-mobile": ["Manrope", "sans-serif"],
+          "label-sm": ["Manrope", "sans-serif"],
+          "headline-md": ["Manrope", "sans-serif"],
+          "display-lg": ["Manrope", "sans-serif"],
+          "body-md": ["Manrope", "sans-serif"],
+          "title-lg": ["Manrope", "sans-serif"],
+          "label-lg": ["Manrope", "sans-serif"],
+          "label-md": ["Manrope", "sans-serif"]
+        },
+        "fontSize": {
+          "title-md": ["14px", {"lineHeight": "20px", "fontWeight": "600"}],
+          "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+          "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+          "headline-lg": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700"}],
+          "display-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+          "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "display-lg": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+          "title-lg": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+          "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+          "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500"}]
+        }
+      }
+    }
+  }
+</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-surface text-on-surface font-body-md text-body-md flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 bg-surface/85 backdrop-blur-xl pt-safe border-b border-outline-variant/60"><div class="h-16 px-margin flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm min-w-0"><button aria-label="Regresar" class="w-11 h-11 flex items-center justify-center text-on-surface hover:text-primary transition-colors shrink-0" onclick="history.back()"><span class="material-symbols-outlined">arrow_back_ios_new</span></button><img alt="Logo Solidez MX" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvt55QT42nm89kk4_9eKrvpX9FvvpHogy0qjA2Xpkph-TakD-8bZnPOvAzk0A0zaqXWpuACAX_swnhrWplR3TbF76w3qXcgRM2HqCNnvcfZ3yrP1vLNWc0RpK4xBOOah5cpHTbBXdkwXRXRKVXCz5r0HObuSbMj4qzKVR2xqO--1wbZZJXLB9bf47_PdgLHW3xGC1oSoZ029UoSTKNbnbn9Lae29SMzs-tpSEvwro"/><h1 class="font-headline-sm text-headline-sm text-on-surface truncate">Detalle De Publicación</h1></div><div class="w-11 h-11 flex items-center justify-center shrink-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkmLQ31ARZWh6eEX9IyFNAR-II6yAE0JiN-A6TiJPRLwkg5g6yTAq4gfFg4ey_8OgIBExA-pvA4Uh_VhFPll_arTDETqTX4OjrcFfuBbjkWTbtpnvx4LCsPjtGGVgzF_L1acTWFXiGiyNc0PtzNb4vhmxgtXVENkWNUI9vVFhAhokbeGmQSeF49UYq7nRZg1Dcw5cXxonMK-nLzXi9yEsMYVVS4DAYFgw6SJU809k"/></div></div></header><main class="flex flex-col relative w-full px-margin pt-16 pb-safe bg-surface flex-1"><div class="flex flex-col w-full gap-space-md pb-space-lg pt-space-md">
+<!-- Status Banner with Live Countdown -->
+<div class="bg-secondary-container text-on-secondary-container rounded-lg p-space-md border border-outline-variant/60 flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-space-xs">
+<p class="font-title-md text-title-md text-on-secondary-fixed">Trabajador en el lugar — Llegada registrada</p>
+</div>
+<div class="mt-space-xs flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-on-secondary-fixed-variant">timer</span>
+<p class="font-label-md text-label-md text-on-secondary-fixed-variant">
+<span class="font-title-md text-title-md text-on-secondary-fixed tabular-nums" id="escrow-timer">24:15</span> min restantes para completar el pago
+        </p>
+</div>
+</div>
+</div>
+<!-- Worker & Job Context Mini-Card -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md border border-outline-variant/60 flex items-center gap-space-sm">
+<img class="w-12 h-12 rounded-full object-cover shrink-0 ring-1 ring-outline-variant" data-alt="Portrait of a friendly Mexican handyman and technician in his early 30s wearing a clean navy blue polo shirt, smiling warmly in natural daylight, soft-focus residential background, trustworthy and professional fintech aesthetic with deep indigo accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCyIjM0zuncFiE7SiTdm0XoQL9HmbndZ5m4xQCT3Z4BX6NNx5GtnhNnh3kh5ABm5Pnaa5pxtIiry531WCGDENUzOYkGplqVyFfv8QucbTp8_AV3-CGVX_iNoBTX8brWg7LAlai1BWeBQnBchbza3297NQ67ojorhVt_xUn4D7V8Kwq_BJyJUTa5qXdABrVDZKlpcCFctZa2T-NFJj_Duz7WwMX3b3HhXgpFyfnrWQ"/>
+<div class="flex-1 min-w-0">
+<p class="font-title-md text-title-md text-on-surface truncate">Instalación de luminarias LED</p>
+<p class="font-body-md text-body-md text-on-surface-variant truncate">Carlos Mendoza • 4.9 ★ (48 trabajos)</p>
+</div>
+<span class="px-space-sm py-space-xs rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm shrink-0">En sitio</span>
+</div>
+<!-- Financial Breakdown Card -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md border border-outline-variant/60 flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-title-lg text-title-lg text-on-surface">Desglose financiero</h2>
+<span class="font-label-sm text-label-sm text-primary bg-primary-fixed px-space-sm py-space-xs rounded-lg">MXN</span>
+</div>
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-md text-on-surface-variant">Importe del trabajo</span>
+<span class="font-title-md text-title-md text-on-surface tabular-nums">$850.00 MXN</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-md text-body-md text-on-surface-variant">Comisión de plataforma (10%)</span>
+<span class="font-title-md text-title-md text-on-surface tabular-nums">$85.00 MXN</span>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-md mt-space-xs flex items-center justify-between border border-outline-variant/40">
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg text-on-surface">Total a cobrar</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">IVA incluido</span>
+</div>
+<span class="font-display-lg-mobile text-display-lg-mobile text-primary tabular-nums">$935.00 MXN</span>
+</div>
+</div>
+<!-- Payment Method Section -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md border border-outline-variant/60 flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<h2 class="font-title-lg text-title-lg text-on-surface">Método de pago</h2>
+<button class="font-label-lg text-label-lg text-primary hover:text-primary-container transition-colors" id="change-card-btn" type="button">Cambiar</button>
+</div>
+<div class="bg-surface-container-low rounded-lg p-space-md flex items-center justify-between gap-space-sm border border-outline-variant/40">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-12 h-8 rounded-lg bg-primary flex items-center justify-center shrink-0">
+<span class="font-label-sm text-label-sm text-on-primary tracking-wider">VISA</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-on-surface truncate">Visa terminada en 4242</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Expira 08/28 • Predeterminada</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<!-- Escrow Protection Banner -->
+<div class="bg-primary-fixed/70 rounded-lg p-space-md border border-primary-fixed-dim/50 flex items-start gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center shrink-0 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+<div class="flex-1 min-w-0">
+<p class="font-title-md text-title-md text-on-primary-fixed">Pago protegido en custodia (Escrow)</p>
+<p class="font-body-md text-body-md text-on-primary-fixed-variant mt-space-xs">
+        Tu dinero permanece seguro en custodia de Stripe Connect. Los fondos se liberan al trabajador únicamente cuando confirmes que el trabajo ha finalizado.
+      </p>
+</div>
+</div>
+<!-- Primary Action Button -->
+<div class="pt-space-xs flex flex-col gap-space-sm">
+<button class="w-full h-[52px] rounded-lg bg-primary text-on-primary font-title-lg text-title-lg shadow-sm hover:bg-primary-container active:scale-[0.99] transition-all flex items-center justify-center gap-space-sm" id="pay-stripe-btn" type="button">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span id="pay-btn-text">Pagar $935.00 MXN con Stripe</span>
+</button>
+<div class="flex items-center justify-center gap-space-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span class="font-label-sm text-label-sm">Procesado de forma segura por Stripe Connect</span>
+</div>
+</div>
+</div>
+<script>
+  (function () {
+    const timerEl = document.getElementById('escrow-timer');
+    let totalSeconds = 24 * 60 + 15;
+
+    setInterval(function () {
+      if (totalSeconds <= 0) return;
+      totalSeconds--;
+      const mins = Math.floor(totalSeconds / 60);
+      const secs = totalSeconds % 60;
+      timerEl.textContent = String(mins).padStart(2, '0') + ':' + String(secs).padStart(2, '0');
+    }, 1000);
+
+    const payBtn = document.getElementById('pay-stripe-btn');
+    const payBtnText = document.getElementById('pay-btn-text');
+    let processing = false;
+
+    payBtn.addEventListener('click', function () {
+      if (processing) return;
+      processing = true;
+      payBtnText.textContent = 'Procesando pago seguro...';
+      payBtn.classList.add('opacity-90');
+
+      setTimeout(function () {
+        payBtn.classList.remove('bg-primary', 'hover:bg-primary-container', 'opacity-90');
+        payBtn.classList.add('bg-secondary');
+        payBtnText.textContent = 'Pago en custodia confirmado';
+      }, 1200);
+    });
+  })();
+</script></main></body></html>

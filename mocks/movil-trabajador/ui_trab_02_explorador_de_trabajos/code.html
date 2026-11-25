@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "tertiary": "#8c3c3c", "secondary-fixed-dim": "#cec6be", "on-background": "#3a302a", "surface-bright": "#faf5ee", "error-container": "#fce4e0", "surface-tint": "#c2652a", "on-primary-fixed-variant": "#8a4518", "tertiary-fixed": "#fce0e0", "error": "#c0392b", "primary-container": "#e08850", "primary-fixed-dim": "#f0a878", "secondary-container": "#eae2da", "on-error": "#ffffff", "surface-container-lowest": "#ffffff", "surface": "#faf5ee", "on-secondary-fixed": "#2a2420", "primary": "#c2652a", "surface-container-highest": "#e6e0d6", "surface-container": "#f2ece4", "on-surface": "#3a302a", "tertiary-container": "#d47070", "tertiary-fixed-dim": "#e8a0a0", "surface-container-high": "#ece6dc", "primary-fixed": "#fbe8d8", "on-secondary": "#ffffff", "on-primary-container": "#fbe8d8", "background": "#faf5ee", "on-secondary-fixed-variant": "#504840", "secondary-fixed": "#eae2da", "surface-dim": "#dcd6cc", "on-error-container": "#7a1a10", "on-tertiary-container": "#3a2020", "on-tertiary": "#ffffff", "outline-variant": "#d8d0c8", "surface-container-low": "#f6f0e8", "secondary": "#78706a", "inverse-primary": "#f0a878", "on-surface-variant": "#605850", "on-tertiary-fixed-variant": "#6e3030", "outline": "#9a9088", "surface-variant": "#ece6dc", "on-primary-fixed": "#401a08", "inverse-on-surface": "#faf5ee", "on-tertiary-fixed": "#2e1515", "on-primary": "#ffffff", "inverse-surface": "#3a302a", "on-secondary-container": "#605850" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.5rem", "full": "9999px" }, spacing: { "space-sm": "0.5rem", "gutter": "0.75rem", "space-xs": "0.25rem", "margin": "1rem", "space-xl": "2rem", "space-lg": "1.5rem", "space-md": "1rem" }, fontFamily: { "headline": ["EB Garamond"], "display": ["EB Garamond"], "body": ["Manrope"], "label": ["Manrope"], "label-lg": ["Manrope"], "headline-sm": ["Manrope"], "title-lg": ["Manrope"], "label-sm": ["Manrope"], "display-lg-mobile": ["Manrope"], "label-md": ["Manrope"], "headline-md": ["Manrope"], "body-md": ["Manrope"], "body-lg": ["Manrope"], "display-lg": ["Manrope"], "title-md": ["Manrope"], "headline-lg": ["Manrope"] }, fontSize: { "label-lg": ["14px", { "lineHeight": "20px", "fontWeight": "500" }], "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }], "title-lg": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "600" }], "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "500" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "display-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "title-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/90 backdrop-blur-xl border-b border-outline-variant/40"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[20px]">shield</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface leading-tight tracking-tight">Solidez</span><span class="font-label-sm text-label-sm text-on-surface-variant leading-none">Trabajador</span></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-label-sm text-label-sm">Disponible</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface min-h-screen"><div class="flex flex-col w-full pb-8">
+<!-- Ubicación de Referencia & Control de Radio de Cobertura -->
+<section class="px-margin pt-space-sm pb-space-sm bg-surface-container-low border-b border-outline-variant/40">
+<div class="flex items-center justify-between gap-space-sm">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center shrink-0 mt-0.5 text-primary">
+<span class="material-symbols-outlined text-[18px]">near_me</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-label-md text-label-md text-on-surface-variant">Ubicación de referencia:</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold truncate" id="current-location-text">Narvarte Poniente</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span>Radio:</span>
+<span class="text-primary font-semibold" id="current-radius-label">10 km</span>
+<span class="mx-1">•</span>
+<span class="flex items-center gap-0.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px] text-primary">history</span>
+<span class="font-label-sm text-label-sm">1/3 cambios usados hoy (24h)</span>
+</span>
+</div>
+</div>
+</div>
+<button class="shrink-0 h-9 px-3 rounded-lg bg-surface-container-lowest text-primary hover:bg-surface-container-high transition-colors border border-outline-variant/60 flex items-center gap-1" id="toggle-radius-modal" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span class="font-label-md text-label-md font-semibold">Ajustar</span>
+</button>
+</div>
+<!-- Selector desplegable de radio rápido (oculto por defecto) -->
+<div class="hidden mt-space-sm pt-space-sm bg-surface-container-lowest rounded-lg p-3 border border-outline-variant/60 shadow-sm" id="radius-drawer">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Ajustar radio Haversine</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Ventana segura</span>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<button class="radius-opt py-1.5 px-2 rounded-lg text-center font-label-md text-label-md bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary transition-all" data-km="5" type="button">5 km</button>
+<button class="radius-opt py-1.5 px-2 rounded-lg text-center font-label-md text-label-md bg-primary text-on-primary font-semibold shadow-sm transition-all" data-km="10" type="button">10 km</button>
+<button class="radius-opt py-1.5 px-2 rounded-lg text-center font-label-md text-label-md bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary transition-all" data-km="25" type="button">25 km</button>
+<button class="radius-opt py-1.5 px-2 rounded-lg text-center font-label-md text-label-md bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary transition-all" data-km="50" type="button">50 km</button>
+</div>
+<p class="mt-2 text-on-surface-variant font-label-sm text-label-sm text-center">Protegemos tu zona: las direcciones precisas se liberan solo tras postulación aceptada.</p>
+</div>
+</section>
+<!-- Barra de Búsqueda y Filtros de Categorías -->
+<section class="px-margin pt-space-md flex flex-col gap-space-sm">
+<!-- Input de Búsqueda -->
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="w-full h-12 pl-10 pr-10 rounded-lg bg-surface-container-lowest text-on-surface placeholder:text-outline text-body-md font-body-md border border-outline-variant/60 focus:outline-none focus:ring-2 focus:ring-primary" placeholder="Buscar oficio, colonia o palabra clave..." type="text"/>
+<button class="absolute inset-y-0 right-0 pr-3.5 flex items-center text-outline hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+</button>
+</div>
+<!-- Pills Horizontales de Categorías -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 -mx-margin px-margin">
+<button class="cat-pill shrink-0 px-4 py-2 rounded-full font-label-md text-label-md bg-primary text-on-primary shadow-sm flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">widgets</span>
+<span>Todos</span>
+</button>
+<button class="cat-pill shrink-0 px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors border border-outline-variant/50 flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">cleaning_services</span>
+<span>Limpieza</span>
+</button>
+<button class="cat-pill shrink-0 px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors border border-outline-variant/50 flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">format_paint</span>
+<span>Pintura</span>
+</button>
+<button class="cat-pill shrink-0 px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors border border-outline-variant/50 flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">yard</span>
+<span>Jardinería</span>
+</button>
+<button class="cat-pill shrink-0 px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors border border-outline-variant/50 flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">local_shipping</span>
+<span>Mudanzas</span>
+</button>
+<button class="cat-pill shrink-0 px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors border border-outline-variant/50 flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">festival</span>
+<span>Eventos</span>
+</button>
+<button class="cat-pill shrink-0 px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors border border-outline-variant/50 flex items-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">more_horiz</span>
+<span>Otros</span>
+</button>
+</div>
+<!-- Filtro Rápido de Fecha -->
+<div class="flex items-center justify-between bg-surface-container-high p-1 rounded-lg mt-1">
+<button class="date-filter flex-1 py-1.5 rounded-lg text-center font-label-md text-label-md bg-surface-container-lowest text-primary font-semibold shadow-sm transition-all" type="button">Hoy</button>
+<button class="date-filter flex-1 py-1.5 rounded-lg text-center font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" type="button">Mañana</button>
+<button class="date-filter flex-1 py-1.5 rounded-lg text-center font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" type="button">Esta semana</button>
+</div>
+</section>
+<!-- Banner Informativo de Pagos Seguros en Custodia -->
+<section class="px-margin mt-space-md">
+<div class="bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-lg p-3.5 shadow-sm flex items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px] text-on-primary">verified_user</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md font-semibold leading-tight">Garantía Escrow Solidez</span>
+<span class="font-label-sm text-label-sm text-on-primary/90">El dinero está retenido antes de que comiences. Pago 100% seguro al concluir.</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[20px] text-on-primary/80 shrink-0">info</span>
+</div>
+</section>
+<!-- Listado: Trabajos Dentro de Radio -->
+<section class="px-margin mt-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between mb-0.5">
+<div class="flex items-center gap-1.5">
+<span class="font-headline-sm text-headline-sm text-on-surface">Trabajos disponibles</span>
+<span class="w-5 h-5 rounded-full bg-primary-fixed text-primary font-label-sm text-label-sm flex items-center justify-center font-semibold">3</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Orden: Más cercanos</span>
+</div>
+<!-- TARJETA 1 -->
+<article class="bg-surface-container-lowest rounded-lg p-4 border border-outline-variant/50 shadow-sm hover:shadow-md transition-all flex flex-col gap-3 relative overflow-hidden group">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">lock</span>
+              Pago en custodia garantizado
+            </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight truncate">Limpieza profunda de oficina</h2>
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-outline">location_on</span>
+            Col. Narvarte Poniente
+          </span>
+</div>
+<div class="flex flex-col items-end shrink-0 bg-surface-container-low px-2.5 py-1.5 rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant leading-none">Compensación</span>
+<span class="font-headline-md text-headline-md text-primary font-bold mt-0.5">$850.00 <span class="font-label-sm text-label-sm font-normal text-on-surface-variant">MXN</span></span>
+</div>
+</div>
+<!-- Resumen de Detalles Operativos -->
+<div class="grid grid-cols-2 gap-2 py-2 px-3 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">explore</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Distancia calculada</span>
+<span class="font-title-md text-title-md text-primary font-semibold">A menos de 2 km</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">schedule</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Horario pactado</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold">Hoy, 09:00 - 14:00</span>
+</div>
+</div>
+</div>
+<!-- Footer de Tarjeta con Perfil Empleador y CTA -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-semibold text-label-md">
+            MO
+          </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Mariana O.</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">4.9</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">(12 reseñas)</span>
+</div>
+</div>
+</div>
+<button class="h-10 px-4 rounded-lg bg-primary text-on-primary font-title-md text-title-md font-semibold hover:bg-primary-container transition-colors shadow-sm flex items-center gap-1" type="button">
+<span>Ver detalle</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- TARJETA 2 -->
+<article class="bg-surface-container-lowest rounded-lg p-4 border border-outline-variant/50 shadow-sm hover:shadow-md transition-all flex flex-col gap-3 relative overflow-hidden group">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">verified</span>
+              Custodia confirmada
+            </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight truncate">Instalación de luminarias LED</h2>
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-outline">location_on</span>
+            Col. Del Valle Norte
+          </span>
+</div>
+<div class="flex flex-col items-end shrink-0 bg-surface-container-low px-2.5 py-1.5 rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant leading-none">Compensación</span>
+<span class="font-headline-md text-headline-md text-primary font-bold mt-0.5">$1,200.00 <span class="font-label-sm text-label-sm font-normal text-on-surface-variant">MXN</span></span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 py-2 px-3 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">explore</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Distancia calculada</span>
+<span class="font-title-md text-title-md text-primary font-semibold">4.5 km</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">schedule</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Horario pactado</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold">Mañana, 10:00 - 15:00</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-semibold text-label-md">
+            RC
+          </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Roberto C.</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">5.0</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">(8 reseñas)</span>
+</div>
+</div>
+</div>
+<button class="h-10 px-4 rounded-lg bg-primary text-on-primary font-title-md text-title-md font-semibold hover:bg-primary-container transition-colors shadow-sm flex items-center gap-1" type="button">
+<span>Ver detalle</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- TARJETA 3 -->
+<article class="bg-surface-container-lowest rounded-lg p-4 border border-outline-variant/50 shadow-sm hover:shadow-md transition-all flex flex-col gap-3 relative overflow-hidden group">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">lock</span>
+              Pago en custodia garantizado
+            </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight truncate">Pintura de muros interiores (depto)</h2>
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-outline">location_on</span>
+            Col. Roma Sur
+          </span>
+</div>
+<div class="flex flex-col items-end shrink-0 bg-surface-container-low px-2.5 py-1.5 rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant leading-none">Compensación</span>
+<span class="font-headline-md text-headline-md text-primary font-bold mt-0.5">$1,800.00 <span class="font-label-sm text-label-sm font-normal text-on-surface-variant">MXN</span></span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 py-2 px-3 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">explore</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Distancia calculada</span>
+<span class="font-title-md text-title-md text-primary font-semibold">7.8 km</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">schedule</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Horario pactado</span>
+<span class="font-title-md text-title-md text-on-surface font-semibold">Viernes, 08:30 - 16:30</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-semibold text-label-md">
+            AL
+          </div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-on-surface">Andrea L.</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-sm text-label-sm text-on-surface font-bold">4.8</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">(19 reseñas)</span>
+</div>
+</div>
+</div>
+<button class="h-10 px-4 rounded-lg bg-primary text-on-primary font-title-md text-title-md font-semibold hover:bg-primary-container transition-colors shadow-sm flex items-center gap-1" type="button">
+<span>Ver detalle</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</article>
+</section>
+<!-- Sección Divisoria Clara: Trabajos Fuera de Radio -->
+<section class="mt-space-lg px-margin flex flex-col gap-space-sm">
+<div class="p-3 bg-surface-container rounded-lg flex items-center justify-between border border-outline-variant/40">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[20px]">explore_off</span>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-bold">Trabajos fuera de tu radio</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Hasta 10 disponibles para explorar</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-dim text-on-surface-variant font-label-sm text-label-sm font-semibold shrink-0">
+        Fuera de alcance
+      </span>
+</div>
+<!-- TARJETA 4 (Fuera de radio) -->
+<article class="bg-surface-container-lowest/90 rounded-lg p-4 border border-outline-variant/50 shadow-sm opacity-95 hover:opacity-100 transition-all flex flex-col gap-3 relative">
+<div class="flex items-start justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">location_searching</span>
+              Requiere mayor traslado
+            </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold leading-tight truncate">Armado de mobiliario comercial</h2>
+<span class="font-label-md text-label-md text-on-surface-variant flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[16px] text-outline">location_on</span>
+            Col. Polanco
+          </span>
+</div>
+<div class="flex flex-col items-end shrink-0 bg-surface-container-low px-2.5 py-1.5 rounded-lg">
+<span class="font-label-sm text-label-sm text-on-surface-variant leading-none">Compensación</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold mt-0.5">$950.00 <span class="font-label-sm text-label-sm font-normal text-on-surface-variant">MXN</span></span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 py-2 px-3 bg-surface-container-low rounded-lg">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline">near_me_disabled</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Distancia Haversine</span>
+<span class="font-title-md text-title-md text-error font-semibold">14.2 km <span class="font-label-sm text-label-sm font-normal text-on-surface-variant">(&gt;10 km)</span></span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-outline">calendar_today</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Fecha estimada</span>
+<span class="font-title-md text-title-md text-on-surface">Sábado, 11:00 - 16:00</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">verified</span>
+<span>Pago protegido en custodia</span>
+</div>
+<button class="h-10 px-4 rounded-lg bg-surface-container text-primary font-title-md text-title-md font-semibold hover:bg-surface-container-high transition-colors flex items-center gap-1" type="button">
+<span>Ver oferta</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</button>
+</div>
+</article>
+</section>
+<!-- Nota de Privacidad de Coordenadas SRS -->
+<footer class="px-margin mt-space-lg flex items-center gap-2 text-on-surface-variant justify-center text-center">
+<span class="material-symbols-outlined text-[16px] text-outline">security</span>
+<p class="font-label-sm text-label-sm">
+      Por seguridad operativa, el número exterior y la ruta exacta solo se transmiten una vez que el contratante aprueba tu postulación.
+    </p>
+</footer>
+</div>
+<script>
+  // Interacción para expandir / alternar el radio drawer
+  const toggleBtn = document.getElementById('toggle-radius-modal');
+  const radiusDrawer = document.getElementById('radius-drawer');
+  const radiusLabel = document.getElementById('current-radius-label');
+  const radiusOptions = document.querySelectorAll('.radius-opt');
+
+  if (toggleBtn && radiusDrawer) {
+    toggleBtn.addEventListener('click', () => {
+      radiusDrawer.classList.toggle('hidden');
+    });
+  }
+
+  radiusOptions.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const km = e.currentTarget.getAttribute('data-km');
+      if (radiusLabel) radiusLabel.textContent = `${km} km`;
+      
+      radiusOptions.forEach((b) => {
+        b.className = 'radius-opt py-1.5 px-2 rounded-lg text-center font-label-md text-label-md bg-surface-container text-on-surface hover:bg-primary hover:text-on-primary transition-all';
+      });
+
+      e.currentTarget.className = 'radius-opt py-1.5 px-2 rounded-lg text-center font-label-md text-label-md bg-primary text-on-primary font-semibold shadow-sm transition-all';
+      
+      setTimeout(() => {
+        if (radiusDrawer) radiusDrawer.classList.add('hidden');
+      }, 250);
+    });
+  });
+
+  // Switch de Filtros de Fecha
+  const dateFilters = document.querySelectorAll('.date-filter');
+  dateFilters.forEach((filterBtn) => {
+    filterBtn.addEventListener('click', () => {
+      dateFilters.forEach((btn) => {
+        btn.className = 'date-filter flex-1 py-1.5 rounded-lg text-center font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all';
+      });
+      filterBtn.className = 'date-filter flex-1 py-1.5 rounded-lg text-center font-label-md text-label-md bg-surface-container-lowest text-primary font-semibold shadow-sm transition-all';
+    });
+  });
+
+  // Pills de categorías
+  const catPills = document.querySelectorAll('.cat-pill');
+  catPills.forEach((pill) => {
+    pill.addEventListener('click', () => {
+      catPills.forEach((p) => {
+        p.className = 'cat-pill shrink-0 px-4 py-2 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface hover:bg-surface-container-high transition-colors border border-outline-variant/50 flex items-center gap-1.5';
+      });
+      pill.className = 'cat-pill shrink-0 px-4 py-2 rounded-full font-label-md text-label-md bg-primary text-on-primary shadow-sm flex items-center gap-1.5';
+    });
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl border-t border-outline-variant/40" data-active-classes="text-primary font-title-md"><div class="h-16 px-gutter flex items-center justify-around"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[48px] transition-colors text-primary font-title-md" data-path="explorar" href="#"><span class="material-symbols-outlined text-[22px]">work_outline</span><span class="font-label-sm text-label-sm mt-0.5">Explorar</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[48px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="postulaciones" href="#"><span class="material-symbols-outlined text-[22px]">assignment</span><span class="font-label-sm text-label-sm mt-0.5">Postulaciones</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[48px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="mis-trabajos" href="#"><span class="material-symbols-outlined text-[22px]">task_alt</span><span class="font-label-sm text-label-sm mt-0.5">Mis Trabajos</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[48px] text-on-surface-variant hover:text-on-surface transition-colors" data-path="perfil" href="#"><span class="material-symbols-outlined text-[22px]">account_circle</span><span class="font-label-sm text-label-sm mt-0.5">Perfil</span></a></div></nav></body></html>
