@@ -79,3 +79,10 @@ Thumbs.db
 *.sln
 *.sw?
 *~
+
+# Local Audit Reports & Agent Artifacts
+AUDIT_*.md
+audit_artifacts/
+.agents/
+.atl/
+
