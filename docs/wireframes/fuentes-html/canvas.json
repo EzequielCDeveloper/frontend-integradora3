@@ -1,0 +1,360 @@
+{
+ "v": 3,
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-11-26T18:30:00Z"
+ },
+ "title": "Wireframes Solidez MX - 35 pantallas",
+ "launch": {
+  "view": "canvas"
+ },
+ "pages": [],
+ "boards": {
+  "EMP_01b.dc.html": {
+   "x": 764,
+   "y": 0,
+   "w": 684,
+   "h": 844,
+   "title": "UI-EMP-01b Auth - Revisa tu correo"
+  },
+  "EMP_02.dc.html": {
+   "x": 1528,
+   "y": 0,
+   "w": 684,
+   "h": 844,
+   "title": "UI-EMP-02 Feed - Mis publicaciones"
+  },
+  "EMP_03.dc.html": {
+   "x": 2292,
+   "y": 0,
+   "w": 684,
+   "h": 1143,
+   "title": "UI-EMP-03 Publicar o editar trabajo"
+  },
+  "EMP_04.dc.html": {
+   "x": 0,
+   "y": 1263,
+   "w": 684,
+   "h": 844,
+   "title": "UI-EMP-04 Detalle de publicacion y postulantes"
+  },
+  "EMP_05.dc.html": {
+   "x": 764,
+   "y": 1263,
+   "w": 684,
+   "h": 844,
+   "title": "UI-EMP-05 Perfil del candidato"
+  },
+  "EMP_06.dc.html": {
+   "x": 1528,
+   "y": 1263,
+   "w": 684,
+   "h": 844,
+   "title": "UI-EMP-06 Trabajo asignado y condiciones"
+  },
+  "EMP_07.dc.html": {
+   "x": 2292,
+   "y": 1263,
+   "w": 684,
+   "h": 844,
+   "title": "UI-EMP-07 Checkout y confirmacion de pago"
+  },
+  "EMP_07b.dc.html": {
+   "x": 0,
+   "y": 2227,
+   "w": 684,
+   "h": 844,
+   "title": "UI-EMP-07b Pago fallido o vencido"
+  },
+  "EMP_08.dc.html": {
+   "x": 764,
+   "y": 2227,
+   "w": 684,
+   "h": 844,
+   "title": "UI-EMP-08 Chat en tiempo real"
+  },
+  "EMP_09.dc.html": {
+   "x": 1528,
+   "y": 2227,
+   "w": 684,
+   "h": 844,
+   "title": "UI-EMP-09 Finalizacion del trabajo"
+  },
+  "EMP_10.dc.html": {
+   "x": 2292,
+   "y": 2227,
+   "w": 684,
+   "h": 844,
+   "title": "UI-EMP-10 Abrir caso o reclamacion"
+  },
+  "EMP_11.dc.html": {
+   "x": 0,
+   "y": 3191,
+   "w": 684,
+   "h": 844,
+   "title": "UI-EMP-11 Evaluar al trabajador"
+  },
+  "EMP_12.dc.html": {
+   "x": 764,
+   "y": 3191,
+   "w": 684,
+   "h": 844,
+   "title": "UI-EMP-12 Historial de trabajos y pagos"
+  },
+  "EMP_13.dc.html": {
+   "x": 1528,
+   "y": 3191,
+   "w": 684,
+   "h": 844,
+   "title": "UI-EMP-13 Perfil y ajustes del empleador"
+  },
+  "EMP_14.dc.html": {
+   "x": 2292,
+   "y": 3191,
+   "w": 684,
+   "h": 844,
+   "title": "UI-EMP-14 Mis casos y tickets"
+  },
+  "TRAB_01.dc.html": {
+   "x": 0,
+   "y": 4455,
+   "w": 684,
+   "h": 844,
+   "title": "UI-TRAB-01 Auth y onboarding - Registro"
+  },
+  "TRAB_01b.dc.html": {
+   "x": 764,
+   "y": 4455,
+   "w": 684,
+   "h": 844,
+   "title": "UI-TRAB-01b Auth - Revisa tu correo"
+  },
+  "TRAB_02.dc.html": {
+   "x": 1528,
+   "y": 4455,
+   "w": 684,
+   "h": 844,
+   "title": "UI-TRAB-02 Explorador y lista de trabajos"
+  },
+  "TRAB_03.dc.html": {
+   "x": 2292,
+   "y": 4455,
+   "w": 684,
+   "h": 844,
+   "title": "UI-TRAB-03 Ubicacion de referencia y radio"
+  },
+  "TRAB_03b.dc.html": {
+   "x": 0,
+   "y": 5419,
+   "w": 684,
+   "h": 844,
+   "title": "UI-TRAB-03b Limite de cambios alcanzado"
+  },
+  "TRAB_04.dc.html": {
+   "x": 764,
+   "y": 5419,
+   "w": 684,
+   "h": 844,
+   "title": "UI-TRAB-04 Detalle de oportunidad"
+  },
+  "TRAB_05.dc.html": {
+   "x": 1528,
+   "y": 5419,
+   "w": 684,
+   "h": 844,
+   "title": "UI-TRAB-05 Mis postulaciones"
+  },
+  "TRAB_06.dc.html": {
+   "x": 2292,
+   "y": 5419,
+   "w": 684,
+   "h": 844,
+   "title": "UI-TRAB-06 Onboarding Stripe Connect"
+  },
+  "TRAB_07.dc.html": {
+   "x": 0,
+   "y": 6383,
+   "w": 684,
+   "h": 844,
+   "title": "UI-TRAB-07 Trabajo asignado y llegada"
+  },
+  "TRAB_08.dc.html": {
+   "x": 764,
+   "y": 6383,
+   "w": 684,
+   "h": 844,
+   "title": "UI-TRAB-08 Chat en tiempo real"
+  },
+  "TRAB_09.dc.html": {
+   "x": 1528,
+   "y": 6383,
+   "w": 684,
+   "h": 844,
+   "title": "UI-TRAB-09 Finalizacion del trabajo"
+  },
+  "TRAB_09b.dc.html": {
+   "x": 2292,
+   "y": 6383,
+   "w": 684,
+   "h": 844,
+   "title": "UI-TRAB-09b Codigo bloqueado o vencido"
+  },
+  "TRAB_10.dc.html": {
+   "x": 0,
+   "y": 7347,
+   "w": 684,
+   "h": 844,
+   "title": "UI-TRAB-10 Centro de casos y soporte"
+  },
+  "TRAB_11.dc.html": {
+   "x": 764,
+   "y": 7347,
+   "w": 684,
+   "h": 844,
+   "title": "UI-TRAB-11 Evaluar al empleador"
+  },
+  "TRAB_12.dc.html": {
+   "x": 1528,
+   "y": 7347,
+   "w": 684,
+   "h": 844,
+   "title": "UI-TRAB-12 Perfil del trabajador"
+  },
+  "TRAB_13.dc.html": {
+   "x": 2292,
+   "y": 7347,
+   "w": 684,
+   "h": 844,
+   "title": "UI-TRAB-13 Historial de trabajos y pagos"
+  },
+  "TRAB_14.dc.html": {
+   "x": 0,
+   "y": 8311,
+   "w": 684,
+   "h": 844,
+   "title": "UI-TRAB-14 Notificaciones"
+  },
+  "ADM_01.dc.html": {
+   "x": 0,
+   "y": 9575,
+   "w": 1584,
+   "h": 800,
+   "title": "UI-ADM-01 Login del administrador"
+  },
+  "ADM_02.dc.html": {
+   "x": 1664,
+   "y": 9575,
+   "w": 1584,
+   "h": 800,
+   "title": "UI-ADM-02 Bandeja de casos"
+  },
+  "ADM_03.dc.html": {
+   "x": 0,
+   "y": 10495,
+   "w": 1584,
+   "h": 800,
+   "title": "UI-ADM-03 Detalle y arbitraje de reclamacion"
+  },
+  "ADM_04.dc.html": {
+   "x": 1664,
+   "y": 10495,
+   "w": 1584,
+   "h": 800,
+   "title": "UI-ADM-04 Atencion de tickets y soporte"
+  },
+  "ADM_05.dc.html": {
+   "x": 0,
+   "y": 11415,
+   "w": 1584,
+   "h": 800,
+   "title": "UI-ADM-05 Centro de moderacion de contenido"
+  },
+  "ADM_06.dc.html": {
+   "x": 1664,
+   "y": 11415,
+   "w": 1584,
+   "h": 800,
+   "title": "UI-ADM-06 Gestion y sancion de cuentas"
+  },
+  "ADM_07.dc.html": {
+   "x": 0,
+   "y": 12335,
+   "w": 1584,
+   "h": 800,
+   "title": "UI-ADM-07 Monitoreo financiero y reintentos Stripe"
+  },
+  "Main.dc.html": {
+   "x": 0,
+   "y": 0,
+   "w": 684,
+   "h": 844,
+   "title": "UI-EMP-01 Auth y onboarding - Registro"
+  }
+ },
+ "order": [
+  "Main.dc.html",
+  "EMP_01b.dc.html",
+  "EMP_02.dc.html",
+  "EMP_03.dc.html",
+  "EMP_04.dc.html",
+  "EMP_05.dc.html",
+  "EMP_06.dc.html",
+  "EMP_07.dc.html",
+  "EMP_07b.dc.html",
+  "EMP_08.dc.html",
+  "EMP_09.dc.html",
+  "EMP_10.dc.html",
+  "EMP_11.dc.html",
+  "EMP_12.dc.html",
+  "EMP_13.dc.html",
+  "EMP_14.dc.html",
+  "TRAB_01.dc.html",
+  "TRAB_01b.dc.html",
+  "TRAB_02.dc.html",
+  "TRAB_03.dc.html",
+  "TRAB_03b.dc.html",
+  "TRAB_04.dc.html",
+  "TRAB_05.dc.html",
+  "TRAB_06.dc.html",
+  "TRAB_07.dc.html",
+  "TRAB_08.dc.html",
+  "TRAB_09.dc.html",
+  "TRAB_09b.dc.html",
+  "TRAB_10.dc.html",
+  "TRAB_11.dc.html",
+  "TRAB_12.dc.html",
+  "TRAB_13.dc.html",
+  "TRAB_14.dc.html",
+  "ADM_01.dc.html",
+  "ADM_02.dc.html",
+  "ADM_03.dc.html",
+  "ADM_04.dc.html",
+  "ADM_05.dc.html",
+  "ADM_06.dc.html",
+  "ADM_07.dc.html"
+ ],
+ "notes": {
+  "t_emp": {
+   "x": 0,
+   "y": -260,
+   "text": "Solidez MX - App del empleador (UI-EMP)",
+   "kind": "title1",
+   "maxW": 3000
+  },
+  "t_trab": {
+   "x": 0,
+   "y": 4195,
+   "text": "App del trabajador (UI-TRAB)",
+   "kind": "title1",
+   "maxW": 3000
+  },
+  "t_adm": {
+   "x": 0,
+   "y": 9315,
+   "text": "Panel web del administrador (UI-ADM)",
+   "kind": "title1",
+   "maxW": 3000
+  }
+ },
+ "designSystems": []
+}
