@@ -148,9 +148,7 @@ export function ApplicantProfileScreenView({
                     color={SaharaColors.primaryAccessible}
                   />
                   <Text style={styles.miniChipText}>
-                    {applicant.stripe_onboarding_complete
-                      ? 'Cuenta bancaria verificada'
-                      : 'Cuenta bancaria en trámite'}
+                    Identidad validada
                   </Text>
                 </View>
               </View>

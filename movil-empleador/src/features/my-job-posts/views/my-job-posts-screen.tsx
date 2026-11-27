@@ -519,12 +519,37 @@ export function MyJobPostsScreenView() {
           </View>
         </View>
 
-        <SaharaButton
-          label={cta.label}
-          icon={cta.icon}
-          size="md"
-          onPress={() => navigateForJob(job)}
-        />
+        <View style={{ flexDirection: 'row', gap: 8 }}>
+          <View style={{ flex: 1 }}>
+            <SaharaButton
+              label={cta.label}
+              icon={cta.icon}
+              size="md"
+              onPress={() => navigateForJob(job)}
+            />
+          </View>
+          {Boolean(
+            job.selected_worker_id &&
+              [
+                'assigned',
+                'arrival_registered',
+                'in_progress',
+                'completion_requested',
+                'in_claim',
+              ].includes(job.status),
+          ) ? (
+            <SaharaButton
+              label="Chat"
+              icon="chat"
+              variant="outline"
+              size="md"
+              fullWidth={false}
+              onPress={() =>
+                router.push(`/(main)/job/${job.id}/chat` as never)
+              }
+            />
+          ) : null}
+        </View>
 
         {/* Pre-selection Quick Edit / Cancel Actions (48dp touch targets) */}
         {canEditOrCancel ? (
@@ -616,7 +641,7 @@ export function MyJobPostsScreenView() {
           data={filteredJobs}
           keyExtractor={(item) => item.id}
           renderItem={renderJobCard}
-          ListHeaderComponent={renderHeaderSection}
+          ListHeaderComponent={renderHeaderSection()}
           ListEmptyComponent={
             <EmptyState
               icon="folder_shared"

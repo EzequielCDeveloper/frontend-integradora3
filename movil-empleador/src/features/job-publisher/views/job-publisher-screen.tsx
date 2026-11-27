@@ -61,10 +61,10 @@ import {
 import type { JobCategory } from '@/types/database';
 
 const PRESET_COORDINATES = [
-  { label: 'Centro / Centenario', lat: 29.072967, lng: -110.955919 },
-  { label: 'Zona Norte / Pitic', lat: 29.098512, lng: -110.941205 },
-  { label: 'Poniente / Las Quintas', lat: 29.08391, lng: -110.98102 },
-  { label: 'Sur / Parque Industrial', lat: 29.03541, lng: -110.93105 },
+  { label: 'Roma Norte / Cuauhtémoc', lat: 19.4194, lng: -99.162 },
+  { label: 'Del Valle / Benito Juárez', lat: 19.3834, lng: -99.1645 },
+  { label: 'Polanco / Miguel Hidalgo', lat: 19.4338, lng: -99.1945 },
+  { label: 'Coyoacán Centro', lat: 19.3467, lng: -99.1617 },
 ];
 
 const QUICK_AMOUNT_PRESETS = ['500', '850', '1200', '1500'];
@@ -86,7 +86,7 @@ export function JobPublisherScreenView() {
   const [form, setForm] = useState<JobFormInput>({
     title: '',
     description: '',
-    category: 'limpieza',
+    category: '' as unknown as JobCategory,
     fixed_payment_mxn: '',
     job_date: '',
     start_time: '',
@@ -94,8 +94,8 @@ export function JobPublisherScreenView() {
     conditions: '',
     neighborhood: '',
     exact_address: '',
-    exact_latitude: 29.072967,
-    exact_longitude: -110.955919,
+    exact_latitude: 19.4194,
+    exact_longitude: -99.162,
   });
 
   const [photos, setPhotos] = useState<AttachmentDraft[]>([]);
@@ -194,7 +194,7 @@ export function JobPublisherScreenView() {
   const selectedZoneName =
     PRESET_COORDINATES.find(
       (p) => Math.abs(form.exact_latitude - p.lat) < 0.001,
-    )?.label ?? 'Centro / Centenario';
+    )?.label ?? 'Roma Norte / Cuauhtémoc';
 
   const { execute: handleSubmit, isPending: isSubmitting } =
     useIdempotentAction(async () => {
@@ -357,7 +357,7 @@ export function JobPublisherScreenView() {
                           styles.categoryChipText,
                           selected ? styles.categoryChipTextActive : undefined,
                         ]}>
-                        {selected ? '[OK] ' : ''}
+                        {selected ? '✓ ' : ''}
                         {JOB_CATEGORY_LABELS[cat]}
                       </Text>
                     </Pressable>
@@ -429,7 +429,7 @@ export function JobPublisherScreenView() {
                           styles.quickPresetText,
                           active ? styles.quickPresetTextActive : undefined,
                         ]}>
-                        {active ? `[OK] $${amt}` : `$${amt} MXN`}
+                        {active ? `✓ $${amt}` : `$${amt} MXN`}
                       </Text>
                     </Pressable>
                   );
@@ -516,7 +516,7 @@ export function JobPublisherScreenView() {
                           styles.quickPresetText,
                           active ? styles.quickPresetTextActive : undefined,
                         ]}>
-                        {active ? '[OK] ' : ''}
+                        {active ? '✓ ' : ''}
                         {opt.label} ({formatSpanishDate(opt.ymd)})
                       </Text>
                     </Pressable>
@@ -583,7 +583,7 @@ export function JobPublisherScreenView() {
                           styles.quickPresetText,
                           active ? styles.quickPresetTextActive : undefined,
                         ]}>
-                        {active ? '[OK] ' : ''}
+                        {active ? '✓ ' : ''}
                         {sched.label}
                       </Text>
                     </Pressable>
@@ -672,7 +672,7 @@ export function JobPublisherScreenView() {
             <SaharaInput
               testID="job-neighborhood-input"
               label="Colonia o zona (visible en el anuncio)"
-              placeholder="Ej. Col. Centenario, Hermosillo"
+              placeholder="Ej. Col. Roma Norte, Cuauhtémoc"
               icon="location_on"
               value={form.neighborhood}
               onChangeText={(v) =>
@@ -758,7 +758,7 @@ export function JobPublisherScreenView() {
                           styles.coordPresetText,
                           isActive ? styles.coordPresetTextActive : undefined,
                         ]}>
-                        {isActive ? `[OK] ${preset.label}` : preset.label}
+                        {isActive ? `✓ ${preset.label}` : preset.label}
                       </Text>
                     </Pressable>
                   );

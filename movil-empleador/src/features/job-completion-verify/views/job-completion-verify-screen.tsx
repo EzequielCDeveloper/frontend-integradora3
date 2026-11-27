@@ -242,7 +242,9 @@ export function JobCompletionVerifyScreenView({ jobId }: { jobId: string }) {
           {/* MODE B: Solicitud de Finalización sin Código (RF-23, RF-24, D-04) */}
           <SaharaCard variant="lowest" style={{ gap: 14 }}>
             <View style={styles.noCodeHeaderRow}>
-              <Text style={styles.modeTitle}>
+              <Text
+                style={[styles.modeTitle, { flex: 1, marginRight: 8 }]}
+                numberOfLines={1}>
                 Si el trabajador no usa el código
               </Text>
               <View
@@ -251,6 +253,7 @@ export function JobCompletionVerifyScreenView({ jobId }: { jobId: string }) {
                   job.status === 'completion_requested'
                     ? styles.statusChipActive
                     : undefined,
+                  { flexShrink: 0 },
                 ]}>
                 <Text
                   style={[

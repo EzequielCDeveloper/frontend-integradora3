@@ -101,6 +101,12 @@ export function EscrowCheckoutScreenView({ jobId }: { jobId: string }) {
       }
     });
 
+  const isCancelled = Boolean(
+    breakdown?.status === 'cancelled' ||
+      (breakdown?.payment_attempts ?? 0) >= 3 ||
+      job?.status === 'cancelled',
+  );
+
   return (
     <SaharaScreenShell
       header={
@@ -119,14 +125,88 @@ export function EscrowCheckoutScreenView({ jobId }: { jobId: string }) {
         />
       ) : (
         <>
-          {/* 30-Minute Countdown Banner after Worker Arrival */}
-          {breakdown.expires_at ? (
+          {/* 30-Minute Countdown Banner after Worker Arrival (Hidden if cancelled) */}
+          {breakdown.expires_at && !isCancelled ? (
             <CountdownBanner
               targetIso={breakdown.expires_at}
               title="El trabajador ya llegó a tu domicilio"
               subtitle={`Tienes 30 minutos para realizar el pago y que empiece a trabajar. Intentos realizados: ${breakdown.payment_attempts} de 3.`}
               mode="ms"
             />
+          ) : null}
+
+          {/* Cancellation Card after 3 failed attempts or cancellation */}
+          {isCancelled ? (
+            <SaharaCard
+              variant="lowest"
+              style={{
+                gap: 12,
+                borderColor: SaharaColors.error,
+                borderWidth: 1.5,
+                backgroundColor: SaharaColors.surfaceContainerLow,
+              }}>
+              <View
+                style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
+                <View
+                  style={{
+                    width: 38,
+                    height: 38,
+                    borderRadius: 19,
+                    backgroundColor: SaharaColors.errorContainer,
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}>
+                  <SaharaIcon
+                    name="close"
+                    size={18}
+                    color={SaharaColors.onErrorContainer}
+                  />
+                </View>
+                <View style={{ flex: 1 }}>
+                  <Text
+                    style={{
+                      fontFamily: Fonts.headline,
+                      fontSize: 15,
+                      fontWeight: '700',
+                      color: SaharaColors.onSurface,
+                    }}>
+                    Cancelado sin cobro
+                  </Text>
+                  <Text
+                    style={{
+                      fontFamily: Fonts.body,
+                      fontSize: 12,
+                      color: SaharaColors.onSurfaceVariant,
+                      marginTop: 2,
+                    }}>
+                    Se agotaron los 3 intentos de cobro permitidos. Tu publicación
+                    ha sido cancelada y no se retuvo ningún cargo a tu tarjeta.
+                  </Text>
+                </View>
+              </View>
+              <View style={{ flexDirection: 'row', gap: 8, marginTop: 4 }}>
+                <View style={{ flex: 1 }}>
+                  <SaharaButton
+                    label="Mis Publicaciones"
+                    variant="outline"
+                    size="sm"
+                    onPress={() => router.replace('/(main)/feed')}
+                  />
+                </View>
+                <View style={{ flex: 1 }}>
+                  <SaharaButton
+                    label="Republicar Trabajo"
+                    variant="primary"
+                    size="sm"
+                    onPress={() =>
+                      router.push(
+                        `/(main)/post-job?cloneJobId=${job.id}` as never,
+                      )
+                    }
+                  />
+                </View>
+              </View>
+            </SaharaCard>
           ) : null}
 
           {errorMsg ? (
@@ -181,14 +261,16 @@ export function EscrowCheckoutScreenView({ jobId }: { jobId: string }) {
             </View>
 
             <View style={styles.totalHighlightBox}>
-              <View>
+              <View style={{ flex: 1, flexShrink: 1, paddingRight: 8 }}>
                 <Text style={styles.totalLabelMain}>Total a pagar</Text>
-                <Text style={styles.totalLabelSub}>
+                <Text style={styles.totalLabelSub} numberOfLines={1}>
                   Dinero protegido hasta que termine
                 </Text>
               </View>
               <Text
                 style={styles.totalAmountValue}
+                numberOfLines={1}
+                adjustsFontSizeToFit
                 testID="breakdown-total-amount">
                 {formatCurrencyMXN(breakdown.total_charged_mxn)}
               </Text>
@@ -316,31 +398,41 @@ export function EscrowCheckoutScreenView({ jobId }: { jobId: string }) {
             </View>
           </SaharaCard>
 
-          {/* Primary Pay Button */}
-          <View style={{ gap: 8 }}>
-            <SaharaButton
-              testID="open-stripe-sheet-btn"
-              label={`Pagar ${formatCurrencyMXN(breakdown.total_charged_mxn)} Ahora`}
-              icon="lock"
-              size="lg"
-              disabled={
-                breakdown.status === 'confirmed' ||
-                breakdown.status === 'cancelled'
-              }
-              loading={isPaying}
-              onPress={() => setShowPaymentSheet(true)}
-            />
-            <View style={styles.stripeFooterRow}>
-              <SaharaIcon
-                name="verified"
-                size={13}
-                color={SaharaColors.onSurfaceVariant}
+          {/* Primary Pay Button or Return Action if Cancelled */}
+          {isCancelled ? (
+            <View style={{ gap: 8 }}>
+              <SaharaButton
+                testID="cancelled-return-btn"
+                label="Ir a Mis Publicaciones"
+                icon="arrow_back"
+                variant="outline"
+                size="lg"
+                onPress={() => router.replace('/(main)/feed')}
               />
-              <Text style={styles.stripeFooterText}>
-                Pago protegido por Solidez MX y Stripe
-              </Text>
             </View>
-          </View>
+          ) : (
+            <View style={{ gap: 8 }}>
+              <SaharaButton
+                testID="open-stripe-sheet-btn"
+                label={`Pagar ${formatCurrencyMXN(breakdown.total_charged_mxn)} Ahora`}
+                icon="lock"
+                size="lg"
+                disabled={breakdown.status === 'confirmed'}
+                loading={isPaying}
+                onPress={() => setShowPaymentSheet(true)}
+              />
+              <View style={styles.stripeFooterRow}>
+                <SaharaIcon
+                  name="verified"
+                  size={13}
+                  color={SaharaColors.onSurfaceVariant}
+                />
+                <Text style={styles.stripeFooterText}>
+                  Pago protegido por Solidez MX y Stripe
+                </Text>
+              </View>
+            </View>
+          )}
         </>
       )}
 

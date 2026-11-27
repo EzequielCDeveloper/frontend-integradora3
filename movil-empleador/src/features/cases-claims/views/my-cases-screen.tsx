@@ -337,8 +337,10 @@ export function MyCasesScreenView() {
         {/* Thread Toggle & Message History (`case_messages`) */}
         <View style={styles.threadHeaderRow}>
           <Text style={styles.threadCountText}>
-            Hilo del caso ({c.messages.length} mensajes ·{' '}
-            {c.attachments.length} evidencias)
+            Hilo del caso ({c.messages.length}{' '}
+            {c.messages.length === 1 ? 'mensaje' : 'mensajes'} ·{' '}
+            {c.attachments.length}{' '}
+            {c.attachments.length === 1 ? 'evidencia' : 'evidencias'})
           </Text>
           <Pressable
             testID={`toggle-case-thread-btn-${c.id}`}
@@ -365,11 +367,13 @@ export function MyCasesScreenView() {
             ).map((msg) => (
               <View key={msg.id} style={styles.messageItemBox}>
                 <View style={styles.messageHeaderRow}>
-                  <Text style={styles.messageAuthor}>
+                  <Text
+                    style={[styles.messageAuthor, { flex: 1, marginRight: 8 }]}
+                    numberOfLines={1}>
                     {msg.author_name}{' '}
                     {msg.author_role === 'admin' ? '(Admin)' : '(Tú)'}
                   </Text>
-                  <Text style={styles.messageDate}>
+                  <Text style={[styles.messageDate, { flexShrink: 0 }]}>
                     {formatSpanishDate(msg.created_at)}
                   </Text>
                 </View>
