@@ -54,7 +54,7 @@ export const DOMAIN_ERROR_MESSAGES: Record<DomainErrorCode, string> = {
   ERR_ATTACHMENT_INVALID:
     'Archivo no permitido. Solo puedes subir imágenes (JPG o PNG) o documentos PDF de máximo 10 MB.',
   ERR_MAX_ATTEMPTS:
-    'Este pago ya alcanzó el máximo de 5 reintentos permitidos.',
+    'Este pago ya alcanzó el máximo de 3 intentos permitidos.',
   ERR_CONFLICT:
     'Esta acción ya se había realizado hace un momento. Actualiza la pantalla para ver el estado más reciente.',
   ERR_VALIDATION:

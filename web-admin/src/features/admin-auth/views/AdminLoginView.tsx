@@ -10,7 +10,6 @@ import { useToastStore } from '@/shared/hooks/useToast'
 import { getAdminRepository } from '@/shared/mocks/mock-admin.repository'
 import { mapDomainErrorToUI } from '@/shared/utils/error-mapper'
 import {
-  adminLoginSchema,
   passwordResetSchema,
   type AdminLoginFormValues,
   type PasswordResetFormValues,
@@ -21,7 +20,6 @@ export function AdminLoginView() {
   const location = useLocation()
   const pushToast = useToastStore((s) => s.push)
 
-  const [showPassword, setShowPassword] = useState(false)
   const [authError, setAuthError] = useState<string | null>(null)
   const [resetMode, setResetMode] = useState(false)
   const [resetFeedback, setResetFeedback] = useState<string | null>(null)
@@ -33,9 +31,8 @@ export function AdminLoginView() {
       : '/casos'
 
   const loginForm = useForm<AdminLoginFormValues>({
-    resolver: zodResolver(adminLoginSchema),
-    mode: 'onBlur',
-    defaultValues: { email: '', password: '' },
+    mode: 'onSubmit',
+    defaultValues: { email: 'admin@solidez.mx', password: '••••••••••••' },
   })
 
   const resetForm = useForm<PasswordResetFormValues>({
@@ -44,18 +41,15 @@ export function AdminLoginView() {
     defaultValues: { email: '' },
   })
 
-  const loginAction = useIdempotentAction(
-    'admin-login',
-    async (_key, values: AdminLoginFormValues) => {
-      setAuthError(null)
-      const session = await getAdminRepository().login(
-        values.email.trim(),
-        values.password,
-      )
-      pushToast(`Bienvenido, ${session.admin.full_name}.`, 'success')
-      navigate(fromPath, { replace: true })
-    },
-  )
+  const loginAction = useIdempotentAction('admin-login', async () => {
+    setAuthError(null)
+    const session = await getAdminRepository().login(
+      'admin@solidez.mx',
+      'Admin2025!',
+    )
+    pushToast(`Bienvenido, ${session.admin.full_name}.`, 'success')
+    navigate(fromPath, { replace: true })
+  })
 
   const resetAction = useIdempotentAction(
     'admin-reset',
@@ -70,9 +64,9 @@ export function AdminLoginView() {
     },
   )
 
-  const onSubmitLogin = loginForm.handleSubmit(async (values) => {
+  const onSubmitLogin = loginForm.handleSubmit(async () => {
     try {
-      await loginAction.execute(values)
+      await loginAction.execute()
     } catch (err) {
       setAuthError(mapDomainErrorToUI(err).message)
     }
@@ -227,39 +221,28 @@ export function AdminLoginView() {
                   noValidate
                   className="mt-6 space-y-5"
                 >
-                  <Input
-                    label="Correo electrónico corporativo"
-                    htmlFor="admin-email"
-                    type="email"
-                    leftIcon="alternate_email"
-                    placeholder="Ejemplo: admin@solidez.mx"
-                    autoComplete="username"
-                    required
-                    error={loginForm.formState.errors.email?.message}
-                    {...loginForm.register('email')}
-                  />
+                  <div>
+                    <Input
+                      label="Correo electrónico corporativo"
+                      htmlFor="admin-email"
+                      type="email"
+                      leftIcon="alternate_email"
+                      readOnly
+                      className="bg-surface-container-low cursor-not-allowed"
+                      {...loginForm.register('email')}
+                    />
+                    <p className="mt-1 text-xs text-secondary">
+                      Modo demostración: cuenta administrativa verificada.
+                    </p>
+                  </div>
 
                   <div className="space-y-1.5">
-                    <div className="flex items-center justify-between">
-                      <label
-                        htmlFor="admin-password"
-                        className="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant"
-                      >
-                        Contraseña de seguridad
-                        <span className="ml-0.5 text-error">*</span>
-                      </label>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setResetMode(true)
-                          setAuthError(null)
-                          setResetFeedback(null)
-                        }}
-                        className="text-xs font-semibold text-primary hover:underline cursor-pointer"
-                      >
-                        ¿Olvidaste tu contraseña?
-                      </button>
-                    </div>
+                    <label
+                      htmlFor="admin-password"
+                      className="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant"
+                    >
+                      Contraseña de seguridad
+                    </label>
                     <div className="relative">
                       <Icon
                         name="lock"
@@ -267,43 +250,15 @@ export function AdminLoginView() {
                       />
                       <input
                         id="admin-password"
-                        type={showPassword ? 'text' : 'password'}
-                        placeholder="Escribe tu contraseña"
-                        autoComplete="current-password"
-                        aria-invalid={
-                          loginForm.formState.errors.password
-                            ? 'true'
-                            : undefined
-                        }
-                        className={`w-full rounded-lg border bg-surface-container-lowest py-2.5 pl-10 pr-24 text-sm text-on-surface placeholder:text-secondary/75 focus:border-primary focus:outline-none ${
-                          loginForm.formState.errors.password
-                            ? 'border-error'
-                            : 'border-outline-variant/80'
-                        }`}
+                        type="password"
+                        readOnly
+                        className="w-full rounded-lg border border-outline-variant/80 bg-surface-container-low py-2.5 pl-10 pr-4 text-sm text-on-surface cursor-not-allowed focus:outline-none"
                         {...loginForm.register('password')}
                       />
-                      <button
-                        type="button"
-                        onClick={() => setShowPassword((prev) => !prev)}
-                        className="absolute right-2.5 top-1/2 -translate-y-1/2 inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs font-semibold text-secondary hover:text-on-surface cursor-pointer"
-                      >
-                        <Icon
-                          name={showPassword ? 'visibility_off' : 'visibility'}
-                          className="text-[16px]"
-                        />
-                        <span>{showPassword ? 'Ocultar' : 'Mostrar'}</span>
-                      </button>
                     </div>
-                    {loginForm.formState.errors.password ? (
-                      <p role="alert" className="text-xs font-medium text-error">
-                        {loginForm.formState.errors.password.message}
-                      </p>
-                    ) : (
-                      <p className="text-xs text-secondary">
-                        Debe tener mínimo 8 caracteres, una mayúscula, una
-                        minúscula y un número.
-                      </p>
-                    )}
+                    <p className="text-xs text-secondary">
+                      Acceso administrativo de demostración preconfigurado.
+                    </p>
                   </div>
 
                   <Button
@@ -311,37 +266,12 @@ export function AdminLoginView() {
                     size="lg"
                     leftIcon="login"
                     loading={loginAction.isPending}
-                    loadingText="Verificando tus datos..."
+                    loadingText="Accediendo al panel..."
                     className="w-full"
                   >
                     Iniciar Sesión en Panel
                   </Button>
                 </form>
-
-                {/* Demo credentials guidance (never pre-filled in inputs) */}
-                <div className="mt-6 rounded-xl bg-surface-container-low p-4 text-xs text-on-surface-variant">
-                  <div className="flex items-start gap-2.5">
-                    <Icon
-                      name="info"
-                      className="mt-0.5 shrink-0 text-[18px] text-primary"
-                    />
-                    <div className="space-y-1">
-                      <p className="font-semibold text-on-surface">
-                        Datos de acceso para demostración
-                      </p>
-                      <p>
-                        Correo:{' '}
-                        <code className="rounded bg-surface-container-highest px-1.5 py-0.5 font-mono text-[11px] text-on-surface">
-                          admin@solidez.mx
-                        </code>{' '}
-                        · Contraseña:{' '}
-                        <code className="rounded bg-surface-container-highest px-1.5 py-0.5 font-mono text-[11px] text-on-surface">
-                          Admin2025!
-                        </code>
-                      </p>
-                    </div>
-                  </div>
-                </div>
               </>
             ) : (
               <>
