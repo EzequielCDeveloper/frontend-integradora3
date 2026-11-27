@@ -1,0 +1,146 @@
+name: Build Android APKs
+
+on:
+  workflow_dispatch:
+    inputs:
+      app:
+        description: 'Aplicación a compilar'
+        required: true
+        default: 'both'
+        type: choice
+        options:
+          - 'both'
+          - 'movil-trabajador'
+          - 'movil-empleador'
+      build_type:
+        description: 'Tipo de build (Release o Debug)'
+        required: true
+        default: 'release'
+        type: choice
+        options:
+          - 'release'
+          - 'debug'
+  push:
+    branches:
+      - main
+    paths:
+      - 'movil-trabajador/**'
+      - 'movil-empleador/**'
+      - '.github/workflows/build-apks.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'movil-trabajador/**'
+      - 'movil-empleador/**'
+      - '.github/workflows/build-apks.yml'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-apk:
+    name: Build ${{ matrix.app_name }} (${{ matrix.app_dir }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - app_dir: movil-trabajador
+            app_name: SolidezMX-Trabajador
+            package_name: com.solidezmx.trabajador
+          - app_dir: movil-empleador
+            app_name: SolidezMX-Empleador
+            package_name: com.solidezmx.empleador
+
+    steps:
+      - name: Check trigger condition for manual dispatch
+        id: filter
+        run: |
+          APP_INPUT="${{ github.event.inputs.app }}"
+          if [ -z "$APP_INPUT" ] || [ "$APP_INPUT" = "both" ] || [ "$APP_INPUT" = "${{ matrix.app_dir }}" ]; then
+            echo "should_build=true" >> $GITHUB_OUTPUT
+          else
+            echo "should_build=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Checkout repository
+        if: steps.filter.outputs.should_build == 'true'
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        if: steps.filter.outputs.should_build == 'true'
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Set up Android SDK
+        if: steps.filter.outputs.should_build == 'true'
+        uses: android-actions/setup-android@v3
+
+      - name: Set up Node.js 20
+        if: steps.filter.outputs.should_build == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: ${{ matrix.app_dir }}/package-lock.json
+
+      - name: Set up Gradle Cache
+        if: steps.filter.outputs.should_build == 'true'
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Install dependencies
+        if: steps.filter.outputs.should_build == 'true'
+        working-directory: ${{ matrix.app_dir }}
+        run: npm ci
+
+      - name: Expo Prebuild (Generate Android native project)
+        if: steps.filter.outputs.should_build == 'true'
+        working-directory: ${{ matrix.app_dir }}
+        run: npx expo prebuild --platform android --clean --no-install
+
+      - name: Build Android APK
+        if: steps.filter.outputs.should_build == 'true'
+        working-directory: ${{ matrix.app_dir }}/android
+        run: |
+          chmod +x gradlew
+          BUILD_TYPE="${{ github.event.inputs.build_type || 'release' }}"
+          echo "Target build type: $BUILD_TYPE"
+          
+          if [ "$BUILD_TYPE" = "debug" ]; then
+            echo "Building Debug APK..."
+            ./gradlew assembleDebug --no-daemon
+          else
+            echo "Building Release APK with default debug signing..."
+            if ! ./gradlew assembleRelease --no-daemon; then
+              echo "Warning: assembleRelease failed; falling back to assembleDebug..."
+              ./gradlew assembleDebug --no-daemon
+            fi
+          fi
+
+      - name: Prepare APK artifact
+        if: steps.filter.outputs.should_build == 'true'
+        run: |
+          mkdir -p output
+          APK_FILE=$(find ${{ matrix.app_dir }}/android/app/build/outputs/apk/ -type f -name "*.apk" | head -n 1)
+          if [ -z "$APK_FILE" ]; then
+            echo "❌ Error: No APK file was generated in ${{ matrix.app_dir }}/android/app/build/outputs/apk/"
+            exit 1
+          fi
+          echo "✅ Found APK at: $APK_FILE"
+          DEST_NAME="${{ matrix.app_name }}.apk"
+          cp "$APK_FILE" "output/$DEST_NAME"
+          echo "APK ready at output/$DEST_NAME"
+          ls -lh output/
+
+      - name: Upload APK Artifact
+        if: steps.filter.outputs.should_build == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.app_name }}-apk
+          path: output/${{ matrix.app_name }}.apk
+          if-no-files-found: error
+          retention-days: 14
