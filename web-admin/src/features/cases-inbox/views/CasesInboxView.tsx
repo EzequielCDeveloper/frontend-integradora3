@@ -375,10 +375,9 @@ export function CasesInboxView() {
           iconTextClass="text-on-primary"
           cardTone="warm"
           valueClassName="text-on-primary-fixed"
-          badgeText={`${kpis.completionPct}%`}
+          badgeText="Cerrados"
           badgeTone="primary"
           footerText={`De ${kpis.total} casos registrados`}
-          progressPct={kpis.completionPct}
         />
       </section>
 

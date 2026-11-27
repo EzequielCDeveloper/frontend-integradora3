@@ -211,21 +211,10 @@ export function StripeMonitorView() {
               className="text-primary text-[24px]"
             />
           </div>
-          <div className="mt-4 space-y-2">
-            <div className="flex items-center justify-between text-xs">
-              <span className="text-on-surface-variant">
-                {snapshot.completedCount} depósitos entregados
-              </span>
-              <strong className="font-mono text-on-surface">
-                {snapshot.successRatePct}% éxito
-              </strong>
-            </div>
-            <div className="h-1.5 w-full overflow-hidden rounded-full bg-surface-container-highest">
-              <div
-                className="h-full rounded-full bg-primary"
-                style={{ width: `${snapshot.successRatePct}%` }}
-              />
-            </div>
+          <div className="mt-4">
+            <span className="text-xs text-on-surface-variant">
+              {snapshot.completedCount} transferencias entregadas al trabajador
+            </span>
           </div>
         </article>
 
@@ -383,7 +372,7 @@ export function StripeMonitorView() {
                         <PaymentStatusBadge status={pay.status} />
                       </td>
                       <td className="px-2 py-3.5 text-center font-mono text-[11px] text-on-surface-variant whitespace-nowrap">
-                        {pay.payment_attempts} de 5
+                        {pay.payment_attempts} de 3
                       </td>
                       <td className="px-3 py-3.5 text-right whitespace-nowrap">
                         {canRetry ? (
@@ -551,7 +540,7 @@ export function StripeMonitorView() {
               </p>
               <p>
                 <strong>Intentos previos:</strong>{' '}
-                {retryTarget.payment_attempts} de 5
+                {retryTarget.payment_attempts} de 3
               </p>
             </div>
           )
