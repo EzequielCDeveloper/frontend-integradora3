@@ -16,7 +16,7 @@ import { SaharaIcon } from './sahara-primitives';
 const NAV_ITEMS = [
   {
     key: 'feed',
-    label: 'Publicaciones',
+    label: 'Trabajos',
     icon: 'folder_shared',
     href: '/(main)/feed',
     matches: ['/feed', '/job/'],
@@ -31,7 +31,7 @@ const NAV_ITEMS = [
   },
   {
     key: 'history',
-    label: 'Movimientos',
+    label: 'Pagos',
     icon: 'receipt_long',
     href: '/(main)/payment-history',
     matches: ['/payment-history'],
@@ -79,6 +79,7 @@ export function EmployerBottomNav() {
                 />
               </View>
               <Text
+                numberOfLines={1}
                 maxFontSizeMultiplier={1.3}
                 style={[
                   styles.navLabel,
@@ -108,6 +109,7 @@ export function EmployerBottomNav() {
               }
             />
             <Text
+              numberOfLines={1}
               maxFontSizeMultiplier={1.3}
               style={[
                 styles.navLabel,

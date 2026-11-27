@@ -48,104 +48,104 @@ import {
 } from '@/shared/utils/validators';
 
 // -----------------------------------------------------------------------------
-// 1. PURE GEOMETRIC / ASCII ICON MAPPER (ZERO EMOJIS, accessible={false})
+// 1. CLEAN PICTOGRAPHIC & GEOMETRIC ICON MAPPER (accessible={false})
 // -----------------------------------------------------------------------------
 const ICON_GLYPHS: Record<string, string> = {
-  assured_workload: 'S',
-  verified_user: 'OK',
-  verified: 'OK',
-  notifications: 'AL',
-  notifications_active: 'AL',
-  person: 'ID',
-  account_circle: 'ID',
-  lock: 'LK',
-  lock_open: 'UL',
-  lock_clock: 'TM',
-  receipt_long: 'CF',
-  receipt: 'CF',
+  assured_workload: '🏛',
+  verified_user: '✓',
+  verified: '✓',
+  notifications: '🔔',
+  notifications_active: '🔔',
+  person: '👤',
+  account_circle: '👤',
+  lock: '🔒',
+  lock_open: '🔓',
+  lock_clock: '⏱',
+  receipt_long: '📄',
+  receipt: '📄',
   add: '+',
   add_circle: '+',
-  add_a_photo: '+F',
-  add_photo_alternate: '+A',
-  photo_camera: 'CM',
-  image: 'IM',
+  add_a_photo: '📷+',
+  add_photo_alternate: '🖼+',
+  photo_camera: '📷',
+  image: '🖼',
   picture_as_pdf: 'PDF',
-  arrow_back: '<',
-  arrow_back_ios_new: '<',
-  arrow_forward: '>',
-  arrow_forward_ios: '>',
-  chevron_right: '>',
-  expand_more: 'v',
-  close: 'X',
-  check: 'OK',
-  check_circle: 'OK',
-  task_alt: 'OK',
-  done_all: 'OK',
-  radio_button_unchecked: 'o',
-  timer: 'TM',
-  schedule: 'HR',
-  hourglass_top: 'TM',
-  calendar_today: 'FE',
-  calendar_month: 'FE',
-  event_available: 'FE',
-  event_busy: 'FE',
-  location_on: 'UB',
-  push_pin: 'UB',
-  pin_drop: 'UB',
-  my_location: 'UB',
-  navigation: 'IR',
-  star: '*',
-  star_outline: '-',
-  group: 'EQ',
-  work: 'TR',
-  business_center: 'TR',
-  folder_shared: 'PB',
-  folder_open: 'EX',
-  handyman: 'MT',
-  construction: 'OB',
-  cleaning_services: 'LM',
-  format_paint: 'PT',
-  yard: 'JD',
-  local_shipping: 'MD',
-  celebration: 'EV',
-  bolt: 'EL',
-  lightbulb: 'ID',
-  chat: 'CH',
-  call: 'TL',
-  phone_iphone: 'TL',
-  mail: 'EM',
-  mark_email_unread: 'EM',
-  key: 'CL',
-  visibility: 'VR',
-  visibility_off: 'OC',
-  edit: 'ED',
-  cancel: 'X',
-  warning: '!',
-  info: 'i',
-  gavel: 'AR',
-  balance: 'AR',
-  support_agent: 'SP',
-  flag: 'RP',
-  send: '>',
-  content_copy: 'CP',
-  account_balance_wallet: 'MX',
-  account_balance: 'MX',
-  payments: 'MX',
-  undo: '<<',
-  replay: '<<',
-  download: 'DL',
-  sim_card_download: 'DL',
-  logout: 'SL',
-  inbox: 'BZ',
-  handshake: 'AC',
-  shield: 'GD',
-  shield_lock: 'GD',
-  shield_person: 'GD',
-  domain: 'EM',
-  article: 'DC',
-  assignment: 'DC',
-  history: 'HS',
-  publish: 'UP',
+  arrow_back: '←',
+  arrow_back_ios_new: '‹',
+  arrow_forward: '→',
+  arrow_forward_ios: '›',
+  chevron_right: '›',
+  expand_more: '▾',
+  close: '✕',
+  check: '✓',
+  check_circle: '✓',
+  task_alt: '✓',
+  done_all: '✓✓',
+  radio_button_unchecked: '○',
+  timer: '⏱',
+  schedule: '⏱',
+  hourglass_top: '⏳',
+  calendar_today: '📅',
+  calendar_month: '📅',
+  event_available: '📅',
+  event_busy: '📅',
+  location_on: '📍',
+  push_pin: '📌',
+  pin_drop: '📍',
+  my_location: '◎',
+  navigation: '➤',
+  star: '★',
+  star_outline: '☆',
+  group: '👥',
+  work: '💼',
+  business_center: '💼',
+  folder_shared: '📁',
+  folder_open: '📂',
+  handyman: '🔧',
+  construction: '🔨',
+  cleaning_services: '🧹',
+  format_paint: '🖌',
+  yard: '🌱',
+  local_shipping: '🚚',
+  celebration: '🎉',
+  bolt: '⚡',
+  lightbulb: '💡',
+  chat: '💬',
+  call: '📞',
+  phone_iphone: '📱',
+  mail: '✉',
+  mark_email_unread: '✉',
+  key: '🔑',
+  visibility: '👁',
+  visibility_off: '🚫',
+  edit: '✎',
+  cancel: '✕',
+  warning: '⚠',
+  info: 'ℹ',
+  gavel: '⚖',
+  balance: '⚖',
+  support_agent: '🎧',
+  flag: '⚑',
+  send: '➤',
+  content_copy: '📋',
+  account_balance_wallet: '💳',
+  account_balance: '🏦',
+  payments: '💳',
+  undo: '↺',
+  replay: '↺',
+  download: '⬇',
+  sim_card_download: '⬇',
+  logout: '⎋',
+  inbox: '📥',
+  handshake: '🤝',
+  shield: '🛡',
+  shield_lock: '🛡',
+  shield_person: '🛡',
+  domain: '🏢',
+  article: '📄',
+  assignment: '📋',
+  history: '⏱',
+  publish: '⬆',
 };
 
 export function SaharaIcon({
@@ -412,7 +412,15 @@ export function SaharaInput({
     <View style={[styles.inputWrapper, containerStyle]}>
       {label || rightBadge ? (
         <View style={styles.inputHeaderRow}>
-          {label ? <Text style={styles.inputLabel}>{label}</Text> : <View />}
+          {label ? (
+            <Text
+              style={[styles.inputLabel, { flex: 1, marginRight: 8 }]}
+              numberOfLines={1}>
+              {label}
+            </Text>
+          ) : (
+            <View />
+          )}
           {rightBadge ? (
             <View style={styles.rightBadgePill}>
               <Text style={styles.rightBadgeText}>{rightBadge}</Text>
@@ -699,30 +707,18 @@ export function RatingStars({
         {[1, 2, 3, 4, 5].map((star) => {
           const filled = star <= Math.round(rating);
           return (
-            <View
+            <Text
               key={star}
-              style={[
-                styles.starDotReadOnly,
-                {
-                  width: Math.max(14, size),
-                  height: Math.max(14, size),
-                  backgroundColor: filled
-                    ? SaharaColors.primaryAccessible
-                    : SaharaColors.surfaceContainerHigh,
-                },
-              ]}>
-              <Text
-                accessible={false}
-                style={{
-                  fontSize: Math.max(9, Math.round(size * 0.55)),
-                  fontWeight: '700',
-                  color: filled
-                    ? SaharaColors.onPrimary
-                    : SaharaColors.secondary,
-                }}>
-                {star}
-              </Text>
-            </View>
+              accessible={false}
+              style={{
+                fontSize: Math.max(16, size),
+                color: filled
+                  ? SaharaColors.primaryAccessible
+                  : SaharaColors.surfaceContainerHighest,
+                marginRight: 2,
+              }}>
+              ★
+            </Text>
           );
         })}
       </View>
@@ -742,7 +738,7 @@ export function RatingStars({
             testID={`star-btn-${star}`}
             accessibilityRole="radio"
             accessibilityState={{ checked: star === rating }}
-            accessibilityLabel={`${star} de 5 puntos`}
+            accessibilityLabel={`${star} de 5 estrellas`}
             onPress={() => onChange(star)}
             style={[
               styles.starBtnInteractive,
@@ -751,13 +747,13 @@ export function RatingStars({
                 : styles.starBtnInteractiveInactive,
             ]}>
             <Text
-              style={[
-                styles.starBtnNumber,
-                filled
-                  ? { color: SaharaColors.onPrimary }
-                  : { color: SaharaColors.onSurface },
-              ]}>
-              {star}
+              style={{
+                fontSize: Math.max(22, Math.round(size * 0.75)),
+                color: filled
+                  ? SaharaColors.onPrimary
+                  : SaharaColors.onSurfaceVariant,
+              }}>
+              ★
             </Text>
           </Pressable>
         );

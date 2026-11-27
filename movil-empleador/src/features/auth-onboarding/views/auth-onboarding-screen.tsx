@@ -65,13 +65,8 @@ export function AuthOnboardingScreenView() {
     pendingEmailInStore ? 'check_email' : 'login',
   );
 
-  // Login state
-  const [loginEmail, setLoginEmail] = useState('');
-  const [loginPassword, setLoginPassword] = useState('');
-  const [loginErrors, setLoginErrors] = useState<{
-    email?: string;
-    password?: string;
-  }>({});
+  // Login state — Pre-configured in Demo Bypass mode (read-only per user requirements)
+  const [loginEmail] = useState('valeria.montes@solidez.mx');
 
   // Register state — strictly initialized EMPTY per Poka-Yoke rule 5.2
   const [regForm, setRegForm] = useState<RegisterFormInput>({
@@ -111,33 +106,9 @@ export function AuthOnboardingScreenView() {
   const passStrength = getPasswordStrength(regForm.password);
   const passCheck = getPasswordChecklist(regForm.password);
 
-  // Idempotent Login
+  // Idempotent 1-click Login Bypass
   const { execute: handleLogin, isPending: isLoggingIn } = useIdempotentAction(
     async () => {
-      setServiceError(null);
-      const emailErr = validateEmail(loginEmail);
-      const passErr =
-        loginPassword.trim().length < 6
-          ? 'Escribe tu contraseña.'
-          : undefined;
-      if (emailErr || passErr) {
-        setLoginErrors({ email: emailErr ?? undefined, password: passErr });
-        return;
-      }
-      setLoginErrors({});
-      try {
-        await employerRepository.login(loginEmail, loginPassword);
-        router.replace('/(main)/feed');
-      } catch (err) {
-        const mapped = mapDomainErrorToUI(err);
-        setServiceError(mapped.message);
-      }
-    },
-  );
-
-  // Quick demo access with canonical seed account
-  const { execute: handleQuickSeedLogin, isPending: isSeedLoggingIn } =
-    useIdempotentAction(async () => {
       setServiceError(null);
       try {
         await employerRepository.login(
@@ -149,7 +120,8 @@ export function AuthOnboardingScreenView() {
         const mapped = mapDomainErrorToUI(err);
         setServiceError(mapped.message);
       }
-    });
+    },
+  );
 
   // Idempotent Registration
   const { execute: handleRegister, isPending: isRegistering } =
@@ -315,98 +287,36 @@ export function AuthOnboardingScreenView() {
         />
       ) : null}
 
-      {/* MODE 1: LOGIN */}
+      {/* MODE 1: LOGIN (Demo Bypass Mode: Fields Read-Only, 1-Click Access) */}
       {mode === 'login' ? (
         <View style={{ gap: Spacing.md }}>
           <SaharaCard variant="lowest" style={{ gap: 14 }}>
             <SaharaInput
               testID="login-email-input"
-              label="Tu correo electrónico"
-              placeholder="ejemplo@correo.com"
+              label="Correo electrónico"
               icon="mail"
-              keyboardType="email-address"
-              autoCapitalize="none"
+              editable={false}
               value={loginEmail}
-              onChangeText={(v) => {
-                setLoginEmail(v);
-                if (loginErrors.email) {
-                  setLoginErrors((prev) => ({
-                    ...prev,
-                    email: validateEmail(v) ?? undefined,
-                  }));
-                }
-              }}
-              onBlur={() =>
-                setLoginErrors((prev) => ({
-                  ...prev,
-                  email: validateEmail(loginEmail) ?? undefined,
-                }))
-              }
-              errorText={loginErrors.email}
+              helperText="Modo demostración: cuenta verificada activa."
             />
 
             <SaharaInput
               testID="login-password-input"
-              label="Tu contraseña"
-              placeholder="Escribe tu contraseña"
+              label="Contraseña"
               icon="key"
               secureTextEntry={!showPassword}
-              value={loginPassword}
-              onChangeText={(v) => setLoginPassword(v)}
-              errorText={loginErrors.password}
+              editable={false}
+              value="••••••••••••"
+              helperText="Contraseña preconfigurada para acceso rápido."
             />
-
-            <View style={styles.forgotPassRow}>
-              <Pressable
-                accessibilityRole="button"
-                accessibilityLabel={
-                  showPassword ? 'Ocultar contraseña' : 'Ver contraseña escrita'
-                }
-                onPress={() => setShowPassword((s) => !s)}
-                style={styles.touchTargetAction}>
-                <Text style={styles.linkTextSecondary}>
-                  {showPassword ? 'Ocultar contraseña' : 'Ver contraseña'}
-                </Text>
-              </Pressable>
-              <Pressable
-                testID="go-to-reset-password-btn"
-                accessibilityRole="button"
-                accessibilityLabel="Olvidé mi contraseña"
-                onPress={() => {
-                  setServiceError(null);
-                  setMode('reset_password');
-                }}
-                style={styles.touchTargetAction}>
-                <Text style={styles.linkTextPrimary}>
-                  Olvidé mi contraseña
-                </Text>
-              </Pressable>
-            </View>
 
             <SaharaButton
               testID="login-submit-btn"
-              label="Entrar a mi Cuenta"
+              label="Iniciar Sesión"
+              sublabel="Entrar como Valeria Montes (Empleador verificado)"
               trailingIcon="arrow_forward"
               loading={isLoggingIn}
               onPress={() => void handleLogin()}
-            />
-
-            <View style={styles.dividerRow}>
-              <View style={styles.dividerLine} />
-              <Text style={styles.dividerLabel}>
-                O prueba la aplicación con datos de ejemplo
-              </Text>
-              <View style={styles.dividerLine} />
-            </View>
-
-            <SaharaButton
-              testID="demo-seed-login-btn"
-              label="Entrar con Cuenta de Ejemplo"
-              sublabel="Valeria Montes de Oca (Con trabajos de muestra listos)"
-              variant="secondary"
-              icon="verified_user"
-              loading={isSeedLoggingIn}
-              onPress={() => void handleQuickSeedLogin()}
             />
           </SaharaCard>
         </View>

@@ -147,6 +147,12 @@ export function WorkerReviewScreenView({ jobId }: { jobId: string }) {
           message={errorMsg ?? 'No se encontró el trabajo finalizado.'}
           onRetry={() => void loadJob()}
         />
+      ) : job.status !== 'completed' ? (
+        <ErrorState
+          message="Solo puedes evaluar trabajos que hayan concluido. Esta publicación aún se encuentra en curso o no es elegible para evaluación."
+          secondaryLabel="Volver a mis trabajos"
+          onSecondaryAction={() => router.replace('/(main)/feed')}
+        />
       ) : (
         <>
           {/* Status Strip & Released Escrow Banner */}
@@ -244,7 +250,8 @@ export function WorkerReviewScreenView({ jobId }: { jobId: string }) {
                         styles.tagPillText,
                         selected ? styles.tagPillTextActive : undefined,
                       ]}>
-                      {selected ? `[OK] ${tag}` : tag}
+                      {selected ? '✓ ' : ''}
+                      {tag}
                     </Text>
                   </Pressable>
                 );
@@ -256,7 +263,7 @@ export function WorkerReviewScreenView({ jobId }: { jobId: string }) {
           <SaharaCard variant="lowest" style={{ gap: 8 }}>
             <SaharaInput
               testID="review-comment-input"
-              label="Comentario (opcional si elegiste aspectos arriba)"
+              label="Comentario (opcional)"
               rightBadge={`${comment.length} / 500`}
               placeholder="Describe cómo fue la experiencia técnica, puntualidad y trato con el trabajador..."
               multiline
