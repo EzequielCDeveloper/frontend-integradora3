@@ -43,6 +43,10 @@ jobs:
   build-apk:
     name: Build ${{ matrix.app_name }} (${{ matrix.app_dir }})
     runs-on: ubuntu-latest
+    env:
+      ANDROID_HOME: /usr/local/lib/android/sdk
+      ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+      GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -XX:MaxMetaspaceSize=1g"
     strategy:
       fail-fast: false
       matrix:
@@ -76,10 +80,6 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Set up Android SDK
-        if: steps.filter.outputs.should_build == 'true'
-        uses: android-actions/setup-android@v3
-
       - name: Set up Node.js 20
         if: steps.filter.outputs.should_build == 'true'
         uses: actions/setup-node@v4
@@ -91,6 +91,16 @@ jobs:
       - name: Set up Gradle Cache
         if: steps.filter.outputs.should_build == 'true'
         uses: gradle/actions/setup-gradle@v4
+
+      - name: Accept Android SDK licenses
+        if: steps.filter.outputs.should_build == 'true'
+        run: |
+          if command -v sdkmanager >/dev/null 2>&1; then
+            yes | sdkmanager --licenses > /dev/null 2>&1 || true
+          elif [ -d "$ANDROID_HOME/cmdline-tools" ]; then
+            SDK_MGR=$(find "$ANDROID_HOME/cmdline-tools" -name sdkmanager -type f | head -n 1)
+            [ -n "$SDK_MGR" ] && yes | "$SDK_MGR" --licenses > /dev/null 2>&1 || true
+          fi
 
       - name: Install dependencies
         if: steps.filter.outputs.should_build == 'true'
