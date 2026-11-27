@@ -48,9 +48,9 @@ export function WorkerAuthScreen() {
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [infoMsg, setInfoMsg] = useState<string | null>(null);
 
-  // Login
-  const [loginEmail, setLoginEmail] = useState('');
-  const [loginPassword, setLoginPassword] = useState('');
+  // Login — Preconfigurado en Modo Demostración Bypass (de solo lectura)
+  const [loginEmail] = useState('carlos.mendoza@correo.mx');
+  const [loginPassword] = useState('Solidez2026');
   const [showLoginPass, setShowLoginPass] = useState(false);
 
   // Registro + información personal inicial
@@ -84,7 +84,7 @@ export function WorkerAuthScreen() {
     setErrorMsg(null);
     setInfoMsg(null);
     try {
-      workerStore.login(loginEmail, loginPassword);
+      workerStore.login('carlos.mendoza@correo.mx', 'Solidez2026');
       router.replace('/(main)/home');
     } catch (err) {
       setErrorMsg(mapDomainErrorToMessage(err));
@@ -237,7 +237,7 @@ export function WorkerAuthScreen() {
         />
       ) : null}
 
-      {/* VISTA 1: INICIO DE SESIÓN */}
+      {/* VISTA 1: INICIO DE SESIÓN (Modo Demostración Bypass) */}
       {step === 'login' ? (
         <SaharaCard variant="lowest" style={styles.formCard}>
           <Text style={styles.cardTitle}>Accede a tu cuenta de trabajador</Text>
@@ -248,60 +248,25 @@ export function WorkerAuthScreen() {
           <SaharaInput
             label="Correo electrónico"
             icon="mail"
-            keyboardType="email-address"
-            autoCapitalize="none"
-            placeholder="carlos.mendoza@correo.mx"
+            editable={false}
             value={loginEmail}
-            onChangeText={setLoginEmail}
+            helperText="Modo demostración: cuenta verificada activa."
           />
 
-          <View style={{ gap: 6 }}>
-            <SaharaInput
-              label="Contraseña"
-              icon="lock"
-              secureTextEntry={!showLoginPass}
-              placeholder="Ingresa tu contraseña"
-              value={loginPassword}
-              onChangeText={setLoginPassword}
-            />
-            <View style={styles.inlineLinkRow}>
-              <Pressable onPress={() => setShowLoginPass((v) => !v)}>
-                <Text style={styles.subtleLink}>
-                  {showLoginPass ? 'Ocultar contraseña' : 'Mostrar contraseña'}
-                </Text>
-              </Pressable>
-              <Pressable
-                onPress={() => {
-                  setRecoveryEmail(loginEmail);
-                  setErrorMsg(null);
-                  setInfoMsg(null);
-                  setStep('recovery');
-                }}>
-                <Text style={styles.primaryLink}>¿Olvidaste tu contraseña?</Text>
-              </Pressable>
-            </View>
-          </View>
+          <SaharaInput
+            label="Contraseña"
+            icon="lock"
+            secureTextEntry={!showLoginPass}
+            editable={false}
+            value="••••••••••••"
+            helperText="Contraseña preconfigurada para acceso rápido."
+          />
 
           <SaharaButton
             label="Iniciar sesión"
+            sublabel="Entrar como Carlos Mendoza (Trabajador verificado)"
             icon="arrow_forward"
             onPress={handleLogin}
-          />
-
-          <View style={styles.dividerRow}>
-            <View style={styles.dividerLine} />
-            <Text style={styles.dividerText}>o continúa con tu cuenta</Text>
-            <View style={styles.dividerLine} />
-          </View>
-
-          <SaharaButton
-            label="Crear cuenta de trabajador"
-            variant="outline"
-            icon="person"
-            onPress={() => {
-              setErrorMsg(null);
-              setStep('register_account');
-            }}
           />
         </SaharaCard>
       ) : null}
